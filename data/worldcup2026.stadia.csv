@@ -1,0 +1,17 @@
+_id,id,name,fifa_name,city,country,capacity,region,createdAt,__v
+698715d7b7461995f2ddd862,1,Estadio Azteca,Mexico City Stadium,Mexico City,Mexico,83000,Central,2026-02-07T10:37:11.008Z,0
+698715d7b7461995f2ddd864,2,Estadio Akron,Estadio Guadalajara,Guadalajara (Zapopan),Mexico,48000,Central,2026-02-07T10:37:11.015Z,0
+698715d7b7461995f2ddd866,3,Estadio BBVA,Estadio Monterrey,Monterrey (Guadalupe),Mexico,53500,Central,2026-02-07T10:37:11.018Z,0
+698715d7b7461995f2ddd868,4,AT&T Stadium,Dallas Stadium,"Dallas (Arlington, Texas)",United States,94000,Central,2026-02-07T10:37:11.021Z,0
+698715d7b7461995f2ddd86a,5,NRG Stadium,Houston Stadium,Houston,United States,72000,Central,2026-02-07T10:37:11.024Z,0
+698715d7b7461995f2ddd86c,6,GEHA Field at Arrowhead Stadium,Kansas City Stadium,Kansas City,United States,73000,Central,2026-02-07T10:37:11.026Z,0
+698715d7b7461995f2ddd86e,7,Mercedes-Benz Stadium,Atlanta Stadium,Atlanta,United States,75000,Eastern,2026-02-07T10:37:11.028Z,0
+698715d7b7461995f2ddd870,8,Hard Rock Stadium,Miami Stadium,Miami (Miami Gardens),United States,65000,Eastern,2026-02-07T10:37:11.030Z,0
+698715d7b7461995f2ddd872,9,Gillette Stadium,Boston Stadium,Boston (Foxborough),United States,65000,Eastern,2026-02-07T10:37:11.032Z,0
+698715d7b7461995f2ddd874,10,Lincoln Financial Field,Philadelphia Stadium,Philadelphia,United States,69000,Eastern,2026-02-07T10:37:11.035Z,0
+698715d7b7461995f2ddd876,11,MetLife Stadium,New York/New Jersey Stadium,New York/New Jersey (East Rutherford),United States,82500,Eastern,2026-02-07T10:37:11.037Z,0
+698715d7b7461995f2ddd878,12,BMO Field,Toronto Stadium,Toronto,Canada,45000,Eastern,2026-02-07T10:37:11.039Z,0
+698715d7b7461995f2ddd87a,13,BC Place,BC Place Vancouver,Vancouver,Canada,54000,Western,2026-02-07T10:37:11.042Z,0
+698715d7b7461995f2ddd87c,14,Lumen Field,Seattle Stadium,Seattle,United States,69000,Western,2026-02-07T10:37:11.043Z,0
+698715d7b7461995f2ddd87e,15,Levi's Stadium,San Francisco Bay Area Stadium,San Francisco Bay Area (Santa Clara),United States,71000,Western,2026-02-07T10:37:11.045Z,0
+698715d7b7461995f2ddd880,16,SoFi Stadium,Los Angeles Stadium,Los Angeles (Inglewood),United States,70000,Western,2026-02-07T10:37:11.047Z,0
