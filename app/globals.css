@@ -104,6 +104,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
     /* Dark "room" the CRT sits in. */
     background-color: #04030a;
     background-image:
@@ -129,7 +130,8 @@
  * ============================================================= */
 .crt-bezel {
   position: relative;
-  padding: clamp(10px, 2.2vw, 26px);
+  overflow: hidden;
+  padding: clamp(8px, 2.2vw, 26px);
   background:
     linear-gradient(160deg, #2a2c34 0%, #15161c 45%, #090a0e 100%);
   box-shadow:
@@ -153,8 +155,19 @@
   font-family: var(--font-display), monospace;
   font-size: 7px;
   letter-spacing: 0.25em;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.18);
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* The brand plate is cosmetic — hide it where the bezel padding is too thin. */
+@media (max-width: 640px) {
+  .crt-bezel {
+    padding-bottom: 10px;
+  }
+  .crt-bezel::after {
+    display: none;
+  }
 }
 
 /* ============================================================= *

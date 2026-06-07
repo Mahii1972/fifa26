@@ -13,24 +13,32 @@ function StandingRow({
   const qualifying = rank <= 2;
   return (
     <tr className="border-b border-foreground/20 text-sm last:border-0 sm:text-base">
-      <td className="py-2 pr-2">
+      <td className="py-2">
         <span
           className={
-            qualifying ? "text-teletext-green glow-green" : "text-muted-foreground"
+            qualifying
+              ? "text-teletext-green glow-green"
+              : "text-muted-foreground"
           }
         >
           {rank}
         </span>
       </td>
-      <td className="py-2 pr-3">
-        <span className="mr-2 text-teletext-cyan">{team?.fifaCode ?? "TBD"}</span>
-        <span className="truncate">{team?.name ?? "TBD"}</span>
+      <td className="overflow-hidden py-2 pr-2">
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="shrink-0 text-teletext-cyan">
+            {team?.fifaCode ?? "TBD"}
+          </span>
+          <span className="truncate text-muted-foreground">
+            {team?.name ?? "TBD"}
+          </span>
+        </div>
       </td>
       <td className="py-2 text-center text-muted-foreground">{standing.mp}</td>
       <td className="py-2 text-center text-muted-foreground">{standing.gf}</td>
       <td className="py-2 text-center text-muted-foreground">{standing.ga}</td>
       <td className="py-2 text-center text-muted-foreground">{standing.gd}</td>
-      <td className="font-display glow-yellow py-2 pl-2 text-right text-xs text-teletext-yellow">
+      <td className="font-display glow-yellow py-2 text-right text-xs text-teletext-yellow">
         {standing.pts}
       </td>
     </tr>
@@ -42,7 +50,7 @@ export function GroupsPanel({ data }: { data: WorldCupData }) {
 
   return (
     <div>
-      <header className="pixel-shadow mb-6 border-2 border-foreground bg-secondary/40 p-5">
+      <header className="pixel-shadow mb-6 border-2 border-foreground bg-secondary/40 p-4 sm:p-5">
         <p className="text-xs tracking-[0.3em] text-teletext-cyan">
           ▌TRANSMISSION 002 / GROUP STAGE
         </p>
@@ -67,29 +75,40 @@ export function GroupsPanel({ data }: { data: WorldCupData }) {
                 4 TEAMS
               </span>
             </div>
-            <table className="w-full px-3">
-              <thead>
-                <tr className="border-b border-foreground/40 text-[11px] tracking-wider text-muted-foreground sm:text-xs">
-                  <th className="py-2 text-left">#</th>
-                  <th className="py-2 text-left">TEAM</th>
-                  <th className="py-2 text-center">MP</th>
-                  <th className="py-2 text-center">GF</th>
-                  <th className="py-2 text-center">GA</th>
-                  <th className="py-2 text-center">GD</th>
-                  <th className="py-2 text-right">PTS</th>
-                </tr>
-              </thead>
-              <tbody>
-                {group.standings.map((standing, idx) => (
-                  <StandingRow
-                    key={standing.teamId}
-                    rank={idx + 1}
-                    team={teamMap.get(standing.teamId)}
-                    standing={standing}
-                  />
-                ))}
-              </tbody>
-            </table>
+            <div className="px-3">
+              <table className="w-full table-fixed">
+                <colgroup>
+                  <col className="w-[2.2rem]" />
+                  <col />
+                  <col className="w-[2.2rem]" />
+                  <col className="w-[2.2rem]" />
+                  <col className="w-[2.2rem]" />
+                  <col className="w-[2.2rem]" />
+                  <col className="w-[2.6rem]" />
+                </colgroup>
+                <thead>
+                  <tr className="border-b border-foreground/40 text-[11px] tracking-wider text-muted-foreground sm:text-xs">
+                    <th className="py-2 text-left">#</th>
+                    <th className="py-2 text-left">TEAM</th>
+                    <th className="py-2 text-center">MP</th>
+                    <th className="py-2 text-center">GF</th>
+                    <th className="py-2 text-center">GA</th>
+                    <th className="py-2 text-center">GD</th>
+                    <th className="py-2 text-right">PTS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.standings.map((standing, idx) => (
+                    <StandingRow
+                      key={standing.teamId}
+                      rank={idx + 1}
+                      team={teamMap.get(standing.teamId)}
+                      standing={standing}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ))}
       </div>

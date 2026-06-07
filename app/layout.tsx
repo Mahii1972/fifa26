@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,13 @@ const vt323 = VT323({
 export const metadata: Metadata = {
   title: "WC/26 — Teletext Data Service",
   description: "FIFA World Cup 2026 — retro broadcast data terminal",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#04030a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

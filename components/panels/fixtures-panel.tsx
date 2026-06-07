@@ -111,44 +111,83 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
           return (
             <div
               key={match.id}
-              className="grid grid-cols-1 gap-1 border-b border-foreground/20 px-3 py-3 text-base transition-colors last:border-0 hover:bg-muted max-lg:py-4 lg:grid-cols-[3rem_3rem_1fr_5rem_1fr_1fr] lg:items-center lg:gap-0 lg:py-2.5"
+              className="border-b border-foreground/20 transition-colors last:border-0 hover:bg-muted"
             >
-              <span className="text-muted-foreground max-lg:text-sm">
-                #{match.id.padStart(2, "0")}
-              </span>
-              <span className="font-display text-[9px] text-teletext-amber max-lg:inline lg:block">
-                {match.group}
-              </span>
-              <span className="glow-soft truncate">
-                <span className="mr-2 text-teletext-cyan lg:hidden">HOME</span>
-                <span className="text-teletext-cyan">
-                  {home?.fifaCode ?? "TBD"}
-                </span>{" "}
-                <span className="hidden text-muted-foreground lg:inline">
-                  {home?.name}
+              {/* Desktop: single aligned row */}
+              <div className="hidden px-3 py-2.5 text-base lg:grid lg:grid-cols-[3rem_3rem_1fr_5rem_1fr_1fr] lg:items-center">
+                <span className="text-muted-foreground">
+                  #{match.id.padStart(2, "0")}
                 </span>
-              </span>
-              <span
-                className={`font-display text-center text-[10px] lg:text-[9px] ${
-                  played ? "glow-green text-teletext-green" : "text-muted-foreground"
-                }`}
-              >
-                {score}
-              </span>
-              <span className="glow-soft truncate">
-                <span className="mr-2 text-teletext-cyan lg:hidden">AWAY</span>
-                <span className="text-teletext-cyan">
-                  {away?.fifaCode ?? "TBD"}
-                </span>{" "}
-                <span className="hidden text-muted-foreground lg:inline">
-                  {away?.name}
+                <span className="font-display text-[9px] text-teletext-amber">
+                  {match.group}
                 </span>
-              </span>
-              <MatchTimeRow
-                localDate={match.localDate}
-                stadiumId={match.stadiumId}
-                venue={stadium?.fifaName}
-              />
+                <span className="glow-soft truncate">
+                  <span className="text-teletext-cyan">
+                    {home?.fifaCode ?? "TBD"}
+                  </span>{" "}
+                  <span className="text-muted-foreground">{home?.name}</span>
+                </span>
+                <span
+                  className={`font-display text-center text-[9px] ${
+                    played
+                      ? "glow-green text-teletext-green"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {score}
+                </span>
+                <span className="glow-soft truncate">
+                  <span className="text-teletext-cyan">
+                    {away?.fifaCode ?? "TBD"}
+                  </span>{" "}
+                  <span className="text-muted-foreground">{away?.name}</span>
+                </span>
+                <MatchTimeRow
+                  localDate={match.localDate}
+                  stadiumId={match.stadiumId}
+                  venue={stadium?.fifaName}
+                />
+              </div>
+
+              {/* Mobile: compact match card */}
+              <div className="px-3 py-3 lg:hidden">
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="font-display text-[9px] text-teletext-amber">
+                    GRP {match.group}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    #{match.id.padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-base">
+                  <span className="glow-soft min-w-0 truncate text-right">
+                    <span className="text-teletext-cyan">
+                      {home?.fifaCode ?? "TBD"}
+                    </span>
+                  </span>
+                  <span
+                    className={`font-display shrink-0 px-1 text-center text-[11px] ${
+                      played
+                        ? "glow-green text-teletext-green"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {score}
+                  </span>
+                  <span className="glow-soft min-w-0 truncate">
+                    <span className="text-teletext-cyan">
+                      {away?.fifaCode ?? "TBD"}
+                    </span>
+                  </span>
+                </div>
+                <div className="mt-2 text-sm">
+                  <MatchTimeRow
+                    localDate={match.localDate}
+                    stadiumId={match.stadiumId}
+                    venue={stadium?.fifaName}
+                  />
+                </div>
+              </div>
             </div>
           );
         })}
