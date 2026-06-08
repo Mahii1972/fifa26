@@ -126,6 +126,66 @@
 }
 
 /* ============================================================= *
+ *  LIQUID WAVY BACKDROP — the "room" behind the CRT
+ * ============================================================= */
+.wavy-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #0a0f3c;
+}
+
+/* Fill the whole screen. The marble itself is static (the filter paints once
+ * and scrolling just composites cached tiles), so it stays smooth even on long
+ * panels — the motion lives on the cheap overlay instead. */
+.wavy-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.wavy-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Deep-blue wash + vignette so the marble reads as a textured CRT screen and
+ * the teletext stays legible on top. */
+.wavy-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 48, 0.55), rgba(0, 0, 48, 0.55)),
+    radial-gradient(
+      ellipse at center,
+      transparent 28%,
+      rgba(0, 0, 28, 0.6) 100%
+    );
+  /* Cheap, GPU-composited "breathing" so the screen feels alive without
+   * re-running the expensive filter each frame. */
+  animation: wavy-pulse 9s ease-in-out infinite;
+}
+
+@keyframes wavy-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.82;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wavy-overlay {
+    animation: none;
+  }
+}
+
+/* ============================================================= *
  *  CRT MONITOR BEZEL — the physical screen housing
  * ============================================================= */
 .crt-bezel {

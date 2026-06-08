@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { TabId, WorldCupData } from "@/lib/types";
+import { WavyBackground } from "@/components/retro/wavy-background";
 import { TabBar } from "@/components/retro/tab-bar";
 import { Ticker } from "@/components/retro/ticker";
 import { BroadcastClock } from "@/components/retro/clock";
@@ -18,6 +19,7 @@ export function WorldCupApp({ data }: { data: WorldCupData }) {
     <div className="min-h-screen p-2 sm:p-5 md:p-8 lg:p-10">
       <div className="crt-bezel mx-auto max-w-7xl">
         <div className="crt-shell min-h-[88vh]">
+          <WavyBackground />
           <div className="crt-content">
             <header className="border-b-2 border-foreground">
               <div className="flex items-center justify-between gap-2 px-3 py-3 sm:px-4">
