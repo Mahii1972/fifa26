@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { TabId, WorldCupData } from "@/lib/types";
+import { useLiveData } from "@/lib/use-live-data";
 import { WavyBackground } from "@/components/retro/wavy-background";
 import { TabBar } from "@/components/retro/tab-bar";
 import { Ticker } from "@/components/retro/ticker";
@@ -12,8 +13,9 @@ import { SquadsPanel } from "@/components/panels/squads-panel";
 import { FixturesPanel } from "@/components/panels/fixtures-panel";
 import { VenuesPanel } from "@/components/panels/venues-panel";
 
-export function WorldCupApp({ data }: { data: WorldCupData }) {
+export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
   const [tab, setTab] = useState<TabId>("signal");
+  const data = useLiveData(initialData);
 
   return (
     <div className="min-h-screen p-2 sm:p-5 md:p-8 lg:p-10">
@@ -32,10 +34,20 @@ export function WorldCupApp({ data }: { data: WorldCupData }) {
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-[11px] tracking-widest text-teletext-cyan sm:gap-4">
-                  <span className="glow-green hidden text-teletext-green sm:inline">
-                    ● LIVE
+                  <span
+                    className={`hidden sm:inline ${
+                      data.live
+                        ? "glow-green text-teletext-green"
+                        : "text-teletext-amber"
+                    }`}
+                  >
+                    {data.live ? "● LIVE FEED" : "○ SNAPSHOT"}
                   </span>
-                  <span className="inline-block h-2.5 w-2.5 animate-blink bg-teletext-green" />
+                  <span
+                    className={`inline-block h-2.5 w-2.5 animate-blink ${
+                      data.live ? "bg-teletext-green" : "bg-teletext-amber"
+                    }`}
+                  />
                   <BroadcastClock />
                 </div>
               </div>

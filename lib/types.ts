@@ -38,6 +38,9 @@ export interface Group {
   standings: GroupStandingEntry[];
 }
 
+/** Lifecycle of a match. Mirrors ESPN status.type.state. */
+export type MatchState = "pre" | "in" | "post";
+
 export interface Match {
   id: string;
   homeTeamId: string;
@@ -51,6 +54,16 @@ export interface Match {
   finished: boolean;
   timeElapsed: string;
   type: string;
+  /** Live-overlay fields (populated from ESPN when available). */
+  state?: MatchState;
+  /** Human status, e.g. "FT", "63'", "Thu, June 11th at 3:00 PM EDT". */
+  statusDetail?: string;
+  /** In-match clock, e.g. "63'". Only meaningful while state === "in". */
+  displayClock?: string;
+  /** Absolute kickoff in ISO UTC — from ESPN if matched, else derived from CSV. */
+  kickoffUtc?: string;
+  /** Where score/status came from for this match. */
+  source?: "espn" | "csv";
 }
 
 export interface Stadium {
@@ -69,6 +82,18 @@ export interface WorldCupData {
   matches: Match[];
   stadiums: Stadium[];
   squads: SquadPlayer[];
+  /** ISO timestamp of the last successful data refresh. */
+  lastUpdated?: string;
+  /** True when scores/standings were overlaid from the live ESPN feed. */
+  live?: boolean;
+}
+
+/** Volatile slice returned by /api/live and merged into the static base. */
+export interface LiveOverlay {
+  matches: Match[];
+  groups: Group[];
+  lastUpdated: string;
+  live: boolean;
 }
 
 export type TabId = "signal" | "groups" | "squads" | "fixtures" | "venues";

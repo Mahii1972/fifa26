@@ -25,6 +25,8 @@ export function VenuesPanel({ data }: { data: WorldCupData }) {
 
   const maxCapacity = Math.max(...data.stadiums.map((s) => s.capacity));
 
+  const hostCountries = [...new Set(data.stadiums.map((s) => s.country))];
+
   return (
     <div>
       <header className="pixel-shadow mb-6 border-2 border-foreground bg-secondary/40 p-5">
@@ -35,6 +37,39 @@ export function VenuesPanel({ data }: { data: WorldCupData }) {
           {data.stadiums.length} VENUES
         </h2>
       </header>
+
+      <section className="mb-6 border-2 border-foreground">
+        <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+          ▓ HOST MATRIX
+        </h3>
+        <div className="grid gap-0 sm:grid-cols-3">
+          {hostCountries.map((country, i) => {
+            const venues = data.stadiums.filter((s) => s.country === country);
+            const cap = venues.reduce((s, v) => s + v.capacity, 0);
+            return (
+              <div
+                key={country}
+                className={`p-4 ${
+                  i < hostCountries.length - 1
+                    ? "border-b-2 border-foreground sm:border-b-0 sm:[&:not(:last-child)]:border-r-2"
+                    : ""
+                }`}
+              >
+                <p className="glow-soft text-base tracking-wide">{country}</p>
+                <p className="font-display glow-yellow mt-2 text-xl text-teletext-yellow">
+                  {venues.length}
+                  <span className="ml-1 text-xs text-muted-foreground">
+                    VENUES
+                  </span>
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {(cap / 1000).toFixed(0)}k total capacity
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       <div className="mb-4 flex flex-wrap gap-1.5 border-2 border-foreground bg-card/40 p-4">
         {countries.map((c) => (

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { MatchTimeRow } from "@/components/match-time";
+import { StatusBadge, hasScore, isLive } from "@/components/retro/match-status";
 import { FILTER_ACTIVE, FILTER_INACTIVE } from "@/lib/teletext";
 import type { WorldCupData } from "@/lib/types";
 
@@ -104,9 +105,14 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
           const home = teamMap.get(match.homeTeamId);
           const away = teamMap.get(match.awayTeamId);
           const stadium = stadiumMap.get(match.stadiumId);
-          const played =
-            match.finished || match.homeScore > 0 || match.awayScore > 0;
+          const played = hasScore(match);
+          const live = isLive(match);
           const score = played ? `${match.homeScore}-${match.awayScore}` : "—";
+          const scoreColor = live
+            ? "glow-green text-teletext-green"
+            : played
+              ? "glow-green text-teletext-green"
+              : "text-muted-foreground";
 
           return (
             <div
@@ -127,13 +133,12 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
                   </span>{" "}
                   <span className="text-muted-foreground">{home?.name}</span>
                 </span>
-                <span
-                  className={`font-display text-center text-[9px] ${
-                    played
-                      ? "glow-green text-teletext-green"
-                      : "text-muted-foreground"
-                  }`}
-                >
+                <span className={`font-display text-center text-[9px] ${scoreColor}`}>
+                  {live && (
+                    <span className="glow-green animate-blink mr-1 text-teletext-green">
+                      ●
+                    </span>
+                  )}
                   {score}
                 </span>
                 <span className="glow-soft truncate">
@@ -142,11 +147,18 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
                   </span>{" "}
                   <span className="text-muted-foreground">{away?.name}</span>
                 </span>
-                <MatchTimeRow
-                  localDate={match.localDate}
-                  stadiumId={match.stadiumId}
-                  venue={stadium?.fifaName}
-                />
+                <div>
+                  <MatchTimeRow
+                    localDate={match.localDate}
+                    stadiumId={match.stadiumId}
+                    venue={stadium?.fifaName}
+                  />
+                  {(live || match.statusDetail) && played && (
+                    <div className="mt-1">
+                      <StatusBadge match={match} />
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Mobile: compact match card */}
@@ -155,9 +167,12 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
                   <span className="font-display text-[9px] text-teletext-amber">
                     GRP {match.group}
                   </span>
-                  <span className="text-sm text-muted-foreground">
-                    #{match.id.padStart(2, "0")}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {played && <StatusBadge match={match} />}
+                    <span className="text-sm text-muted-foreground">
+                      #{match.id.padStart(2, "0")}
+                    </span>
+                  </div>
                 </div>
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-base">
                   <span className="glow-soft min-w-0 truncate text-right">
@@ -166,12 +181,11 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
                     </span>
                   </span>
                   <span
-                    className={`font-display shrink-0 px-1 text-center text-[11px] ${
-                      played
-                        ? "glow-green text-teletext-green"
-                        : "text-muted-foreground"
-                    }`}
+                    className={`font-display shrink-0 px-1 text-center text-[11px] ${scoreColor}`}
                   >
+                    {live && (
+                      <span className="glow-green animate-blink mr-1">●</span>
+                    )}
                     {score}
                   </span>
                   <span className="glow-soft min-w-0 truncate">

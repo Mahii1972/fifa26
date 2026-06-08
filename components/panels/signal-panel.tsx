@@ -1,5 +1,11 @@
-import { MatchTimeCompact } from "@/components/match-time";
-import type { WorldCupData } from "@/lib/types";
+import { NextMatchCard } from "@/components/retro/next-match";
+import { StatusBadge, hasScore } from "@/components/retro/match-status";
+import { getAllTimezoneLines } from "@/lib/timezones";
+import type { Match, WorldCupData } from "@/lib/types";
+
+function kickoffMs(m: Match): number {
+  return m.kickoffUtc ? new Date(m.kickoffUtc).getTime() : Number.POSITIVE_INFINITY;
+}
 
 export function SignalPanel({ data }: { data: WorldCupData }) {
   const countries = [...new Set(data.stadiums.map((s) => s.country))];
@@ -9,6 +15,7 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
   );
   const firstMatch = data.matches[0];
   const lastMatch = data.matches[data.matches.length - 1];
+  const teamMap = new Map(data.teams.map((t) => [t.id, t]));
 
   const stats = [
     { label: "NATIONS", value: data.teams.length },
@@ -18,6 +25,11 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
     { label: "MATCHDAYS", value: matchdays.length },
     { label: "SEATS", value: `${(totalCapacity / 1_000_000).toFixed(1)}M` },
   ];
+
+  // Earliest fixtures by kickoff — the tournament openers.
+  const openingFixtures = [...data.matches]
+    .sort((a, b) => kickoffMs(a) - kickoffMs(b))
+    .slice(0, 6);
 
   return (
     <div className="space-y-6">
@@ -42,6 +54,12 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
         </p>
       </header>
 
+      <NextMatchCard
+        matches={data.matches}
+        teams={data.teams}
+        stadiums={data.stadiums}
+      />
+
       <div className="grid grid-cols-2 gap-0 border-2 border-foreground md:grid-cols-3 lg:grid-cols-6">
         {stats.map((stat, i) => (
           <div
@@ -61,60 +79,112 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
         ))}
       </div>
 
-      <div className="grid gap-0 border-2 border-foreground lg:grid-cols-2">
-        <section className="border-b-2 border-foreground p-5 lg:border-b-0 lg:border-r-2">
-          <h3 className="font-display glow-cyan mb-4 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-            ▓ HOST MATRIX
-          </h3>
-          <div className="space-y-2 text-base">
-            {countries.map((country) => {
-              const venues = data.stadiums.filter((s) => s.country === country);
-              const cap = venues.reduce((s, v) => s + v.capacity, 0);
-              return (
-                <div
-                  key={country}
-                  className="flex items-center justify-between border border-foreground/30 bg-secondary/30 px-3 py-2"
-                >
-                  <span className="glow-soft">{country}</span>
-                  <span className="text-muted-foreground">
-                    {venues.length} venues · {(cap / 1000).toFixed(0)}k cap
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="p-5">
-          <h3 className="font-display glow-cyan mb-4 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+      <section className="border-2 border-foreground">
+        <div className="flex items-center justify-between border-b-2 border-foreground bg-card/40 px-4 py-3">
+          <h3 className="font-display glow-cyan text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
             ▓ OPENING FIXTURES
           </h3>
-          <div className="space-y-0 text-base">
-            {data.matches.slice(0, 6).map((match) => {
-              const home = data.teams.find((t) => t.id === match.homeTeamId);
-              const away = data.teams.find((t) => t.id === match.awayTeamId);
-              return (
-                <div
-                  key={match.id}
-                  className="flex items-center gap-3 border-b border-foreground/20 py-2 last:border-0"
-                >
-                  <span className="w-9 text-muted-foreground">
-                    M{match.id.padStart(2, "0")}
+          <span className="text-[10px] tracking-widest text-muted-foreground">
+            TIMES IN IST
+          </span>
+        </div>
+
+        <ul>
+          {openingFixtures.map((match) => {
+            const home = teamMap.get(match.homeTeamId);
+            const away = teamMap.get(match.awayTeamId);
+            const scored = hasScore(match);
+            // primary looks like "21:30 IST · 13/06/2026 (+1)"
+            const [koTime, koDate] = (
+              getAllTimezoneLines(match.localDate, match.stadiumId)?.primary ??
+              ""
+            ).split(" · ");
+
+            return (
+              <li
+                key={match.id}
+                className="flex items-center gap-2 border-b border-foreground/20 px-3 py-3 transition-colors last:border-0 hover:bg-muted sm:gap-4 sm:px-4"
+              >
+                <span className="font-display w-5 shrink-0 text-center text-[9px] text-teletext-amber sm:w-6">
+                  {match.group}
+                </span>
+
+                {/* Home */}
+                <div className="flex min-w-0 flex-1 items-center justify-end gap-2 text-right">
+                  <span className="glow-soft truncate text-sm sm:text-base">
+                    <span className="text-teletext-cyan">
+                      {home?.fifaCode ?? "TBD"}
+                    </span>{" "}
+                    <span className="hidden text-muted-foreground sm:inline">
+                      {home?.name}
+                    </span>
                   </span>
-                  <span className="w-6 text-teletext-amber">{match.group}</span>
-                  <span className="glow-soft flex-1 truncate">
-                    {home?.fifaCode ?? "???"} v {away?.fifaCode ?? "???"}
-                  </span>
-                  <MatchTimeCompact
-                    localDate={match.localDate}
-                    stadiumId={match.stadiumId}
-                  />
+                  {home?.flag && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={home.flag}
+                      alt=""
+                      className="h-4 w-6 shrink-0 border border-foreground/40 object-cover"
+                    />
+                  )}
                 </div>
-              );
-            })}
-          </div>
-        </section>
-      </div>
+
+                {/* Score or kickoff (time + date) */}
+                <div className="w-16 shrink-0 text-center leading-tight sm:w-20">
+                  {scored ? (
+                    <span
+                      className={`font-display text-sm tabular-nums sm:text-base ${
+                        match.state === "in"
+                          ? "glow-green text-teletext-green"
+                          : "glow-soft"
+                      }`}
+                    >
+                      {match.homeScore}-{match.awayScore}
+                    </span>
+                  ) : (
+                    <>
+                      <span className="block text-[11px] text-teletext-yellow sm:text-xs">
+                        {koTime || "v"}
+                      </span>
+                      {koDate && (
+                        <span className="block text-[9px] tracking-wide text-muted-foreground">
+                          {koDate}
+                        </span>
+                      )}
+                    </>
+                  )}
+                </div>
+
+                {/* Away */}
+                <div className="flex min-w-0 flex-1 items-center gap-2">
+                  {away?.flag && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={away.flag}
+                      alt=""
+                      className="h-4 w-6 shrink-0 border border-foreground/40 object-cover"
+                    />
+                  )}
+                  <span className="glow-soft truncate text-sm sm:text-base">
+                    <span className="text-teletext-cyan">
+                      {away?.fifaCode ?? "TBD"}
+                    </span>{" "}
+                    <span className="hidden text-muted-foreground sm:inline">
+                      {away?.name}
+                    </span>
+                  </span>
+                </div>
+
+                {/* Auto-width on mobile (no wasted space when empty); fixed
+                    column on desktop so rows stay aligned. */}
+                <div className="shrink-0 text-right empty:hidden sm:w-14">
+                  <StatusBadge match={match} />
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 }
