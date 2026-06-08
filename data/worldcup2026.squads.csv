@@ -1,0 +1,1245 @@
+_id,id,team_id,shirt_number,name,position,date_of_birth,age,caps,goals,club,coach,__v
+8e3b4e224691444e99f0f39f,1,4,1,Matěj Kovář,GK,2000-05-17,26,20,0,PSV Eindhoven,Miroslav Koubek,0
+33047535e5414f2f95d4d2e2,2,4,2,David Zima,DF,2000-11-08,25,25,1,Slavia Prague,Miroslav Koubek,0
+10388a6799ad4f4a83284e3a,3,4,3,Tomáš Holeš,DF,1993-03-31,33,41,2,Slavia Prague,Miroslav Koubek,0
+dda18986ea0f49c99480b85f,4,4,4,Robin Hranáč,DF,2000-01-29,26,14,1,TSG Hoffenheim,Miroslav Koubek,0
+e09417df0cd546468ee1c3d3,5,4,5,Vladimír Coufal,DF,1992-08-22,33,62,2,TSG Hoffenheim,Miroslav Koubek,0
+fed0b7ad87434d3e944969c6,6,4,6,Štěpán Chaloupek,DF,2003-03-08,23,5,0,Slavia Prague,Miroslav Koubek,0
+59a945c706df4d938bd8e6a0,7,4,7,Ladislav Krejčí,DF,1999-04-20,27,27,5,Wolverhampton Wanderers,Miroslav Koubek,0
+d5bba739dac54017a631921b,8,4,8,Vladimír Darida,MF,1990-08-08,35,79,8,Hradec Králové,Miroslav Koubek,0
+be3b69cc0c624941a111e1b4,9,4,9,Adam Hložek,FW,2002-07-25,23,43,5,TSG Hoffenheim,Miroslav Koubek,0
+0701f4d62fdc495f8e76c74d,10,4,10,Patrik Schick,FW,1996-01-24,30,53,26,Bayer Leverkusen,Miroslav Koubek,0
+be722050c6814cddb789af17,11,4,11,Jan Kuchta,FW,1997-01-08,29,31,3,Sparta Prague,Miroslav Koubek,0
+a2102374e9c2496fb0eb90b4,12,4,12,Lukáš Červ,MF,2001-04-10,25,17,2,Viktoria Plzeň,Miroslav Koubek,0
+69ea8d3f49d14582af169fb8,13,4,13,Mojmír Chytil,FW,1999-04-29,27,22,6,Slavia Prague,Miroslav Koubek,0
+d44cf44e4de141079cddd831,14,4,14,David Jurásek,DF,2000-08-07,25,18,1,Slavia Prague,Miroslav Koubek,0
+229bbb83aeec4fcd9b5fb55f,15,4,15,Pavel Šulc,FW,2000-12-29,25,21,5,Lyon,Miroslav Koubek,0
+6de00ca82b3e464ca2f707a3,16,4,16,Jindřich Staněk,GK,1996-04-27,30,14,0,Slavia Prague,Miroslav Koubek,0
+5f2804d7da8145c7b02d295e,17,4,17,Lukáš Provod,MF,1996-10-23,29,38,3,Slavia Prague,Miroslav Koubek,0
+4cb5c75a64b34d73909c6318,18,4,18,Michal Sadílek,MF,1999-05-31,27,35,1,Slavia Prague,Miroslav Koubek,0
+ddea99a753424d8ebf46d6d8,19,4,19,Tomáš Chorý,FW,1995-01-26,31,22,7,Slavia Prague,Miroslav Koubek,0
+34664c6adf6b402092b77593,20,4,20,Jaroslav Zelený,DF,1992-08-20,33,23,0,Sparta Prague,Miroslav Koubek,0
+7c4f948b80344afdba9357ac,21,4,21,David Douděra,DF,1998-05-31,28,17,2,Slavia Prague,Miroslav Koubek,0
+984f6396ddd24c0aba1da374,22,4,22,Tomáš Souček,MF,1995-02-27,31,90,17,West Ham United,Miroslav Koubek,0
+90c770deb9d74335af6824cf,23,4,23,Lukáš Horníček,GK,2002-07-13,23,1,0,Braga,Miroslav Koubek,0
+7fdef3da634f4c44bc92cbe7,24,4,24,Alexandr Sojka,MF,2003-04-02,23,2,0,Viktoria Plzeň,Miroslav Koubek,0
+fc6917bc28d7448db374e914,25,4,25,Hugo Sochůrek,MF,2008-06-07,18,1,0,Sparta Prague,Miroslav Koubek,0
+2ba663bacdd545179ce51dae,26,4,26,Denis Višinský,FW,2003-03-21,23,2,1,Viktoria Plzeň,Miroslav Koubek,0
+19855d33cc5d4bba883517d8,27,1,1,Raúl Rangel,GK,2000-02-25,26,14,0,Guadalajara,Javier Aguirre,0
+9e7519871fec4f6b98712c89,28,1,2,Jorge Sánchez,DF,1997-12-10,28,59,3,PAOK,Javier Aguirre,0
+b7fa53c8812e4cd88cde636f,29,1,3,César Montes,DF,1997-02-24,29,67,4,Lokomotiv Moscow,Javier Aguirre,0
+b080bc2d97e843e280f001d9,30,1,4,Edson Álvarez,DF,1997-10-24,28,98,7,Fenerbahçe,Javier Aguirre,0
+7995c2f83b1a42a4a0401656,31,1,5,Johan Vásquez,DF,1998-10-22,27,46,3,Genoa,Javier Aguirre,0
+6cfafaf202be4181993fd0be,32,1,6,Érik Lira,MF,2000-05-08,26,25,0,Cruz Azul,Javier Aguirre,0
+5b953870bd454e9ca1f4c74d,33,1,7,Luis Romo,MF,1995-06-05,31,63,4,Guadalajara,Javier Aguirre,0
+4b437314dd78454894ec29fb,34,1,8,Álvaro Fidalgo,MF,1997-04-09,29,4,0,Real Betis,Javier Aguirre,0
+6e38c923c2d24f318241dfc8,35,1,9,Raúl Jiménez,FW,1991-05-05,35,124,45,Fulham,Javier Aguirre,0
+101a4410a6a5483087420134,36,1,10,Alexis Vega,FW,1997-11-25,28,52,7,Toluca,Javier Aguirre,0
+8aee4545323f49b3994747a7,37,1,11,Santiago Giménez,FW,2001-04-18,25,47,6,Milan,Javier Aguirre,0
+3581963beeac4b8cb57b2373,38,1,12,Carlos Acevedo,GK,1996-04-19,30,7,0,Santos Laguna,Javier Aguirre,0
+67893822b18949c0ae545f3b,39,1,13,Guillermo Ochoa,GK,1985-07-13,40,152,0,AEL Limassol,Javier Aguirre,0
+b4960dce3dc54150b6b140a1,40,1,14,Armando González,FW,2003-04-20,23,7,1,Guadalajara,Javier Aguirre,0
+590d4e6c46e24565bb432947,41,1,15,Israel Reyes,DF,2000-05-23,26,34,2,América,Javier Aguirre,0
+b5514b683e55456abe896888,42,1,16,Julián Quiñones,FW,1997-03-24,29,22,2,Al-Qadsiah,Javier Aguirre,0
+4233566d71e949148108152f,43,1,17,Orbelín Pineda,MF,1996-03-24,30,92,12,AEK Athens,Javier Aguirre,0
+2711e7c0cdae4d5b8ec50e34,44,1,18,Obed Vargas,MF,2005-08-05,20,6,0,Atlético Madrid,Javier Aguirre,0
+1df05ef196c4478cb0ae2d31,45,1,19,Gilberto Mora,MF,2008-10-14,17,8,0,Tijuana,Javier Aguirre,0
+3c730b6660e741fda91ba705,46,1,20,Mateo Chávez,DF,2004-05-12,22,10,0,AZ,Javier Aguirre,0
+830c388a39004259a790aa2e,47,1,21,César Huerta,FW,2000-12-03,25,26,3,Anderlecht,Javier Aguirre,0
+7f2b5bb3216d4afaa9839268,48,1,22,Guillermo Martínez,FW,1995-03-15,31,12,3,Pumas,Javier Aguirre,0
+1919b091b08243b983d5fb0f,49,1,23,Jesús Gallardo,DF,1994-08-15,31,121,3,Toluca,Javier Aguirre,0
+6e08d1bb2329446b91ce99c6,50,1,24,Luis Chávez,MF,1996-01-15,30,45,5,Dynamo Moscow,Javier Aguirre,0
+2d0fedb8bdeb4c10acf1d23f,51,1,25,Roberto Alvarado,FW,1998-09-07,27,67,5,Guadalajara,Javier Aguirre,0
+262c175333154de5a9d21d1c,52,1,26,Brian Gutiérrez,MF,2003-06-17,22,7,2,Guadalajara,Javier Aguirre,0
+e723245602ec4561a587929d,53,2,1,Ronwen Williams,GK,1992-01-21,34,62,0,Mamelodi Sundowns,,0
+8ef223ba745d4c68a0e3e390,54,2,2,Thabang Matuludi,DF,1999-01-14,27,2,0,Polokwane City,,0
+9b599c6974774bd9b49d9b37,55,2,3,Khulumani Ndamane,DF,2004-02-05,22,5,0,Mamelodi Sundowns,,0
+e6c233cdb4984cbc99942d4f,56,2,4,Teboho Mokoena,MF,1997-01-24,29,51,9,Mamelodi Sundowns,,0
+fc3b06dd86f54ccd90d0f2a1,57,2,5,Thalente Mbatha,MF,2000-03-06,26,14,3,Orlando Pirates,,0
+c73486d9dc864af8bc93633a,58,2,6,Aubrey Modiba,DF,1995-07-22,30,44,3,Mamelodi Sundowns,,0
+e153c1bb5db6480faba834ba,59,2,7,Oswin Appollis,FW,2001-08-25,24,25,8,Orlando Pirates,,0
+2723db5f1649415ab88da67a,60,2,8,Tshepang Moremi,FW,2000-10-02,25,9,1,Orlando Pirates,,0
+6bd12e8a43eb4926b8368a7c,61,2,9,Lyle Foster,FW,2000-09-03,25,26,10,Burnley,,0
+1bce5cbe2955409583624b71,62,2,10,Relebohile Mofokeng,FW,2004-10-23,21,12,0,Orlando Pirates,,0
+7994e96c5c7940419d73f8b6,63,2,11,Themba Zwane,MF,1989-08-03,36,53,12,Mamelodi Sundowns,,0
+f8fc3b75c12e4c1a9b362a7e,64,2,12,Thapelo Maseko,FW,2003-11-11,22,9,1,AEL Limassol,,0
+c9e0865aa7a24bbb9d2a338b,65,2,13,Sphephelo Sithole,MF,1999-03-03,27,27,1,Tondela,,0
+40e272dba99b4d0ea0fd6c76,66,2,14,Mbekezeli Mbokazi,DF,2005-09-19,20,10,1,Chicago Fire FC,,0
+c2b21d8c62bf45daa9f01fac,67,2,15,Iqraam Rayners,FW,1995-12-19,30,13,4,Mamelodi Sundowns,,0
+3d4d5f34b80048ea97bc1d64,68,2,16,Sipho Chaine,GK,1996-12-14,29,3,0,Orlando Pirates,,0
+e3af93ec907b4f4eaafff6be,69,2,17,Evidence Makgopa,FW,2000-06-05,26,26,6,Orlando Pirates,,0
+b2e90bc94af944dfb0af88b7,70,2,18,Samukele Kabini,DF,2004-03-15,22,5,0,Molde,,0
+fcfd11425fab4eeaa3b19a55,71,2,19,Nkosinathi Sibisi,DF,1995-09-22,30,19,0,Orlando Pirates,,0
+fc0702aed7654957a3fe9115,72,2,20,Khuliso Mudau,DF,1995-04-26,31,32,1,Mamelodi Sundowns,,0
+bfcc09272c74478abb59639c,73,2,21,Ime Okon,DF,2004-02-20,22,7,1,Hannover 96,,0
+eb3978b2bbdd46f087a31de5,74,2,22,Ricardo Goss,GK,1994-04-02,32,4,0,Siwelele,,0
+c1ddc26360d44f0ca5ada7b3,75,2,23,Jayden Adams,MF,2001-05-05,25,4,0,Mamelodi Sundowns,,0
+ddf06775dc2848f392d6ca91,76,2,24,Olwethu Makhanya,DF,2004-04-30,22,0,0,Philadelphia Union,,0
+1d437adda40d4859a50e7ef8,77,2,25,Kamogelo Sebelebele,FW,2002-07-21,23,2,0,Orlando Pirates,,0
+bf5228611cd94af281c3f290,78,2,26,Bradley Cross,DF,2001-01-30,25,0,0,Kaizer Chiefs,,0
+3c4743c7a1e440fb8f65679f,79,3,1,Kim Seung-gyu,GK,1990-09-30,35,87,0,FC Tokyo,Hong Myung-bo,0
+59d6304036ed46c98cde55a1,80,3,2,Lee Han-beom,DF,2002-06-17,23,8,0,Midtjylland,Hong Myung-bo,0
+119859cc51704162b4d7c44c,81,3,3,Lee Gi-hyuk,MF,2000-07-07,25,3,0,Gangwon FC,Hong Myung-bo,0
+f61061681ed246e69581feae,82,3,4,Kim Min-jae,DF,1996-11-15,29,79,4,Bayern Munich,Hong Myung-bo,0
+8f418e09188543239f268961,83,3,5,Kim Tae-hyeon,DF,2000-09-17,25,7,0,Kashima Antlers,Hong Myung-bo,0
+a90ed50208274a88a7a8c0f3,84,3,6,Hwang In-beom,MF,1996-09-20,29,73,6,Feyenoord,Hong Myung-bo,0
+7a49c29ab7524145aa3015ee,85,3,7,Son Heung-min,FW,1992-07-08,33,144,56,Los Angeles FC,Hong Myung-bo,0
+634b4cca96f446dd86bde1da,86,3,8,Paik Seung-ho,MF,1997-03-17,29,27,3,Birmingham City,Hong Myung-bo,0
+def5a9663a0e44749fb526eb,87,3,9,Cho Gue-sung,FW,1998-01-25,28,44,12,Midtjylland,Hong Myung-bo,0
+83bca08b0b114e79865ff9c0,88,3,10,Lee Jae-sung,MF,1992-08-10,33,105,15,Mainz 05,Hong Myung-bo,0
+7090d06a04a1437f8675628b,89,3,11,Hwang Hee-chan,MF,1996-01-26,30,79,17,Wolverhampton Wanderers,Hong Myung-bo,0
+72c0a9ff4d7841d8bde20b4e,90,3,12,Song Bum-keun,GK,1997-10-15,28,3,0,Jeonbuk Hyundai Motors,Hong Myung-bo,0
+d0112173401c4a08959074d7,91,3,13,Lee Tae-seok,DF,2002-07-28,23,15,1,Austria Wien,Hong Myung-bo,0
+aa967a93e55c46f8ab1e18d7,92,3,14,Cho Wi-je,DF,2001-08-25,24,1,0,Jeonbuk Hyundai Motors,Hong Myung-bo,0
+3ff6024aab1a43ecbc14d65d,93,3,15,Kim Moon-hwan,DF,1995-08-01,30,35,0,Daejeon Hana Citizen,Hong Myung-bo,0
+c5d55b0d85a54c50b5784849,94,3,16,Park Jin-seob,DF,1995-10-23,30,14,1,Zhejiang,Hong Myung-bo,0
+8101c36b4727426fafb6eada,95,3,17,Bae Jun-ho,MF,2003-08-21,22,13,2,Stoke City,Hong Myung-bo,0
+ca2a7320854e42d2bd175a27,96,3,18,Oh Hyeon-gyu,FW,2001-04-12,25,27,6,Beşiktaş,Hong Myung-bo,0
+3cbe139aca444ee3b39e6820,97,3,19,Lee Kang-in,MF,2001-02-19,25,47,11,Paris Saint-Germain,Hong Myung-bo,0
+59f2fa75d549456996a72439,98,3,20,Yang Hyun-jun,MF,2002-05-25,24,9,0,Celtic,Hong Myung-bo,0
+646ba497d46a49d8b466d4be,99,3,21,Jo Hyeon-woo,GK,1991-09-25,34,48,0,Ulsan HD,Hong Myung-bo,0
+8937a44cb8d94d76b3aab5a2,100,3,22,Seol Young-woo,DF,1998-12-05,27,34,0,Red Star Belgrade,Hong Myung-bo,0
+4b8fc53c4b7d4e7386f8730f,101,3,23,Jens Castrop,DF,2003-07-29,22,7,0,Borussia Mönchengladbach,Hong Myung-bo,0
+3fd65075ee59499e86633d17,102,3,24,Kim Jin-gyu,MF,1997-02-24,29,22,3,Jeonbuk Hyundai Motors,Hong Myung-bo,0
+716f01c737684e229ea48862,103,3,25,Eom Ji-sung,MF,2002-05-09,24,9,2,Swansea City,Hong Myung-bo,0
+13e30847ae0948808ea3d4f2,104,3,26,Lee Dong-gyeong,MF,1997-09-20,28,18,4,Ulsan HD,Hong Myung-bo,0
+b9bcbf4d9c924dc0b3e8eab6,105,6,1,Nikola Vasilj,GK,1995-12-02,30,26,0,FC St. Pauli,Sergej Barbarez,0
+784fbd76a4f04ee0875723ee,106,6,2,Nihad Mujakić,DF,1998-04-15,28,12,1,Gaziantep,Sergej Barbarez,0
+eba509c3e5d144578527c98f,107,6,3,Dennis Hadžikadunić,DF,1998-07-09,27,32,0,Sampdoria,Sergej Barbarez,0
+170c1fc017624b14a0094732,108,6,4,Tarik Muharemović,DF,2003-02-28,23,14,1,Sassuolo,Sergej Barbarez,0
+b3f537004fd64c2091a32881,109,6,5,Sead Kolašinac,DF,1993-06-20,32,65,0,Atalanta,Sergej Barbarez,0
+3ef915204cdc455fb472824a,110,6,6,Benjamin Tahirović,MF,2003-03-03,23,28,2,Brøndby,Sergej Barbarez,0
+370f5b5a46944cfc9ae244bc,111,6,7,Amar Dedić,DF,2002-08-18,23,28,1,Benfica,Sergej Barbarez,0
+626f403f5fd847659a1f669a,112,6,8,Armin Gigović,MF,2002-04-06,24,20,1,Young Boys,Sergej Barbarez,0
+41e5bf53e14048b7a16cc7b4,113,6,9,Samed Baždar,FW,2004-01-31,22,13,1,Jagiellonia Białystok,Sergej Barbarez,0
+6bbd56c495604c98a6f7450a,114,6,10,Ermedin Demirović,FW,1998-03-25,28,40,4,VfB Stuttgart,Sergej Barbarez,0
+ce2a1fdf51e247b58872029b,115,6,11,Edin Džeko,FW,1986-03-17,40,148,73,Schalke 04,Sergej Barbarez,0
+038715616d564886afc7614d,116,6,12,Mladen Jurkas,GK,2007-10-07,18,0,0,Borac Banja Luka,Sergej Barbarez,0
+52d41fe7bc7b4f82a6e0d464,117,6,13,Ivan Bašić,MF,2002-04-30,24,17,0,Astana,Sergej Barbarez,0
+28c037d07f2c4e2587203c53,118,6,14,Ivan Šunjić,MF,1996-10-09,29,11,0,Pafos,Sergej Barbarez,0
+04f71029093f46bc81c3ee36,119,6,15,Amar Memić,MF,2001-01-20,25,13,1,Viktoria Plzeň,Sergej Barbarez,0
+7ddbaf5c138146db8b28d846,120,6,16,Amir Hadžiahmetović,MF,1997-03-08,29,36,0,Hull City,Sergej Barbarez,0
+838885dcf28c42a08b319d12,121,6,17,Dženis Burnić,MF,1998-05-22,28,20,0,Karlsruher SC,Sergej Barbarez,0
+d088833a5b8c47bebd8362b4,122,6,18,Nikola Katić,DF,1996-10-10,29,17,2,Schalke 04,Sergej Barbarez,0
+6004b64475c64b45ab6c7255,123,6,19,Kerim Alajbegović,FW,2007-09-21,18,10,1,Red Bull Salzburg,Sergej Barbarez,0
+07998e54d1ab42719c627c21,124,6,20,Esmir Bajraktarević,FW,2005-03-10,21,16,1,PSV Eindhoven,Sergej Barbarez,0
+b49ba407a3ec463685d3c2c5,125,6,21,Stjepan Radeljić,DF,1997-09-05,28,5,0,Rijeka,Sergej Barbarez,0
+a34e75f91a3a4d3dab8f1aa7,126,6,22,Martin Zlomislić,GK,1998-08-16,27,3,0,Rijeka,Sergej Barbarez,0
+8e116027eb114fd5b50b64c3,127,6,23,Haris Tabaković,FW,1994-06-20,31,10,4,Borussia Mönchengladbach,Sergej Barbarez,0
+3a959e8eec564744a4fbdc29,128,6,24,Nidal Čelik,DF,2006-07-17,19,2,0,Lens,Sergej Barbarez,0
+9ce9abf9252d4dfca875dada,129,6,25,Jovo Lukić,FW,1998-11-28,27,3,0,Universitatea Cluj,Sergej Barbarez,0
+a9eeaa6f99b74e0694397f10,130,6,26,Ermin Mahmić,MF,2005-03-14,21,2,0,Slovan Liberec,Sergej Barbarez,0
+fa76dade208c4af2812b8ae0,131,5,1,Dayne St. Clair,GK,1997-05-09,29,20,0,Inter Miami CF,,0
+9268224e7d6a4464b2cd3b5c,132,5,2,Alistair Johnston,DF,1998-10-08,27,58,1,Celtic,,0
+6b9c22694da24d898cd131ff,133,5,3,Alfie Jones,DF,1997-10-07,28,2,0,Middlesbrough,,0
+d1d826e0bdf0458ea600ae4d,134,5,4,Luc de Fougerolles,DF,2005-10-12,20,13,0,Dender,,0
+bb6d2141e72d4ce58c471f60,135,5,5,Joel Waterman,DF,1996-01-24,30,17,0,Chicago Fire FC,,0
+e1719369c3374695a7f182dc,136,5,6,Mathieu Choinière,MF,1999-02-07,27,23,0,Los Angeles FC,,0
+1853c773a9724a36b66f690d,137,5,7,Stephen Eustáquio,MF,1996-12-21,29,56,4,Los Angeles FC,,0
+adcf3cbf055d47778a4c3511,138,5,8,Ismaël Koné,MF,2002-06-16,23,40,4,Sassuolo,,0
+5286b861ec42417d94e474e1,139,5,9,Cyle Larin,FW,1995-04-17,31,90,30,Southampton,,0
+f73b7c58552d407c8711ce05,140,5,10,Jonathan David,FW,2000-01-14,26,77,39,Juventus,,0
+c9b868e7779344d98fa631f4,141,5,11,Liam Millar,MF,1999-09-27,26,41,1,Hull City,,0
+812e63caf41f438ca76ae1cd,142,5,12,Tani Oluwaseyi,FW,2000-05-15,26,24,2,Villarreal,,0
+eea8b95d0ec54c448d656672,143,5,13,Derek Cornelius,DF,1997-11-25,28,44,1,Rangers,,0
+d7f1c15092934907bae597db,144,5,14,Jacob Shaffelburg,MF,1999-11-26,26,31,6,Los Angeles FC,,0
+d7a5c477e4f244408dc33579,145,5,15,Moïse Bombito,DF,2000-03-30,26,20,0,Nice,,0
+eba5380b12fa4b8883008588,146,5,16,Maxime Crépeau,GK,1994-05-11,32,32,0,Orlando City SC,,0
+8384066fb6014c3cbe785501,147,5,17,Tajon Buchanan,FW,1999-02-08,27,60,8,Villarreal,,0
+2cd3e33da1a34af9a1ab532b,148,5,18,Owen Goodman,GK,2003-11-27,22,0,0,Barnsley,,0
+0434333c5def44f8b322fa51,149,5,19,Alphonso Davies,DF,2000-11-02,25,58,15,Bayern Munich,,0
+73af3e90306d40faabb4ed32,150,5,20,Ali Ahmed,FW,2000-10-10,25,24,1,Norwich City,,0
+21599218cf08453380aac8b0,151,5,21,Jonathan Osorio,MF,1992-06-12,33,90,10,Toronto FC,,0
+f844cf4a7a4641c99def7e0c,152,5,22,Richie Laryea,DF,1995-01-07,31,75,1,Toronto FC,,0
+5b1586873abf41cbaca8991d,153,5,23,Niko Sigur,DF,2003-09-09,22,19,2,Hajduk Split,,0
+6097a155b0b147e3a7d54b8a,154,5,24,Promise David,FW,2001-07-03,24,10,3,Union Saint-Gilloise,,0
+5ffab5a4c02a49ecb68e1841,155,5,25,Nathan Saliba,MF,2004-02-07,22,15,2,Anderlecht,,0
+cd53cdd1d68d406295558763,156,7,1,Mahmud Abunada,GK,2000-02-05,26,5,0,Al-Rayyan,,0
+6b480613897741d68ad2273c,157,7,2,Pedro Miguel,DF,1990-08-06,35,99,3,Al-Sadd,,0
+ba7aa0f67dea49f7aedd2adf,158,7,3,Lucas Mendes,DF,1990-07-03,35,25,1,Al-Wakrah,,0
+4e1f21356c394bedb52c5c10,159,7,4,Issa Laye,DF,1997-12-22,28,4,0,Al-Arabi,,0
+2a269802ff2940feb5e3fb77,160,7,5,Jassem Gaber,DF,2002-02-20,24,32,1,Al-Rayyan,,0
+a99b42477d474daf9a98433d,161,7,6,Abdulaziz Hatem,MF,1990-01-01,36,117,11,Al-Rayyan,,0
+23d9289dfc4e49d7b3aa1a32,162,7,7,Ahmed Alaaeldin,FW,1993-01-31,33,68,9,Al-Rayyan,,0
+e2425a8521374999acf7c4c4,163,7,8,Edmilson Junior,FW,1994-08-19,31,16,0,Al-Duhail,,0
+6baaaf6299e14dfd8c1cace9,164,7,9,Mohammed Muntari,FW,1993-12-20,32,67,16,Al-Gharafa,,0
+57f4ea8cac2d4dc2b97dfa8a,165,7,10,Hassan Al-Haydos,FW,1990-12-11,35,186,41,Al-Sadd,,0
+4747d8f92b8b4c53aa793553,166,7,11,Akram Afif,FW,1996-11-18,29,125,39,Al-Sadd,,0
+94a682ee118541aea529b4a2,167,7,12,Karim Boudiaf,MF,1990-09-16,35,118,5,Al-Duhail,,0
+adf67b7b5839495abd2cdcf0,168,7,13,Ayoub Al-Oui,DF,2005-03-11,21,6,0,Al-Gharafa,,0
+e1d95bcce3884f97b5bceec2,169,7,14,Homam Ahmed,DF,1999-08-25,26,68,3,Cultural Leonesa,,0
+b161f4e392ef45f1bb6caddd,170,7,15,Yusuf Abdurisag,FW,1999-08-06,26,39,3,Al-Wakrah,,0
+51d43a4ae2324163bad196a5,171,7,16,Boualem Khoukhi,DF,1990-07-09,35,116,20,Al-Sadd,,0
+4122849975314aa6ba08a092,172,7,17,Ahmed Al-Ganehi,MF,2000-09-22,25,13,1,Al-Gharafa,,0
+5556563efe1249d0bfde6593,173,7,18,Sultan Al-Brake,DF,1996-04-07,30,17,0,Al-Duhail,,0
+6cfe17942b8d47d6bb13973e,174,7,19,Almoez Ali,FW,1996-08-19,29,115,55,Al-Duhail,,0
+de9eb451ebcc4b51b96f51f4,175,7,20,Ahmed Fathy,MF,1993-01-25,33,48,0,Al-Arabi,,0
+d74f37b05ec14143a93ea454,176,7,21,Salah Zakaria,GK,1999-04-24,27,8,0,Al-Duhail,,0
+cb6686e7cb7b42f1954d0982,177,7,22,Meshaal Barsham,GK,1998-02-14,28,52,0,Al-Sadd,,0
+6295b1ee19a6478799fcaeca,178,7,23,Assim Madibo,MF,1996-10-22,29,51,0,Al-Wakrah,,0
+47fdae2aeba04ac7a8bd00ce,179,7,24,Tahsin Jamshid,FW,2006-06-16,19,3,0,Al-Duhail,,0
+88acdb3fd9b843cdb558e684,180,7,25,Al-Hashmi Al-Hussain,DF,2003-08-15,22,8,0,Al-Arabi,,0
+6fa6c67be4954f5fbb2fccdc,181,7,26,Mohamed Manai,FW,2002-10-25,23,10,0,Al-Shamal,,0
+c1a114127cc3448eb2b81e5c,182,8,1,Gregor Kobel,GK,1997-12-06,28,21,0,Borussia Dortmund,Murat Yakin,0
+4580ae52df824bf28d873ad3,183,8,2,Miro Muheim,DF,1998-03-24,28,10,0,Hamburger SV,Murat Yakin,0
+8d54022f25a84b8fa034c5a5,184,8,3,Silvan Widmer,DF,1993-03-05,33,60,5,Mainz 05,Murat Yakin,0
+dd0b5b5be873489cba7bd03d,185,8,4,Nico Elvedi,DF,1996-09-30,29,67,3,Borussia Mönchengladbach,Murat Yakin,0
+9084203abf9041e9a027efda,186,8,5,Manuel Akanji,DF,1995-07-19,30,81,4,Inter Milan,Murat Yakin,0
+8e1e15904632483499123732,187,8,6,Denis Zakaria,MF,1996-11-20,29,65,3,Monaco,Murat Yakin,0
+f7c7cd1a8b5e4288a02d00d5,188,8,7,Breel Embolo,FW,1997-02-14,29,86,24,Rennes,Murat Yakin,0
+9f9df1a6f4c042cdb59b9eab,189,8,8,Remo Freuler,MF,1992-04-15,34,88,11,Bologna,Murat Yakin,0
+7903f81443ee46d3a2b58142,190,8,9,Johan Manzambi,MF,2005-10-14,20,12,3,SC Freiburg,Murat Yakin,0
+c5c5ecb0f5014c95915930ba,191,8,10,Granit Xhaka,MF,1992-09-27,33,146,17,Sunderland,Murat Yakin,0
+0e575158083b44889ee6ee97,192,8,11,Dan Ndoye,FW,2000-10-25,25,31,8,Nottingham Forest,Murat Yakin,0
+d0ebed0ed99a4732950ba335,193,8,12,Yvon Mvogo,GK,1994-06-06,32,13,0,Lorient,Murat Yakin,0
+4e4509b0b8724465aa7648c4,194,8,13,Ricardo Rodriguez,DF,1992-08-25,33,138,9,Real Betis,Murat Yakin,0
+ab0d715720644ac49345be40,195,8,14,Ardon Jashari,MF,2002-07-30,23,8,0,Milan,Murat Yakin,0
+2964cbf427b944c6920d5f8a,196,8,15,Djibril Sow,MF,1997-02-06,29,52,0,Sevilla,Murat Yakin,0
+a29269f6df60493faa80e33f,197,8,16,Christian Fassnacht,FW,1993-11-11,32,23,5,Young Boys,Murat Yakin,0
+2016af962fca48c69f844ecd,198,8,17,Rubén Vargas,FW,1998-08-05,27,61,11,Sevilla,Murat Yakin,0
+3bcadc4cfa154535b7b12929,199,8,18,Eray Cömert,DF,1998-02-04,28,22,0,Valencia,Murat Yakin,0
+a47eb06855404f06b36afc46,200,8,19,Noah Okafor,FW,2000-05-24,26,25,2,Leeds United,Murat Yakin,0
+50c4e8272c0c4b9a904fc570,201,8,20,Michel Aebischer,MF,1997-01-06,29,40,2,Pisa,Murat Yakin,0
+9ad3214234d04624aea1ef88,202,8,21,Marvin Keller,GK,2002-07-03,23,1,0,Young Boys,Murat Yakin,0
+aa1484bc0bde49aba01ce9e5,203,8,22,Fabian Rieder,MF,2002-02-16,24,28,1,FC Augsburg,Murat Yakin,0
+e225fda4536a4c758ddf216d,204,8,23,Zeki Amdouni,FW,2000-12-04,25,29,11,Burnley,Murat Yakin,0
+5f4706e6b6d74f4bbc747ef8,205,8,24,Aurèle Amenda,DF,2003-07-31,22,7,0,Eintracht Frankfurt,Murat Yakin,0
+ca848689923e492eb1c4bcd9,206,8,25,Luca Jaquez,DF,2003-06-02,23,3,0,VfB Stuttgart,Murat Yakin,0
+e12615265752434fb0dcbdf0,207,8,26,Cedric Itten,FW,1996-12-27,29,15,5,Fortuna Düsseldorf,Murat Yakin,0
+6530541d945d4dc2b739d272,208,9,1,Alisson,GK,1992-10-02,33,78,0,Liverpool,,0
+f49bd9aca60049c6bea71449,209,9,2,Éderson Silva,MF,1999-07-07,26,3,0,Atalanta,,0
+2d04d9b9e897498d96cfab34,210,9,3,Gabriel Magalhães,DF,1997-12-19,28,17,1,Arsenal,,0
+aaa54d58952346a78f7607f7,211,9,4,Marquinhos,DF,1994-05-14,32,105,7,Paris Saint-Germain,,0
+1cb63070901f466faa1df19c,212,9,5,Casemiro,MF,1992-02-23,34,86,9,Manchester United,,0
+4dcbfb58340d483093d6cf71,213,9,6,Alex Sandro,DF,1991-01-26,35,45,2,Flamengo,,0
+556a95d16317418da6716166,214,9,7,Vinícius Júnior,FW,2000-07-12,25,49,9,Real Madrid,,0
+dfe0f067e4244ab49d6948a6,215,9,8,Bruno Guimarães,MF,1997-11-16,28,43,3,Newcastle United,,0
+293b9dad1c6e4233b0bdbe60,216,9,9,Matheus Cunha,FW,1999-05-27,27,23,1,Manchester United,,0
+ffc7bedbd6964ea09e000a5d,217,9,10,Neymar,FW,1992-02-05,34,128,79,Santos,,0
+000ce00f50d3458a8a51b9d0,218,9,11,Raphinha,FW,1996-12-14,29,39,11,Barcelona,,0
+9cf57c8372d746258bf51c5f,219,9,12,Weverton,GK,1987-12-13,38,11,0,Grêmio,,0
+edc5f04ae813449b9109e68b,220,9,13,Danilo Luiz,DF,1991-07-15,34,70,1,Flamengo,,0
+cb962b5590184c388e8eacf1,221,9,14,Bremer,DF,1997-03-18,29,8,1,Juventus,,0
+f6ad65c68aa14ca1b6c23273,222,9,15,Léo Pereira,DF,1996-01-31,30,4,0,Flamengo,,0
+3cbdba4ade164332a59f2394,223,9,16,Douglas Santos,DF,1994-03-22,32,7,0,Zenit Saint Petersburg,,0
+de4a00d78aa5499d9b0f7704,224,9,17,Fabinho,MF,1993-10-23,32,33,0,Al-Ittihad,,0
+26bc899749b54f55a6f87759,225,9,18,Danilo Santos,MF,2001-04-29,25,4,2,Botafogo,,0
+3b526566a1d54319882a8d98,226,9,19,Endrick,FW,2006-07-21,19,17,4,Lyon,,0
+31cdcc87b94a4c1b8c008443,227,9,20,Lucas Paquetá,MF,1997-08-27,28,63,13,Flamengo,,0
+03a211016eb246358c04671f,228,9,21,Luiz Henrique,FW,2001-01-02,25,15,2,Zenit Saint Petersburg,,0
+1af0389c10b34b3c8317e7f4,229,9,22,Gabriel Martinelli,FW,2001-06-18,24,23,4,Arsenal,,0
+5b01c19a12f349c3b5a92ba7,230,9,23,Ederson Moraes,GK,1993-08-17,32,32,0,Fenerbahçe,,0
+57d99925907d4708b4aa8396,231,9,24,Roger Ibañez,DF,1998-11-23,27,7,0,Al-Ahli,,0
+346d71a5dde1421d8735958d,232,9,25,Igor Thiago,FW,2001-06-26,24,4,2,Brentford,,0
+dbd3ca4c467b40569ab9c723,233,9,26,Rayan,FW,2006-08-03,19,2,1,Bournemouth,,0
+38ee6fef55a84b0dbef6724b,234,11,1,Johny Placide,GK,1988-01-29,38,81,0,Bastia,,0
+2b30ef342880492887a441d8,235,11,2,Carlens Arcus,DF,1996-06-28,29,53,1,Angers,,0
+e675bf0c77be45e7b5d11777,236,11,3,Keeto Thermoncy,DF,2006-03-29,20,1,0,Young Boys,,0
+4f7d9c79c99e4b6f952ac6b2,237,11,4,Ricardo Adé,DF,1990-05-21,36,59,2,LDU Quito,,0
+e921033a4a0544819af68f91,238,11,5,Hannes Delcroix,DF,1999-02-28,27,7,0,Lugano,,0
+f7988c5c9f8b484a9646c741,239,11,6,Carl Sainté,MF,2002-08-09,23,26,0,El Paso Locomotive FC,,0
+2d4fa3f6c85d45b181e20f63,240,11,7,Derrick Etienne Jr.,FW,1996-11-25,29,48,8,Toronto FC,,0
+ce4500ba5371425689c8766c,241,11,8,Martin Expérience,DF,1999-03-09,27,21,0,Nancy,,0
+bd976f3017724f7f9d10c4a9,242,11,9,Duckens Nazon,FW,1994-04-07,32,78,44,Esteghlal,,0
+836242ccbc6c4219a3ba9f9e,243,11,10,Jean-Ricner Bellegarde,MF,1998-06-27,27,10,0,Wolverhampton Wanderers,,0
+ee18f083b26a423da6517fce,244,11,11,Louicius Deedson,FW,2001-02-11,25,32,10,FC Dallas,,0
+b1edf547362643ca84effb72,245,11,12,Alexandre Pierre,GK,2001-02-25,25,15,0,Sochaux,,0
+a9e3348a457f47e79991e224,246,11,13,Duke Lacroix,DF,1993-10-14,32,16,3,Colorado Springs Switchbacks FC,,0
+02824e429df44e83977cd8ef,247,11,14,Leverton Pierre,MF,1998-03-09,28,33,0,Vizela,,0
+928b22a79aaa4718a9051186,248,11,15,Ruben Providence,FW,2001-07-07,24,15,3,Almere City,,0
+11acc26ebfb249ccad4780a5,249,11,16,Lenny Joseph,FW,2000-10-12,25,2,1,Ferencváros,,0
+6de8ded6f3b6416082468945,250,11,17,Danley Jean Jacques,MF,2000-05-20,26,30,6,Philadelphia Union,,0
+33c3f0d229304832a1bedd3e,251,11,18,Wilson Isidor,FW,2000-08-27,25,4,2,Sunderland,,0
+567312b988d042848d0bd886,252,11,19,Yassin Fortuné,FW,1999-01-30,27,4,0,Vizela,,0
+5bad2d50857f4e20a222aec2,253,11,20,Frantzdy Pierrot,FW,1995-03-29,31,51,34,Çaykur Rizespor,,0
+0c5b5d48810543baa218bc3e,254,11,21,Josué Casimir,FW,2001-09-24,24,7,0,Auxerre,,0
+501a93afa44643f186b85088,255,11,22,Jean-Kévin Duverne,DF,1997-07-12,28,17,1,Gent,,0
+0255590f0fca4e36ad1a468a,256,11,23,Josué Duverger,GK,2000-04-27,26,6,0,Cosmos Koblenz,,0
+2204757626784b19a67be3a4,257,11,24,Wilguens Paugain,DF,2001-08-24,24,8,0,Zulte Waregem,,0
+c95c106673054223ae1858bb,258,11,25,Dominique Simon,MF,2000-07-29,25,2,0,Tatran Prešov,,0
+006a8bffc7d24fb1a1630c56,259,11,26,Woodensky Pierre,MF,2004-12-30,21,1,0,Violette,,0
+6a751272f19b486b8b7ff328,260,10,1,Yassine Bounou,GK,1991-04-05,35,90,0,Al-Hilal,Mohamed Ouahbi,0
+db1d7e40a47e4938b3ee37c1,261,10,2,Achraf Hakimi,DF,1998-11-04,27,96,11,Paris Saint-Germain,Mohamed Ouahbi,0
+09181242077643ff8cf2d5a6,262,10,3,Noussair Mazraoui,DF,1997-11-14,28,45,2,Manchester United,Mohamed Ouahbi,0
+9a4a1de4befb4c73b9b157da,263,10,4,Sofyan Amrabat,MF,1996-08-21,29,75,0,Real Betis,Mohamed Ouahbi,0
+c63a187558cc4e1381bf67bf,264,10,5,Nayef Aguerd,DF,1996-03-30,30,64,2,Marseille,Mohamed Ouahbi,0
+911ebf2439394be5a466f723,265,10,6,Ayyoub Bouaddi,MF,2007-10-02,18,4,0,Lille,Mohamed Ouahbi,0
+9c9a92674749410eb9505371,266,10,7,Chemsdine Talbi,MF,2005-05-09,21,5,0,Sunderland,Mohamed Ouahbi,0
+4f6fb0ba1bce43d5b1aecc86,267,10,8,Azzedine Ounahi,MF,2000-04-19,26,49,9,Girona,Mohamed Ouahbi,0
+192f5bd657e94bd083cd3c7c,268,10,9,Soufiane Rahimi,FW,1996-06-02,30,37,12,Al Ain,Mohamed Ouahbi,0
+caaf9a78b24e43ad95311ed5,269,10,10,Brahim Díaz,FW,1999-08-03,26,26,14,Real Madrid,Mohamed Ouahbi,0
+702dc42983ae4783b8eb7f1c,270,10,11,Ismael Saibari,MF,2001-01-28,25,31,9,PSV Eindhoven,Mohamed Ouahbi,0
+9efb6520e3ed47499e461956,271,10,12,Munir Mohamedi,GK,1989-05-10,37,53,0,RS Berkane,Mohamed Ouahbi,0
+54a643ba9dc34b33b77688ad,272,10,13,Zakaria El Ouahdi,DF,2001-12-31,24,3,0,Genk,Mohamed Ouahbi,0
+9256f6d273ff467e8b7b4f22,273,10,14,Issa Diop,DF,1997-01-09,29,4,0,Fulham,Mohamed Ouahbi,0
+6f945315e00a432da68dd786,274,10,15,Samir El Mourabet,MF,2005-10-06,20,4,0,Strasbourg,Mohamed Ouahbi,0
+f494c2c60f5442379ed6aa9b,275,10,16,Gessime Yassine,MF,2005-11-22,20,5,0,Strasbourg,Mohamed Ouahbi,0
+d97dafa8c0a54a7aa3c22022,276,10,17,Abde Ezzalzouli,FW,2001-12-17,24,37,2,Real Betis,Mohamed Ouahbi,0
+e37c67092a494e9ba0515e74,277,10,18,Chadi Riad,DF,2003-06-17,22,6,1,Crystal Palace,Mohamed Ouahbi,0
+52de6442075646d9b1c51a43,278,10,19,Youssef Belammari,DF,1998-09-20,27,19,0,Al Ahly,Mohamed Ouahbi,0
+2fb88814338b4ae98a2ba3d3,279,10,20,Ayoub El Kaabi,FW,1993-06-25,32,71,35,Olympiacos,Mohamed Ouahbi,0
+0529c058258247f4a7d4f1db,280,10,21,Ayoube Amaimouni,FW,2004-11-30,21,2,0,Eintracht Frankfurt,Mohamed Ouahbi,0
+4dc5472933204ff4812eaea7,281,10,22,Ahmed Reda Tagnaouti,GK,1996-04-05,30,3,0,AS FAR,Mohamed Ouahbi,0
+025a831b0cb14099baa11780,282,10,23,Bilal El Khannouss,MF,2004-05-10,22,37,3,VfB Stuttgart,Mohamed Ouahbi,0
+c2fe6346d89748629b4b7254,283,10,24,Neil El Aynaoui,MF,2001-07-02,24,16,2,Roma,Mohamed Ouahbi,0
+06d61c46359b4a57a4a0202c,284,10,25,Redouane Halhal,DF,2003-03-05,23,3,0,Mechelen,Mohamed Ouahbi,0
+e10c149e7e56422eb66436f4,285,10,26,Anass Salah-Eddine,DF,2002-01-18,24,9,0,PSV Eindhoven,Mohamed Ouahbi,0
+830a0b95edb34a70b73f75cf,286,12,1,Angus Gunn,GK,1996-01-22,30,22,0,Nottingham Forest,Steve Clarke,0
+bfd2f336bd21405581d75f17,287,12,2,Aaron Hickey,DF,2002-06-10,24,21,0,Brentford,Steve Clarke,0
+b092ea36f5b4446999d1b9c8,288,12,3,Andy Robertson,DF,1994-03-11,32,94,4,Liverpool,Steve Clarke,0
+2b4add7cac734831ad777941,289,12,4,Scott McTominay,MF,1996-12-08,29,70,15,Napoli,Steve Clarke,0
+f24d2bb7f69148c6bd8355d9,290,12,5,Grant Hanley,DF,1991-11-20,34,68,2,Hibernian,Steve Clarke,0
+abfbc2544b504e74bdc8484e,291,12,6,Kieran Tierney,DF,1997-06-05,29,56,2,Celtic,Steve Clarke,0
+eb64a334e1554e8d83fd1791,292,12,7,John McGinn,MF,1994-10-18,31,86,20,Aston Villa,Steve Clarke,0
+c9ec267299e44105b2e3359f,293,12,8,Tyler Fletcher,MF,2007-03-19,19,2,0,Manchester United,Steve Clarke,0
+0360119e82af45279dcae757,294,12,9,Lyndon Dykes,FW,1995-10-07,30,51,10,Charlton Athletic,Steve Clarke,0
+ec4966789fec4c14a0c7a68c,295,12,10,Ché Adams,FW,1996-07-13,29,47,13,Torino,Steve Clarke,0
+8e4aab7925b2423abc0cd0f9,296,12,11,Ryan Christie,MF,1995-02-22,31,68,10,Bournemouth,Steve Clarke,0
+1e7494258a1a4ad8b129fa1c,297,12,12,Liam Kelly,GK,1996-01-23,30,3,0,Rangers,Steve Clarke,0
+fbe3db24da4a42fabd57f1a7,298,12,13,Jack Hendry,DF,1995-05-07,31,38,3,Al-Ettifaq,Steve Clarke,0
+b2120c1d3c5b4f74bc194328,299,12,14,Ross Stewart,FW,1996-07-11,29,3,0,Southampton,Steve Clarke,0
+6768b90b5f6e4127a3928570,300,12,15,John Souttar,DF,1996-09-25,29,24,2,Rangers,Steve Clarke,0
+850fe00a2eea442c8209f264,301,12,16,Dominic Hyam,DF,1995-12-20,30,4,0,Wrexham,Steve Clarke,0
+a5925552dfd8418e9f124f91,302,12,17,Ben Gannon-Doak,FW,2005-11-11,20,14,1,Bournemouth,Steve Clarke,0
+ef83c4dec8364e27932eea64,303,12,18,George Hirst,FW,1999-02-15,27,10,1,Ipswich Town,Steve Clarke,0
+65b09dddf986408e891e421b,304,12,19,Lewis Ferguson,MF,1999-08-24,26,24,1,Bologna,Steve Clarke,0
+0044ca88be684cc1bf432b55,305,12,20,Lawrence Shankland,FW,1995-08-10,30,20,7,Heart of Midlothian,Steve Clarke,0
+4452c224a690487393fd48ce,306,12,21,Craig Gordon,GK,1982-12-31,43,84,0,Heart of Midlothian,Steve Clarke,0
+ef76e7c9db174f539ff07c85,307,12,22,Nathan Patterson,DF,2001-10-16,24,26,1,Everton,Steve Clarke,0
+98bdd37ea7be4b51a6f446d8,308,12,23,Kenny McLean,MF,1992-01-08,34,58,3,Norwich City,Steve Clarke,0
+a2533505ddb04b43924b16bc,309,12,24,Anthony Ralston,DF,1998-11-16,27,27,1,Celtic,Steve Clarke,0
+918e5ddd87e44c178a1f6964,310,12,25,Findlay Curtis,FW,2006-06-09,20,3,1,Kilmarnock,Steve Clarke,0
+28711a593e73401abed067a6,311,12,26,Scott McKenna,DF,1996-11-12,29,50,1,Dinamo Zagreb,Steve Clarke,0
+8ff11ba0adfb4a5394a585c2,312,15,1,Mathew Ryan,GK,1992-04-08,34,104,0,Levante,Tony Popovic,0
+d06850a1c543437eaedeb7ef,313,15,2,Miloš Degenek,DF,1994-04-28,32,57,1,APOEL,Tony Popovic,0
+3f3fbbcabf6e4c879f3884a6,314,15,3,Alessandro Circati,DF,2003-10-10,22,13,1,Parma,Tony Popovic,0
+a534c957d3cb4a4789669b76,315,15,4,Jacob Italiano,DF,2001-07-30,24,5,0,Grazer AK,Tony Popovic,0
+ef56768702884ab88365e62c,316,15,5,Jordan Bos,DF,2002-10-29,23,27,4,Feyenoord,Tony Popovic,0
+ef31aa491172486d9b62c93d,317,15,6,Jason Geria,DF,1993-05-10,33,14,0,Albirex Niigata,Tony Popovic,0
+43a3d9cf4ec44c1383741add,318,15,7,Mathew Leckie,FW,1991-02-04,35,80,14,Melbourne City,Tony Popovic,0
+54ce842097034919a8c95281,319,15,8,Connor Metcalfe,MF,1999-11-05,26,36,1,FC St. Pauli,Tony Popovic,0
+d1f68f07f6d7442888959960,320,15,9,Mohamed Touré,FW,2004-03-26,22,10,2,Norwich City,Tony Popovic,0
+78f02971cc9349cb99829550,321,15,10,Ajdin Hrustic,FW,1996-07-05,29,37,4,Heracles Almelo,Tony Popovic,0
+e13ca61bc7224f82bc12eaa4,322,15,11,Awer Mabil,FW,1995-09-15,30,38,10,Castellón,Tony Popovic,0
+a298a676940d4123986279ab,323,15,12,Paul Izzo,GK,1995-01-06,31,4,0,Randers,Tony Popovic,0
+8f4a1bcbfa33425598840a33,324,15,13,Aiden O'Neill,MF,1998-07-04,27,31,0,New York City FC,Tony Popovic,0
+04326910b4354efab1e96c4b,325,15,14,Cammy Devlin,MF,1998-06-07,28,5,0,Heart of Midlothian,Tony Popovic,0
+7eef730ae0524689827e279a,326,15,15,Kai Trewin,DF,2001-05-18,25,6,0,New York City FC,Tony Popovic,0
+c42eb65ecc4b47f79b42126e,327,15,16,Aziz Behich,DF,1990-12-16,35,84,3,Melbourne City,Tony Popovic,0
+ab4479e396614ef68c511056,328,15,17,Nestory Irankunda,FW,2006-02-09,20,15,5,Watford,Tony Popovic,0
+f089ccad6cf74c4b8ffbe633,329,15,18,Patrick Beach,GK,2003-08-06,22,2,0,Melbourne City,Tony Popovic,0
+244b6907b3404f03b5465da2,330,15,19,Harry Souttar,DF,1998-10-22,27,38,11,Leicester City,Tony Popovic,0
+ef69c43aa5bf4753b0fa4557,331,15,20,Cristian Volpato,FW,2003-11-15,22,1,0,Sassuolo,Tony Popovic,0
+cd5babcbe81e4764afbaa374,332,15,21,Cameron Burgess,DF,1995-10-21,30,27,0,Swansea City,Tony Popovic,0
+7d7c412a6cdf45b3a52e9fc5,333,15,22,Jackson Irvine,MF,1993-03-07,33,82,14,FC St. Pauli,Tony Popovic,0
+a9feb99c9b8347d885cf8d26,334,15,23,Nishan Velupillay,FW,2001-05-07,25,7,3,Melbourne Victory,Tony Popovic,0
+0b4497f0071e4cfebcf0d9eb,335,15,24,Paul Okon-Engstler,MF,2005-01-24,21,6,0,Sydney FC,Tony Popovic,0
+5dcc840ea1f64a40a9a5b4fc,336,15,25,Lucas Herrington,DF,2007-09-05,18,4,0,Colorado Rapids,Tony Popovic,0
+afcb1685c79640f8b8335055,337,15,26,Tete Yengi,FW,2000-11-28,25,1,1,Machida Zelvia,Tony Popovic,0
+f2af4a71e88741b7a5d96051,338,14,1,Gatito Fernández,GK,1988-03-29,38,31,0,Cerro Porteño,,0
+6d4d3b1a5a3e40a9ae0ea918,339,14,2,Gustavo Velázquez,DF,1991-04-17,35,13,1,Cerro Porteño,,0
+b40bbedeebe04135aee09843,340,14,3,Omar Alderete,DF,1996-12-26,29,36,3,Sunderland,,0
+93b885df207c40ed81133c8c,341,14,4,Juan José Cáceres,DF,2000-06-01,26,17,0,Dynamo Moscow,,0
+9a9486dc87134ba1b9c15712,342,14,5,Fabián Balbuena,DF,1991-08-23,34,48,2,Grêmio,,0
+fc6f8d670af14d0d8e5b3b78,343,14,6,Júnior Alonso,DF,1993-02-09,33,71,3,Atlético Mineiro,,0
+2cec7a101e6f4406979182d6,344,14,7,Ramón Sosa,MF,1999-08-31,26,29,1,Palmeiras,,0
+5c62b925e38a47ff9afa50ac,345,14,8,Diego Gómez,MF,2003-03-27,23,24,3,Brighton & Hove Albion,,0
+74855b7a143f42dea60c66c3,346,14,9,Antonio Sanabria,FW,1996-03-04,30,48,7,Cremonese,,0
+ac88ba5fbb4841609386de36,347,14,10,Miguel Almirón,MF,1994-02-10,32,76,10,Atlanta United FC,,0
+484d6411c769460597e6290f,348,14,11,Maurício,MF,2001-06-22,24,3,0,Palmeiras,,0
+e97e7aea7b5a407f912966cf,349,14,12,Orlando Gill,GK,2000-06-11,26,6,0,San Lorenzo,,0
+7c6e55e374aa47aebd2d6a12,350,14,13,José Canale,DF,1996-07-20,29,2,0,Lanús,,0
+0e60d1ce5c544ea399a8694e,351,14,14,Andrés Cubas,MF,1996-05-11,30,33,0,Vancouver Whitecaps FC,,0
+0a92700f50c3425e8d52a06d,352,14,15,Gustavo Gómez,DF,1993-05-06,33,89,4,Palmeiras,,0
+b3570c50e89c4bfdbd0f1af0,353,14,16,Damián Bobadilla,MF,2001-07-11,24,19,1,São Paulo,,0
+693e40ddae2a4d4c96505a1c,354,14,17,Kaku,FW,1995-01-11,31,33,6,Al Ain,,0
+5b446996cb2e4c268fd72405,355,14,18,Álex Arce,FW,1995-06-16,30,15,1,Independiente Rivadavia,,0
+bd73fdd3ed9f4dfdb4a829a0,356,14,19,Julio Enciso,FW,2004-01-23,22,32,4,Strasbourg,,0
+1452ea48622f48c49794ef9a,357,14,20,Braian Ojeda,MF,2000-06-27,25,17,0,Orlando City SC,,0
+253771fd989c4b4086860ade,358,14,21,Gabriel Ávalos,FW,1990-10-12,35,23,2,Independiente,,0
+49f471726a29473d9aca1aef,359,14,22,Gastón Olveira,GK,1993-04-21,33,1,0,Olimpia,,0
+d038475168354c00a3bc062f,360,14,23,Matías Galarza,MF,2002-02-11,24,15,3,Atlanta United FC,,0
+e78b20846ba947bb95a317f3,361,14,24,Gustavo Caballero,MF,2001-09-21,24,2,1,Portsmouth,,0
+4163ad616e884a11a5901dc5,362,14,25,Isidro Pitta,FW,1999-08-14,26,5,0,Red Bull Bragantino,,0
+f0eb3c228877461992654256,363,14,26,Alexandro Maidana,DF,2005-07-26,20,2,1,Talleres,,0
+0d410d7090c84c21821dcf1c,364,16,1,Mert Günok,GK,1989-03-01,37,37,0,Fenerbahçe,,0
+4fab67dd67bb4c5e89f8b387,365,16,2,Zeki Çelik,DF,1997-02-17,29,61,3,Roma,,0
+93334471bd324b0bb50440d8,366,16,3,Merih Demiral,DF,1998-03-05,28,62,6,Al-Ahli,,0
+9d8c6566622b4a9d9563cc6e,367,16,4,Çağlar Söyüncü,DF,1996-05-23,30,60,2,Fenerbahçe,,0
+fdf2f61b81b9482cbcb393cf,368,16,5,Salih Özcan,MF,1998-01-11,28,30,1,Borussia Dortmund,,0
+7c218924263e4b8f90564f61,369,16,6,Orkun Kökçü,MF,2000-12-29,25,50,4,Beşiktaş,,0
+bd183b3a988547839686381a,370,16,7,Kerem Aktürkoğlu,FW,1998-10-21,27,52,15,Fenerbahçe,,0
+9981e473153047bd882b1bdd,371,16,8,Arda Güler,FW,2005-02-25,21,29,6,Real Madrid,,0
+69a1421ff3d54ad38ae28e93,372,16,9,Deniz Gül,FW,2004-07-02,21,8,2,Porto,,0
+894d26724fb64ec89be5ef65,373,16,10,Hakan Çalhanoğlu,MF,1994-02-08,32,105,22,Inter Milan,,0
+0461eb1a17254b389647b1a9,374,16,11,Kenan Yıldız,FW,2005-05-04,21,28,5,Juventus,,0
+c60e6b8b6d4a4567ad7c66b1,375,16,12,Altay Bayındır,GK,1998-04-14,28,12,0,Manchester United,,0
+abd2b617ed3b4f9fbb46b9f3,376,16,13,Eren Elmalı,DF,2000-07-07,25,23,0,Galatasaray,,0
+4b74491679654e35b8f363ec,377,16,14,Abdülkerim Bardakcı,DF,1994-09-07,31,27,2,Galatasaray,,0
+fd703fe0a65e4ca499ae009a,378,16,15,Ozan Kabak,DF,2000-03-25,26,30,2,TSG Hoffenheim,,0
+7a2f9889591b436392a3d44a,379,16,16,İsmail Yüksek,MF,1999-01-26,27,32,1,Fenerbahçe,,0
+baf655fd23c1416da10a8bbf,380,16,17,İrfan Can Kahveci,FW,1995-07-15,30,47,6,Kasımpaşa,,0
+148904d5944346fa95fecc92,381,16,18,Mert Müldür,DF,1999-04-03,27,45,3,Fenerbahçe,,0
+2fae3256384a4d228f4786f4,382,16,19,Yunus Akgün,FW,2000-07-07,25,19,4,Galatasaray,,0
+6ba0a887c4e24f6abfd1afb2,383,16,20,Ferdi Kadıoğlu,DF,1999-10-07,26,30,2,Brighton & Hove Albion,,0
+1da13a53f77b439c90dd959a,384,16,21,Barış Alper Yılmaz,FW,2000-05-23,26,35,4,Galatasaray,,0
+5d9f281d02194dbd8d4c4bc8,385,16,22,Kaan Ayhan,MF,1994-11-10,31,73,5,Galatasaray,,0
+7a1b02c9e2f04505b018fe8d,386,16,23,Uğurcan Çakır,GK,1996-04-05,30,39,0,Galatasaray,,0
+4a0b9f1dd31c454894f7c5ec,387,16,24,Oğuz Aydın,FW,2000-10-27,25,11,0,Fenerbahçe,,0
+cc67c8febe604a3c8e6cc9bb,388,16,25,Samet Akaydin,DF,1994-03-13,32,19,1,Çaykur Rizespor,,0
+af55e4901d394f1199e49152,389,16,26,Can Uzun,FW,2005-11-11,20,6,1,Eintracht Frankfurt,,0
+d58d3a1eff774fafb382018b,390,13,1,Matt Turner,GK,1994-06-24,31,54,0,New England Revolution,,0
+8c39d24854904ceb8406df5e,391,13,2,Sergiño Dest,DF,2000-11-03,25,39,3,PSV Eindhoven,,0
+1a637ade252049f688806ce7,392,13,3,Chris Richards,DF,2000-03-28,26,36,3,Crystal Palace,,0
+a1cbcf3439ed49009f7f2ae0,393,13,4,Tyler Adams,MF,1999-02-14,27,54,2,Bournemouth,,0
+fa42267bd2804a62bd246bec,394,13,5,Antonee Robinson,DF,1997-08-08,28,54,5,Fulham,,0
+26adea0e6ab54219a63b2f64,395,13,6,Auston Trusty,DF,1998-08-12,27,8,0,Celtic,,0
+b94ee5d08ccd424d8f92e29f,396,13,7,Giovanni Reyna,MF,2002-11-13,23,38,9,Borussia Mönchengladbach,,0
+1934f51c48684dff9ff9f39d,397,13,8,Weston McKennie,MF,1998-08-28,27,66,12,Juventus,,0
+41a7eee39f0d44c6a377c965,398,13,9,Ricardo Pepi,FW,2003-01-09,23,37,13,PSV Eindhoven,,0
+84ae700ea1f34e8d99a2e20c,399,13,10,Christian Pulisic,FW,1998-09-18,27,86,33,Milan,,0
+52395e7542224b4cb7419c3e,400,13,11,Brenden Aaronson,FW,2000-10-22,25,58,9,Leeds United,,0
+5cb92bfa6ebe4e9c8556c38b,401,13,12,Miles Robinson,DF,1997-03-14,29,40,3,FC Cincinnati,,0
+d2c96c6bde58442b841b040b,402,13,13,Tim Ream,DF,1987-10-05,38,82,1,Charlotte FC,,0
+b85254055da9412183b3a7d5,403,13,14,Sebastian Berhalter,MF,2001-05-10,25,13,1,Vancouver Whitecaps FC,,0
+9ec151056e0f470180e8aeef,404,13,15,Cristian Roldan,MF,1995-06-03,31,47,0,Seattle Sounders FC,,0
+bf73d2dea4964c72ba98d9a8,405,13,16,Alex Freeman,DF,2004-08-09,21,17,2,Villarreal,,0
+80905d6e96724539984a686d,406,13,17,Malik Tillman,MF,2002-05-28,24,30,3,Bayer Leverkusen,,0
+d04d680597af4726ac0cb533,407,13,18,Max Arfsten,DF,2001-04-19,25,20,1,Columbus Crew,,0
+581f9b50cd754633a8d641e4,408,13,19,Haji Wright,FW,1998-03-27,28,20,7,Coventry City,,0
+be7ab13988e24f2ea4adc49f,409,13,20,Folarin Balogun,FW,2001-07-03,24,27,9,Monaco,,0
+0604a9cf6bc843e6806f6ff5,410,13,21,Timothy Weah,FW,2000-02-22,26,51,7,Marseille,,0
+57de2bdb24c147fd982ccc39,411,13,22,Mark McKenzie,DF,1999-02-25,27,29,0,Toulouse,,0
+69031bfe29ab4079b1acb21a,412,13,23,Joe Scally,DF,2002-12-31,23,26,0,Borussia Mönchengladbach,,0
+3c015532acca4c25b2114913,413,13,24,Matt Freese,GK,1998-09-02,27,15,0,New York City FC,,0
+25446e73532a464b9deb76db,414,13,25,Chris Brady,GK,2004-03-03,22,1,0,Chicago Fire FC,,0
+32990000572a43139270d473,415,13,26,Alejandro Zendejas,FW,1998-02-07,28,14,2,América,,0
+e795ea3b94744b8b9ebd64ed,416,18,1,Eloy Room,GK,1989-02-06,37,71,0,Miami FC,,0
+33c205c1c0da4e58988f84a2,417,18,2,Shurandy Sambo,DF,2001-08-19,24,8,0,Sparta Rotterdam,,0
+d3e020f421d0430aa22e026d,418,18,3,Juriën Gaari,DF,1993-12-23,32,60,1,Abha,,0
+b4c1bcced0e34997a22d3b93,419,18,4,Roshon van Eijma,DF,1998-06-09,28,28,1,RKC Waalwijk,,0
+8de8ead5134a43f690d36cec,420,18,5,Sherel Floranus,DF,1998-08-23,27,28,0,PEC Zwolle,,0
+81e87e313532460998899093,421,18,6,Godfried Roemeratoe,MF,1999-08-19,26,28,1,RKC Waalwijk,,0
+678d27323e9747e9b9f1d129,422,18,7,Juninho Bacuna,MF,1997-08-07,28,49,15,Volendam,,0
+a2edd6a6f43b45d7b54859b7,423,18,8,Livano Comenencia,MF,2004-02-03,22,20,2,Zürich,,0
+f950790d16a5435b8220f3f7,424,18,9,Jürgen Locadia,FW,1993-11-07,32,13,1,Miami FC,,0
+40a84b8a4d8d414a9b071fc8,425,18,10,Leandro Bacuna,MF,1991-08-21,34,72,16,Iğdır,,0
+273f1e2070fa4c3cae49de27,426,18,11,Jeremy Antonisse,FW,2002-03-29,24,27,4,Kifisia,,0
+54db24a764194936acbef3c2,427,18,12,Sontje Hansen,FW,2002-05-18,24,6,1,Middlesbrough,,0
+c97a350b38bd434a909584bc,428,18,13,Tyrese Noslin,FW,2002-09-11,23,7,1,Telstar,,0
+4fb6fe91fd17472894f22bef,429,18,14,Kenji Gorré,FW,1994-09-29,31,38,6,Maccabi Haifa,,0
+7ab70886b2ce475d982f624b,430,18,15,Ar'jany Martha,MF,2003-09-04,22,9,2,Rotherham United,,0
+aea7b7dfa42f43be9841cfc2,431,18,16,Jearl Margaritha,FW,2000-04-10,26,22,5,Beveren,,0
+55459fb2c95a46ad81441582,432,18,17,Brandley Kuwas,FW,1992-09-19,33,35,2,Volendam,,0
+7b652a0d97ae4188bdd68960,433,18,18,Armando Obispo,DF,1999-03-05,27,6,0,PSV Eindhoven,,0
+7c5895649cc64e29a5407c53,434,18,19,Gervane Kastaneer,FW,1996-06-09,30,29,9,Terengganu,,0
+5ff8e84fdc394264969f5f4e,435,18,20,Joshua Brenet,DF,1994-03-20,32,18,2,Kayserispor,,0
+1008ac98de624433b393e4e5,436,18,21,Tahith Chong,MF,1999-12-04,26,6,3,Sheffield United,,0
+b717dc3fe759400dba5b4a3d,437,18,22,Kevin Felida,MF,1999-11-11,26,19,1,Den Bosch,,0
+18f1732bfe234bbdb32a5397,438,18,23,Riechedly Bazoer,DF,1996-10-12,29,5,0,Konyaspor,,0
+0fbc85f420a94061a930c155,439,18,24,Deveron Fonville,DF,2003-05-16,23,2,0,NEC,,0
+7c0d2614af03481598517e69,440,18,25,Tyrick Bodak,GK,2002-05-15,24,4,0,Telstar,,0
+a509cbe1adba46d6b98fa1c6,441,18,26,Trevor Doornbusch,GK,1999-07-06,26,8,0,VVV-Venlo,,0
+835b70ad4ef84df485bc5f5c,442,20,1,Hernán Galíndez,GK,1987-03-30,39,35,0,Huracán,,0
+65bb48bdb05b41d3aecf8484,443,20,2,Félix Torres,DF,1997-01-11,29,49,5,Internacional,,0
+24473e03294c4ab0b85b624e,444,20,3,Piero Hincapié,DF,2002-01-09,24,52,3,Arsenal,,0
+34a451991e8e49089538bc36,445,20,4,Joel Ordóñez,DF,2004-04-21,22,17,0,Club Brugge,,0
+ba9fad694ec34c3099c3604a,446,20,5,Jordy Alcívar,MF,1999-08-05,26,11,1,Independiente del Valle,,0
+15e24dae42e44c369517b9f7,447,20,6,Willian Pacho,DF,2001-10-16,24,34,2,Paris Saint-Germain,,0
+fee3eae22e0142c89acb4065,448,20,7,Pervis Estupiñán,DF,1998-01-21,28,54,5,Milan,,0
+b5eb92f131664bf8934d69f9,449,20,8,Anthony Valencia,MF,2003-07-21,22,3,1,Antwerp,,0
+e357f43f9dde4996965e78d6,450,20,9,John Yeboah,FW,2000-06-23,25,23,3,Venezia,,0
+1286fd3e85e44d3087f4701c,451,20,10,Kendry Páez,MF,2007-05-04,19,26,2,River Plate,,0
+01f90a488efe4f3785446431,452,20,11,Kevin Rodríguez,FW,2000-03-04,26,31,2,Union Saint-Gilloise,,0
+ea1c1f6a03d64489a50d6f54,453,20,12,Moisés Ramírez,GK,2000-09-09,25,7,0,Kifisia,,0
+850e4f40f5654739ad51d69d,454,20,13,Enner Valencia,FW,1989-11-04,36,105,49,Pachuca,,0
+70f128eef82a4f08a6434b20,455,20,14,Alan Minda,MF,2003-05-14,23,20,2,Atlético Mineiro,,0
+a7e8d0b2cce34879a226b737,456,20,15,Pedro Vite,MF,2002-03-09,24,17,1,UNAM,,0
+035fb4248ad64628946422a3,457,20,16,Jordy Caicedo,FW,1997-11-18,28,20,4,Huracán,,0
+a0eb57f1f87243318999df75,458,20,17,Ángelo Preciado,DF,1998-02-18,28,55,0,Atlético Mineiro,,0
+832b365927d6445fba12c608,459,20,18,Denil Castillo,MF,2004-03-24,22,5,0,Midtjylland,,0
+b32de305d3f8462a88983677,460,20,19,Gonzalo Plata,FW,2000-11-01,25,50,8,Flamengo,,0
+2e6d41046b7449b4afd98e97,461,20,20,Nilson Angulo,FW,2003-06-19,22,14,2,Sunderland,,0
+595ebfc5973b4e5e8717aa85,462,20,21,Alan Franco,MF,1998-08-21,27,58,1,Atlético Mineiro,,0
+ee2a72b4f9e645f9829a3141,463,20,22,Gonzalo Valle,GK,1996-02-28,30,4,0,LDU Quito,,0
+0028477e46a346c8a72e4b91,464,20,23,Moisés Caicedo,MF,2001-11-02,24,61,3,Chelsea,,0
+93e30f27d82f4a46bc57008d,465,20,24,Jeremy Arévalo,FW,2005-03-19,21,4,0,VfB Stuttgart,,0
+1fd3926d80f949ae85e0505f,466,20,25,Jackson Porozo,DF,2000-08-04,25,10,1,Tijuana,,0
+1e25f384eb3049ef83a00f6b,467,20,26,Yaimar Medina,DF,2004-11-05,21,6,0,Genk,,0
+87ddfddd74c245c1956191da,468,17,1,Manuel Neuer,GK,1986-03-27,40,124,0,Bayern Munich,Julian Nagelsmann,0
+e386b2f3b58d453690f274a1,469,17,2,Antonio Rüdiger,DF,1993-03-03,33,82,3,Real Madrid,Julian Nagelsmann,0
+e8998d87e7a34e74b1a3ae56,470,17,3,Waldemar Anton,DF,1996-07-20,29,13,0,Borussia Dortmund,Julian Nagelsmann,0
+076ffba13df74a9fbbafd856,471,17,4,Jonathan Tah,DF,1996-02-11,30,47,1,Bayern Munich,Julian Nagelsmann,0
+b37772fa6fe8424282ee8f77,472,17,5,Aleksandar Pavlović,MF,2004-05-03,22,11,1,Bayern Munich,Julian Nagelsmann,0
+a417a32d1b1042678dbf54eb,473,17,6,Joshua Kimmich,DF,1995-02-08,31,110,10,Bayern Munich,Julian Nagelsmann,0
+133a889b39af42b2a0fd1a75,474,17,7,Kai Havertz,FW,1999-06-11,27,58,22,Arsenal,Julian Nagelsmann,0
+3faf8bca32aa4f6999cf2181,475,17,8,Leon Goretzka,MF,1995-02-06,31,70,15,Bayern Munich,Julian Nagelsmann,0
+46a1a04865e1409daf28b140,476,17,9,Jamie Leweling,MF,2001-02-26,25,5,1,VfB Stuttgart,Julian Nagelsmann,0
+7d95ce5347934687b4336b44,477,17,10,Jamal Musiala,MF,2003-02-26,23,42,9,Bayern Munich,Julian Nagelsmann,0
+40ebe7912e2a4f93b3200d71,478,17,11,Nick Woltemade,FW,2002-02-14,24,11,4,Newcastle United,Julian Nagelsmann,0
+5bdd7952d6334f4bb9d8de47,479,17,12,Oliver Baumann,GK,1990-06-02,36,13,0,TSG Hoffenheim,Julian Nagelsmann,0
+69f2c32c8631457e93140f33,480,17,13,Pascal Groß,MF,1991-06-15,34,18,1,Brighton & Hove Albion,Julian Nagelsmann,0
+fdec59ba39474871a3875569,481,17,14,Maximilian Beier,FW,2002-10-17,23,9,0,Borussia Dortmund,Julian Nagelsmann,0
+b5d00f52304d4f9cb67b6781,482,17,15,Nico Schlotterbeck,DF,1999-12-01,26,27,0,Borussia Dortmund,Julian Nagelsmann,0
+77f2ea06d2f14403b43efa03,483,17,16,Angelo Stiller,MF,2001-04-04,25,8,0,VfB Stuttgart,Julian Nagelsmann,0
+c4dcf780a7bb4c908c4a4f87,484,17,17,Florian Wirtz,MF,2003-05-03,23,41,11,Liverpool,Julian Nagelsmann,0
+9a976caba3c941bf901f9335,485,17,18,Nathaniel Brown,DF,2003-06-16,22,5,0,Eintracht Frankfurt,Julian Nagelsmann,0
+dc8fc734d8ad4e7b84091b22,486,17,19,Leroy Sané,MF,1996-01-11,30,76,17,Galatasaray,Julian Nagelsmann,0
+5b853594401549349c30cb6f,487,17,20,Nadiem Amiri,MF,1996-10-27,29,11,1,Mainz 05,Julian Nagelsmann,0
+ae6964ff7eac49169cc45b86,488,17,21,Alexander Nübel,GK,1996-09-30,29,3,0,VfB Stuttgart,Julian Nagelsmann,0
+a4dd1a4901f2410fb48cbf04,489,17,22,David Raum,DF,1998-04-22,28,37,1,RB Leipzig,Julian Nagelsmann,0
+be5285f8223c47c9b3502421,490,17,23,Felix Nmecha,MF,2000-10-10,25,8,1,Borussia Dortmund,Julian Nagelsmann,0
+0ff2ca1557894d6c9d358802,491,17,24,Malick Thiaw,DF,2001-08-08,24,5,0,Newcastle United,Julian Nagelsmann,0
+ac991e614f184144923f1f77,492,17,25,Assan Ouédraogo,MF,2006-05-09,20,1,1,RB Leipzig,Julian Nagelsmann,0
+628709ab38864888bad13664,493,17,26,Deniz Undav,FW,1996-07-19,29,9,6,VfB Stuttgart,Julian Nagelsmann,0
+a143569498cf4252b543b0a5,494,19,1,Yahia Fofana,GK,2000-08-21,25,35,0,Çaykur Rizespor,Emerse Faé,0
+6f2997aa9f9344dcb19d3665,495,19,2,Ousmane Diomande,DF,2003-12-04,22,15,1,Sporting CP,Emerse Faé,0
+f0cec402c06a4b24b943f2ad,496,19,3,Ghislain Konan,DF,1995-12-27,30,54,0,Gil Vicente,Emerse Faé,0
+193c7e99d66d4c24815c493a,497,19,4,Jean Michaël Seri,MF,1991-07-19,34,65,4,Maribor,Emerse Faé,0
+b899277d274949e1867c5e0f,498,19,5,Wilfried Singo,DF,2000-12-25,25,34,1,Galatasaray,Emerse Faé,0
+e33d057c0cba4c2eaaa3bea1,499,19,6,Seko Fofana,MF,1995-05-07,31,32,7,Porto,Emerse Faé,0
+3f9b2047120c4a7a9c864057,500,19,7,Odilon Kossounou,DF,2001-01-04,25,35,0,Atalanta,Emerse Faé,0
+722ed0c5b44043968a9b2773,501,19,8,Franck Kessié,MF,1996-12-19,29,103,15,Al-Ahli,Emerse Faé,0
+595d03be09754be49b23190c,502,19,9,Ange-Yoan Bonny,FW,2003-10-25,22,1,0,Inter Milan,Emerse Faé,0
+f785993b7ef94e078786920a,503,19,10,Simon Adingra,FW,2002-01-01,24,29,5,Monaco,Emerse Faé,0
+dc8bdbc81b87429fb47b4be3,504,19,11,Yan Diomande,FW,2006-11-14,19,10,3,RB Leipzig,Emerse Faé,0
+6adc0391196c4b4fa1bf2bbf,505,19,12,Elye Wahi,FW,2003-01-02,23,2,0,Nice,Emerse Faé,0
+ff8278ca1da14343b3286ab3,506,19,13,Christopher Opéri,DF,1997-04-29,29,12,0,İstanbul Başakşehir,Emerse Faé,0
+1db17e93234547c0a01aa536,507,19,14,Oumar Diakité,FW,2003-12-20,22,29,6,Cercle Brugge,Emerse Faé,0
+c8e310a73f364c12a657689c,508,19,15,Amad Diallo,FW,2002-07-11,23,19,6,Manchester United,Emerse Faé,0
+4c30717d8a764a7ab26d76d1,509,19,16,Mohamed Koné,GK,2002-03-07,24,0,0,Charleroi,Emerse Faé,0
+8f7750f8479745a491f432d9,510,19,17,Guéla Doué,DF,2002-10-17,23,20,3,Strasbourg,Emerse Faé,0
+5841efa624ca447f9333a783,511,19,18,Ibrahim Sangaré,MF,1997-12-02,28,58,12,Nottingham Forest,Emerse Faé,0
+602d0c3e886d40c28abf5d38,512,19,19,Nicolas Pépé,FW,1995-05-29,31,55,12,Villarreal,Emerse Faé,0
+e85c908ec3f04748a126ffe6,513,19,20,Emmanuel Agbadou,DF,1997-06-17,28,20,2,Beşiktaş,Emerse Faé,0
+c3ac764402ab4a1d8d7e559c,514,19,21,Evan Ndicka,DF,1999-08-20,26,28,0,Roma,Emerse Faé,0
+375e1cc796a74cc4af5a893f,515,19,22,Evann Guessand,FW,2001-07-01,24,21,4,Crystal Palace,Emerse Faé,0
+0a27aecadc3d48f6bdfbf5c9,516,19,23,Alban Lafont,GK,1999-01-23,27,4,0,Panathinaikos,Emerse Faé,0
+8131ece44485435d9f69cbe4,517,19,24,Bazoumana Touré,FW,2006-03-02,20,6,2,TSG Hoffenheim,Emerse Faé,0
+924c066cfe92447a8c384371,518,19,25,Parfait Guiagon,MF,2001-02-22,25,5,0,Charleroi,Emerse Faé,0
+caf0fb4d91044a05a1c93864,519,19,26,Christ Inao Oulaï,MF,2006-04-06,20,9,0,Trabzonspor,Emerse Faé,0
+797eb270caac4981a8464bf6,520,22,1,Zion Suzuki,GK,2002-08-21,23,24,0,Parma,Hajime Moriyasu,0
+be4eda7e4490488790e59013,521,22,2,Yukinari Sugawara,DF,2000-06-28,25,21,2,Werder Bremen,Hajime Moriyasu,0
+2922cfc4e919491392b3e82e,522,22,3,Shōgo Taniguchi,DF,1991-07-15,34,38,1,Sint-Truiden,Hajime Moriyasu,0
+e4ce20789b294e5290299ade,523,22,4,Kō Itakura,DF,1997-01-27,29,40,2,Ajax,Hajime Moriyasu,0
+277776fc8fb2457596af4cf3,524,22,5,Yūto Nagatomo,DF,1986-09-12,39,145,4,FC Tokyo,Hajime Moriyasu,0
+39924106f176432e9199be99,525,22,6,Wataru Endo,MF,1993-02-09,33,73,4,Liverpool,Hajime Moriyasu,0
+a90825bab8e14fceb3104e5c,526,22,7,Ao Tanaka,MF,1998-09-10,27,38,8,Leeds United,Hajime Moriyasu,0
+9aa7d6ce5bfa43e1b29ded24,527,22,8,Takefusa Kubo,MF,2001-06-04,25,49,7,Real Sociedad,Hajime Moriyasu,0
+461ce61533be451d8c840499,528,22,9,Keisuke Gotō,FW,2005-06-03,21,4,0,Sint-Truiden,Hajime Moriyasu,0
+ea1d6373ca1c4feb9e2738e3,529,22,10,Ritsu Dōan,MF,1998-06-16,27,65,11,Eintracht Frankfurt,Hajime Moriyasu,0
+2b76cb55a64f4619909ff102,530,22,11,Daizen Maeda,MF,1997-10-20,28,27,4,Celtic,Hajime Moriyasu,0
+208f39e5a237429bba50d63e,531,22,12,Keisuke Ōsako,GK,1999-07-28,26,11,0,Sanfrecce Hiroshima,Hajime Moriyasu,0
+dd2695cfa6784d6ebcadb55d,532,22,13,Keito Nakamura,MF,2000-07-28,25,25,10,Reims,Hajime Moriyasu,0
+d635f0fe6c964cf39850bd61,533,22,14,Junya Itō,MF,1993-03-09,33,69,15,Genk,Hajime Moriyasu,0
+3948bf5d39a0440c80bc94fd,534,22,15,Daichi Kamada,MF,1996-08-05,29,49,12,Crystal Palace,Hajime Moriyasu,0
+b7a78f1513d54f64a099890c,535,22,16,Tsuyoshi Watanabe,DF,1997-02-05,29,11,0,Feyenoord,Hajime Moriyasu,0
+77afe7da5b704df992a3e9b8,536,22,17,Yuito Suzuki,MF,2001-10-25,24,6,0,SC Freiburg,Hajime Moriyasu,0
+ced5bb63cdec45cbac6fed70,537,22,18,Ayase Ueda,FW,1998-08-28,27,39,16,Feyenoord,Hajime Moriyasu,0
+1511489aa96b4373bb5c55b8,538,22,19,Kōki Ogawa,FW,1997-08-08,28,15,11,NEC,Hajime Moriyasu,0
+3b7b62e0b8774033b2704b5f,539,22,20,Ayumu Seko,DF,2000-06-07,26,14,0,Le Havre,Hajime Moriyasu,0
+184a78a41f7548bea502f3ee,540,22,21,Hiroki Itō,DF,1999-05-12,27,24,1,Bayern Munich,Hajime Moriyasu,0
+75cb437171c9431d8f8c4e80,541,22,22,Takehiro Tomiyasu,DF,1998-11-05,27,43,1,Ajax,Hajime Moriyasu,0
+4865c4891ebb46e4b11b5d13,542,22,23,Tomoki Hayakawa,GK,1999-03-03,27,4,0,Kashima Antlers,Hajime Moriyasu,0
+77965c055b8d47deb99d4d93,543,22,24,Kaishū Sano,MF,2000-12-30,25,13,0,Mainz 05,Hajime Moriyasu,0
+bcbdf1a6f8a24459a5dfed59,544,22,25,Junnosuke Suzuki,DF,2003-07-12,22,6,0,Copenhagen,Hajime Moriyasu,0
+f144fba61aba414bbe42a494,545,22,26,Kento Shiogai,FW,2005-03-26,21,2,0,VfL Wolfsburg,Hajime Moriyasu,0
+34d4024f545149fab7931076,546,21,1,Bart Verbruggen,GK,2002-08-18,23,28,0,Brighton & Hove Albion,Ronald Koeman,0
+39d7210f362a42108f544767,547,21,2,Jurriën Timber,DF,2001-06-17,24,24,0,Arsenal,Ronald Koeman,0
+9bc1f7dd4c6a40cb9317d5e8,548,21,3,Marten de Roon,MF,1991-03-29,35,43,1,Atalanta,Ronald Koeman,0
+fe295fc279bf4fb5b7485d0a,549,21,4,Virgil van Dijk,DF,1991-07-08,34,91,12,Liverpool,Ronald Koeman,0
+40059c24acb5498b9c83c8e2,550,21,5,Nathan Aké,DF,1995-02-18,31,59,5,Manchester City,Ronald Koeman,0
+bafd6916bf4046c28208e771,551,21,6,Jan Paul van Hecke,DF,2000-06-08,26,11,0,Brighton & Hove Albion,Ronald Koeman,0
+f8127d3cb98e4210a079061a,552,21,7,Justin Kluivert,MF,1999-05-05,27,12,0,Bournemouth,Ronald Koeman,0
+d616375fbd4240da80cf90dd,553,21,8,Ryan Gravenberch,MF,2002-05-16,24,26,1,Liverpool,Ronald Koeman,0
+42a57021e73c455daae8c48a,554,21,9,Wout Weghorst,FW,1992-08-07,33,52,14,Ajax,Ronald Koeman,0
+69f9bda5117247c399f0288b,555,21,10,Memphis Depay,FW,1994-02-13,32,109,55,Corinthians,Ronald Koeman,0
+58df2ae0cd2a4979970b61d6,556,21,11,Cody Gakpo,FW,1999-05-07,27,49,19,Liverpool,Ronald Koeman,0
+f9eba133fb8f40ae99aaf933,557,21,12,Mats Wieffer,DF,1999-11-16,26,15,1,Brighton & Hove Albion,Ronald Koeman,0
+4387cdbb0d214720902fc3e5,558,21,13,Robin Roefs,GK,2003-01-17,23,1,0,Sunderland,Ronald Koeman,0
+e623205441c74ea59f5c68cf,559,21,14,Tijjani Reijnders,MF,1998-07-29,27,31,7,Manchester City,Ronald Koeman,0
+ab1814b54ff54021a99f6435,560,21,15,Micky van de Ven,DF,2001-04-19,25,20,1,Tottenham Hotspur,Ronald Koeman,0
+9c2dc9fd10524d698760bccd,561,21,16,Guus Til,MF,1997-12-22,28,6,1,PSV Eindhoven,Ronald Koeman,0
+9dd0a2cffb95480a93955077,562,21,17,Noa Lang,FW,1999-06-17,26,15,3,Galatasaray,Ronald Koeman,0
+ad97041ea20e41a3af7daa05,563,21,18,Donyell Malen,FW,1999-01-19,27,52,13,Roma,Ronald Koeman,0
+3803cc905a6148c9a0fe4e7a,564,21,19,Brian Brobbey,FW,2002-02-01,24,11,1,Sunderland,Ronald Koeman,0
+3e97db54a41f44ab82f98989,565,21,20,Teun Koopmeiners,MF,1998-02-28,28,28,3,Juventus,Ronald Koeman,0
+64448a7b445748d997a15e0e,566,21,21,Frenkie de Jong,MF,1997-05-12,29,65,2,Barcelona,Ronald Koeman,0
+5d16b1eb3ae84c51a4d79aa3,567,21,22,Denzel Dumfries,DF,1996-04-18,30,71,11,Inter Milan,Ronald Koeman,0
+bef44bd5ac8a4219bb81261c,568,21,23,Mark Flekken,GK,1993-06-13,32,11,0,Bayer Leverkusen,Ronald Koeman,0
+8d7914afbee4415b99f35feb,569,21,24,Crysencio Summerville,FW,2001-10-30,24,1,0,West Ham United,Ronald Koeman,0
+506e6d373d3341cb927db810,570,21,25,Jorrel Hato,DF,2006-03-07,20,8,0,Chelsea,Ronald Koeman,0
+60f479329c71493b82d662cf,571,21,26,Quinten Timber,MF,2001-06-17,24,11,1,Marseille,Ronald Koeman,0
+94fb416532334a90b6559dcb,572,23,1,Jacob Widell Zetterström,GK,1998-07-11,27,3,0,Derby County,,0
+1378ff7eab3c4391a24f6e5f,573,23,2,Gustaf Lagerbielke,DF,2000-04-10,26,11,2,Braga,,0
+d94174385e3345bca7f00ebd,574,23,3,Victor Lindelöf,DF,1994-07-17,31,76,3,Aston Villa,,0
+40ff349da1d24a019e012138,575,23,4,Isak Hien,DF,1999-01-13,27,29,0,Atalanta,,0
+dc447ee1ab3b4f8c8fb3717f,576,23,5,Gabriel Gudmundsson,DF,1999-04-29,27,24,0,Leeds United,,0
+c3b69d7aafed4db5bad70904,577,23,6,Herman Johansson,DF,1997-10-16,28,3,0,FC Dallas,,0
+027594d4c9e84927877b84c3,578,23,7,Lucas Bergvall,MF,2006-02-02,20,10,0,Tottenham Hotspur,,0
+a14e4e4915fb4716902fc434,579,23,8,Daniel Svensson,DF,2002-02-12,24,13,0,Borussia Dortmund,,0
+ca45b816ba944a8b91e1cb11,580,23,9,Alexander Isak,FW,1999-09-21,26,58,17,Liverpool,,0
+b2e1ada7047e452a9db4f0b1,581,23,10,Benjamin Nygren,MF,2001-07-08,24,11,3,Celtic,,0
+16ed14f5eeec4793844dd9e3,582,23,11,Anthony Elanga,FW,2002-04-27,24,30,6,Newcastle United,,0
+9eaf0f7e6bc7448f95359f26,583,23,12,Viktor Johansson,GK,1998-09-14,27,12,0,Stoke City,,0
+dcd62abe6d5044cfbd8e264b,584,23,13,Ken Sema,MF,1993-09-30,32,33,5,Pafos,,0
+c8bda4402525432b887fa06b,585,23,14,Hjalmar Ekdal,DF,1998-10-21,27,13,0,Burnley,,0
+9f444ca32713487ca7aab9be,586,23,15,Carl Starfelt,DF,1995-06-01,31,18,0,Celta Vigo,,0
+4a671edeef98456cbd12cdb1,587,23,16,Jesper Karlström,MF,1995-06-21,30,25,0,Udinese,,0
+9ac77ef43c3543a499f19e7a,588,23,17,Viktor Gyökeres,FW,1998-06-04,28,33,20,Arsenal,,0
+48cd72ef481041408c6ddd3f,589,23,18,Yasin Ayari,MF,2003-10-06,22,21,3,Brighton & Hove Albion,,0
+e03ab2f5e8c849b1ba4cd7ad,590,23,19,Mattias Svanberg,MF,1999-01-05,27,41,2,VfL Wolfsburg,,0
+f57c62eccadc4718823bbf9c,591,23,20,Eric Smith,DF,1997-01-08,29,2,0,FC St. Pauli,,0
+fd8b5a6389d042c3b1bd1d7f,592,23,21,Alexander Bernhardsson,DF,1998-09-08,27,11,0,Holstein Kiel,,0
+a3aab4dddfb04234b174a029,593,23,22,Besfort Zeneli,MF,2002-11-21,23,8,0,Union Saint-Gilloise,,0
+208164a8eeb5403ca76b1f00,594,23,23,Kristoffer Nordfeldt,GK,1989-06-23,36,21,0,AIK,,0
+8a34e935a58448e9929f173c,595,23,24,Elliot Stroud,DF,2002-06-22,23,1,0,Mjällby AIF,,0
+0398b28953cb4c07af10dee4,596,23,25,Gustaf Nilsson,FW,1997-05-23,29,10,4,Club Brugge,,0
+7799a10a3593432fb8eacaa0,597,23,26,Taha Ali,FW,1998-07-01,27,2,0,Malmö FF,,0
+b213e4f7a7184053805a6d12,598,24,1,Mouhib Chamakh,GK,2001-08-25,24,2,0,Club Africain,,0
+fab38d9eb2974e418dfbf7c9,599,24,2,Ali Abdi,DF,1993-12-20,32,46,7,Nice,,0
+7d8d358bfc8a43a8918ecc7b,600,24,3,Montassar Talbi,DF,1998-05-26,28,64,4,Lorient,,0
+b57418bba29644629649c2ef,601,24,4,Omar Rekik,DF,2001-12-20,24,6,0,Maribor,,0
+12d8edbc8e884777a1d4a9c5,602,24,5,Adem Arous,DF,2004-07-17,21,2,0,Kasımpaşa,,0
+bc7bef8fdbf9457fa1b2f88d,603,24,6,Dylan Bronn,DF,1995-06-19,30,52,2,Servette,,0
+ae5cef71907e46fdadea0a68,604,24,7,Elias Achouri,FW,1999-02-10,27,30,4,Copenhagen,,0
+7843e1e0658849c9a7223b18,605,24,8,Elias Saad,FW,1999-12-27,26,15,4,Hannover 96,,0
+17f295426d1e4c43a6ead0a3,606,24,9,Hazem Mastouri,FW,1997-06-18,28,19,4,Dynamo Makhachkala,,0
+4dee9b8d431e4c03b298f86b,607,24,10,Hannibal Mejbri,MF,2003-01-21,23,45,1,Burnley,,0
+161affde70904f20b036b464,608,24,11,Ismaël Gharbi,MF,2004-04-10,22,17,2,FC Augsburg,,0
+988be526c8b2440f8fe31270,609,24,12,Mortadha Ben Ouanes,DF,1994-07-02,31,18,0,Kasımpaşa,,0
+135382f61f214c18b6db6e09,610,24,13,Rani Khedira,MF,1994-01-27,32,3,0,Union Berlin,,0
+17244fc29bbc41f0aa6903bb,611,24,14,Khalil Ayari,MF,2005-02-02,21,4,0,Paris Saint-Germain,,0
+29b7837ba22b4b15935d1480,612,24,15,Hadj Mahmoud,MF,2000-04-24,26,9,0,Lugano,,0
+8b99dd9a881d44739759b2b8,613,24,16,Aymen Dahmen,GK,1997-01-28,29,37,0,CS Sfaxien,,0
+c2f199ef905c4de49124d42c,614,24,17,Ellyes Skhiri,MF,1995-05-10,31,83,4,Eintracht Frankfurt,,0
+0917fac3185249cf8eef6b82,615,24,18,Rayan Elloumi,FW,2007-09-17,18,4,0,Vancouver Whitecaps FC,,0
+528baf2250ea417e9bba4a88,616,24,19,Firas Chaouat,FW,1996-05-08,30,30,6,Club Africain,,0
+e84efceb82584a96996d1837,617,24,20,Yan Valery,DF,1999-02-22,27,22,0,Young Boys,,0
+9c7720a8bc3d4747a1718bd9,618,24,21,Mohamed Amine Ben Hamida,DF,1995-12-15,30,13,0,Espérance de Tunis,,0
+cf40954d53934ca29b88fd1f,619,24,22,Sabri Ben Hessen,GK,1996-06-13,29,2,0,Étoile du Sahel,,0
+ed320697cb404af88ce2f97c,620,24,23,Moutaz Neffati,DF,2004-09-04,21,5,0,IFK Norrköping,,0
+926f6085d2c7420dafdc97fe,621,24,24,Raed Chikhaoui,DF,2004-06-09,22,0,0,US Monastir,,0
+49e7d5085989443fa5175c33,622,24,25,Anis Ben Slimane,MF,2001-03-16,25,41,4,Norwich City,,0
+41929880935a4afea78d20e7,623,24,26,Sebastian Tounekti,MF,2002-07-13,23,12,1,Celtic,,0
+44fe1bf28dc7467cbeee2b2b,624,25,1,Thibaut Courtois,GK,1992-05-11,34,109,0,Real Madrid,,0
+75bc3598d3dd40638f7ac3a8,625,25,2,Zeno Debast,DF,2003-10-24,22,26,1,Sporting CP,,0
+cc8c6bc8bc104bf1bdd7892b,626,25,3,Arthur Theate,DF,2000-05-25,26,33,1,Eintracht Frankfurt,,0
+3aa44464b9314fcdbbcc0686,627,25,4,Brandon Mechele,DF,1993-01-28,33,9,1,Club Brugge,,0
+5be115d9e70a4c4ab2128b1a,628,25,5,Maxim De Cuyper,DF,2000-12-22,25,19,4,Brighton & Hove Albion,,0
+08833fdeb3824216bdd510ae,629,25,6,Axel Witsel,MF,1989-01-12,37,138,12,Girona,,0
+618e62f65597455f9c9521fd,630,25,7,Kevin De Bruyne,MF,1991-06-28,34,119,37,Napoli,,0
+47b1b5d9598240108732bda1,631,25,8,Youri Tielemans,MF,1997-05-07,29,85,13,Aston Villa,,0
+080a2f6e28bf4d85b4c5c073,632,25,9,Romelu Lukaku,FW,1993-05-13,33,126,90,Napoli,,0
+7dfc186b698f4b1ca18821ec,633,25,10,Leandro Trossard,FW,1994-12-04,31,51,12,Arsenal,,0
+98bca5863b2343a59a17cc7c,634,25,11,Jérémy Doku,FW,2002-05-27,24,43,7,Manchester City,,0
+f5f46b19baa947e6bf851496,635,25,12,Senne Lammens,GK,2002-07-07,23,2,0,Manchester United,,0
+08481dbdaf404fecbca24c9e,636,25,13,Mike Penders,GK,2005-07-31,20,0,0,Strasbourg,,0
+be5ef534a0044c54801a94f4,637,25,14,Dodi Lukébakio,FW,1997-09-24,28,30,6,Benfica,,0
+36490b59e2a6431ca002ac1b,638,25,15,Thomas Meunier,DF,1991-09-12,34,80,10,Lille,,0
+1823b27a1d664bb186d4fe99,639,25,16,Koni De Winter,DF,2002-06-12,23,8,0,Milan,,0
+788c8e09926a4aa8bf2b07c1,640,25,17,Charles De Ketelaere,FW,2001-03-10,25,30,6,Atalanta,,0
+51c236517c0047d3a6a2d156,641,25,18,Joaquin Seys,DF,2005-03-28,21,5,0,Club Brugge,,0
+5d7cfb55db7146e787462fdd,642,25,19,Diego Moreira,MF,2004-08-06,21,3,0,Strasbourg,,0
+8e14031d6a8a4c3ab79761b1,643,25,20,Hans Vanaken,MF,1992-08-24,33,34,7,Club Brugge,,0
+39f392c42f354ca990961d83,644,25,21,Timothy Castagne,DF,1995-12-05,30,63,2,Fulham,,0
+d94d8e4428f44a66b6012106,645,25,22,Alexis Saelemaekers,MF,1999-06-27,26,24,2,Milan,,0
+6fd0cf27ee284da0bce8aa64,646,25,23,Nicolas Raskin,MF,2001-02-23,25,13,2,Rangers,,0
+cd6460ca5bf94d4bba5d236c,647,25,24,Amadou Onana,MF,2001-08-16,24,29,1,Aston Villa,,0
+082c03ac676643e580b96ed1,648,25,25,Nathan Ngoy,DF,2003-06-10,23,4,0,Lille,,0
+46c0a22ec1914fcfbae4bbeb,649,25,26,Matias Fernandez-Pardo,FW,2005-02-03,21,2,0,Lille,,0
+858ed6fd5b4a40579e2424f3,650,26,1,Mohamed El Shenawy,GK,1988-12-18,37,76,0,Al Ahly,Hossam Hassan,0
+fd2b66d0f95e4b6fac5f1b1e,651,26,2,Yasser Ibrahim,DF,1993-02-10,33,17,1,Al Ahly,Hossam Hassan,0
+2c9dd7fbae534aa8b8872955,652,26,3,Mohamed Hany,DF,1996-02-02,30,42,0,Al Ahly,Hossam Hassan,0
+024f4d63be89405c839c1e02,653,26,4,Hossam Abdelmaguid,DF,2001-04-30,25,13,0,Zamalek,Hossam Hassan,0
+d8f81332618c42fca1fb43f3,654,26,5,Ramy Rabia,DF,1993-05-20,33,44,5,Al Ain,Hossam Hassan,0
+b05aa67ec85a4f8e907eeaaf,655,26,6,Mohamed Abdelmonem,DF,1999-02-01,27,36,3,Nice,Hossam Hassan,0
+2a12e8cec7fa49d69735cd64,656,26,7,Trézéguet,FW,1994-10-01,31,96,23,Al Ahly,Hossam Hassan,0
+6938c3c6611441579dcfeeb9,657,26,8,Emam Ashour,MF,1998-02-20,28,29,0,Al Ahly,Hossam Hassan,0
+f32cac4a24f9486aba73a471,658,26,9,Hamza Abdelkarim,FW,2008-01-01,18,2,0,Barcelona B,Hossam Hassan,0
+db09b59aa4a8493b9d32521b,659,26,10,Mohamed Salah,FW,1992-06-15,33,116,67,Liverpool,Hossam Hassan,0
+62b5b4a67893481284d3d512,660,26,11,Mostafa Ziko,MF,1997-04-27,29,2,2,Pyramids,Hossam Hassan,0
+ad9dd892b27442a5856eafa2,661,26,12,Haissem Hassan,FW,2002-02-08,24,4,0,Oviedo,Hossam Hassan,0
+63255075deca43068695d2af,662,26,13,Ahmed Fatouh,DF,1998-03-22,28,39,1,Zamalek,Hossam Hassan,0
+00c52ae4283948fc8c0455df,663,26,14,Hamdy Fathy,MF,1994-09-29,31,63,3,Al-Wakrah,Hossam Hassan,0
+29e5189849b24887bf1f527d,664,26,15,Karim Hafez,DF,1996-03-12,30,9,0,Pyramids,Hossam Hassan,0
+3ec0a26c6ab04f6da63bbd04,665,26,16,El Mahdy Soliman,GK,1987-06-08,39,0,0,Zamalek,Hossam Hassan,0
+82844936dc484aaf86023a5a,666,26,17,Mohanad Lasheen,MF,1996-05-29,30,23,0,Pyramids,Hossam Hassan,0
+e2fda39b9571457085e1e403,667,26,18,Nabil Emad,MF,1996-04-06,30,12,0,Al-Najma,Hossam Hassan,0
+0b39ca6022074439ac59c55a,668,26,19,Marwan Attia,MF,1998-08-01,27,34,1,Al Ahly,Hossam Hassan,0
+5a3d8153fcc24fd1bb201260,669,26,20,Ibrahim Adel,FW,2001-04-23,25,24,3,Nordsjælland,Hossam Hassan,0
+0d3bffb3154e4506a272473e,670,26,21,Mahmoud Saber,MF,2001-07-30,24,15,1,ZED,Hossam Hassan,0
+40a7091182974fada809f865,671,26,22,Omar Marmoush,FW,1999-02-07,27,49,11,Manchester City,Hossam Hassan,0
+a694477d99fd461c8cd560ee,672,26,23,Mostafa Shobeir,GK,2000-05-15,26,9,0,Al Ahly,Hossam Hassan,0
+76c368e3c7dd4912bd364bdd,673,26,24,Tarek Alaa,DF,2002-01-05,24,3,0,ZED,Hossam Hassan,0
+92d287e99ab049b5ae2b9f6d,674,26,25,Zizo,FW,1996-01-10,30,63,5,Al Ahly,Hossam Hassan,0
+9bbd8a106a05490ab86fec8c,675,26,26,Mohamed Alaa,GK,1999-01-01,27,0,0,El Gouna,Hossam Hassan,0
+784be9d67c1c46fe9565ef49,676,27,1,Alireza Beiranvand,GK,1992-09-21,33,86,0,Tractor,Amir Ghalenoei,0
+e0598467a7e14bec9130005e,677,27,2,Saleh Hardani,DF,1998-12-26,27,18,1,Esteghlal,Amir Ghalenoei,0
+23902de92431493e855f3083,678,27,3,Ehsan Hajsafi,DF,1990-02-25,36,146,7,Sepahan,Amir Ghalenoei,0
+de988f45d883429e9db7a31b,679,27,4,Shojae Khalilzadeh,DF,1989-05-14,37,58,2,Tractor,Amir Ghalenoei,0
+51b201a2951d46a681d898b3,680,27,5,Milad Mohammadi,DF,1993-09-29,32,76,1,Persepolis,Amir Ghalenoei,0
+306ce5c0534b40618204a05a,681,27,6,Saeid Ezatolahi,MF,1996-10-01,29,83,2,Shabab Al Ahli,Amir Ghalenoei,0
+f292a4a68f4444ae97894982,682,27,7,Alireza Jahanbakhsh,MF,1993-08-11,32,98,17,Dender,Amir Ghalenoei,0
+d46c0f35f09d45fd8ca3f253,683,27,8,Mohammad Mohebi,MF,1998-12-20,27,36,14,Rostov,Amir Ghalenoei,0
+f7d93a32a7ad40f98d70de5e,684,27,9,Mehdi Taremi,FW,1992-07-18,33,105,60,Olympiacos,Amir Ghalenoei,0
+ce9262116d4e4292afcb9d75,685,27,10,Mehdi Ghayedi,FW,1998-12-05,27,30,10,Al Nasr,Amir Ghalenoei,0
+e15dde21f6234808af4f4450,686,27,11,Ali Alipour,FW,1995-11-11,30,14,1,Persepolis,Amir Ghalenoei,0
+2262aba7025b4fc1a7d8d1c6,687,27,12,Payam Niazmand,GK,1995-04-06,31,15,0,Persepolis,Amir Ghalenoei,0
+ca10ab18c76c4d4a8e8fa849,688,27,13,Hossein Kanaanizadegan,DF,1994-03-23,32,65,6,Persepolis,Amir Ghalenoei,0
+cad5211189194efbac9cd8c9,689,27,14,Saman Ghoddos,MF,1993-09-06,32,68,3,Kalba,Amir Ghalenoei,0
+42955b3edb5042ab8c5637b6,690,27,15,Rouzbeh Cheshmi,MF,1993-07-24,32,40,3,Esteghlal,Amir Ghalenoei,0
+a3a222e8359f442dbc72b932,691,27,16,Mehdi Torabi,MF,1994-09-10,31,52,7,Tractor,Amir Ghalenoei,0
+5570e28bc23f4caaa938454d,692,27,17,Aria Yousefi,DF,2002-04-22,24,14,1,Sepahan,Amir Ghalenoei,0
+c6793f2adaf1444a8ceee5fd,693,27,18,Amirhossein Hosseinzadeh,FW,2000-10-30,25,18,5,Tractor,Amir Ghalenoei,0
+0ed4c15e722f442785ecfce1,694,27,19,Ali Nemati,DF,1996-02-08,30,17,0,Foolad,Amir Ghalenoei,0
+1685c6807ee24ded801e1c1e,695,27,20,Shahriyar Moghanlou,FW,1994-12-21,31,21,2,Kalba,Amir Ghalenoei,0
+0643c07f425e44d18c02e826,696,27,21,Mohammad Ghorbani,MF,2001-10-07,24,16,0,Al Wahda,Amir Ghalenoei,0
+0c630edc948643d8b483182f,697,27,22,Hossein Hosseini,GK,1992-06-30,33,13,0,Sepahan,Amir Ghalenoei,0
+1cf20ac2dd2b47bc8683d085,698,27,23,Ramin Rezaeian,DF,1990-03-21,36,74,8,Foolad,Amir Ghalenoei,0
+bfc5c9811e6546e3b6c0593d,699,27,24,Dennis Eckert,FW,1997-01-09,29,0,0,Standard Liège,Amir Ghalenoei,0
+4f4b43acef8d49c3b08d951c,700,27,25,Danial Eiri,DF,2003-10-26,22,0,0,Malavan,Amir Ghalenoei,0
+53b652dc74224c38a3175747,701,27,26,Amirmohammad Razzaghinia,MF,2006-04-11,20,4,0,Esteghlal,Amir Ghalenoei,0
+0c46d09530164515ab46091c,702,28,1,Max Crocombe,GK,1993-08-12,32,24,0,Millwall,,0
+92247303135742ccb3242b16,703,28,2,Tim Payne,DF,1994-01-10,32,51,3,Wellington Phoenix,,0
+6ba156cd14a540c7af4d839c,704,28,3,Francis de Vries,DF,1994-11-28,31,20,1,Auckland FC,,0
+4c6fd2d0ff2d42f78a62abbc,705,28,4,Tyler Bindon,DF,2005-01-27,21,25,3,Sheffield United,,0
+39aaaa695c534de68b0d329c,706,28,5,Michael Boxall,DF,1988-08-18,37,63,1,Minnesota United FC,,0
+bc27579e2f044071a218e217,707,28,6,Joe Bell,MF,1999-04-27,27,32,1,Viking,,0
+9697186db18e424cb8c0e428,708,28,7,Matthew Garbett,MF,2002-04-13,24,37,5,Peterborough United,,0
+f762371e5ce44fae962a46fe,709,28,8,Marko Stamenić,MF,2002-02-19,24,39,3,Swansea City,,0
+aed98fa4f635400ca9a9fcec,710,28,9,Chris Wood,FW,1991-12-07,34,90,45,Nottingham Forest,,0
+6e629d14b4f743eba346d3e8,711,28,10,Sarpreet Singh,MF,1999-02-20,27,28,3,Wellington Phoenix,,0
+c76565c758c0432cb9dcdcf2,712,28,11,Elijah Just,MF,2000-05-01,26,44,9,Motherwell,,0
+2e7fa2c848464486a9e9a84f,713,28,12,Alex Paulsen,GK,2002-07-04,23,8,0,Lechia Gdańsk,,0
+18f42579ce1944b393690283,714,28,13,Liberato Cacace,DF,2000-09-27,25,37,1,Wrexham,,0
+67e0f29171034e648fc9dd2d,715,28,14,Alex Rufer,MF,1996-06-12,29,26,0,Wellington Phoenix,,0
+d478d7a6b00f41108e2000d4,716,28,15,Nando Pijnaker,DF,1999-02-25,27,25,0,Auckland FC,,0
+f721bb7373ed4555adec6686,717,28,16,Finn Surman,DF,2003-09-23,22,19,2,Portland Timbers,,0
+514cbb1cd51145928be2282d,718,28,17,Kosta Barbarouses,FW,1990-02-19,36,76,10,Western Sydney Wanderers,,0
+e12b77a890dc42da96367ab1,719,28,18,Ben Waine,FW,2001-06-11,25,31,9,Port Vale,,0
+cc4562847d784a9bbe228475,720,28,19,Ben Old,MF,2002-08-13,23,24,2,Saint-Étienne,,0
+872f7cacbba240d89ac2e14c,721,28,20,Callum McCowatt,MF,1999-04-30,27,32,4,Silkeborg,,0
+b39e350face2479da757c58e,722,28,21,Jesse Randall,FW,2002-08-19,23,11,2,Auckland FC,,0
+428e8040cb3649aa85b8ab89,723,28,22,Michael Woud,GK,1999-01-16,27,6,0,Auckland FC,,0
+72a443c2be6748b7badfa3db,724,28,23,Ryan Thomas,MF,1994-12-20,31,25,3,PEC Zwolle,,0
+4813d2049e4d4282acfca594,725,28,24,Callan Elliot,DF,1999-07-07,26,11,0,Auckland FC,,0
+7cf245476a4e4f88919f176a,726,28,25,Lachlan Bayliss,MF,2002-07-24,23,4,0,Newcastle Jets,,0
+7951717763294e3985122580,727,28,26,Tommy Smith,DF,1990-03-31,36,56,2,Braintree Town,,0
+462a07575268452f9b7d375f,728,30,1,Vozinha,GK,1986-06-03,40,86,0,Chaves,Bubista,0
+7c121e31771541a182d97803,729,30,2,Stopira,DF,1988-05-20,38,62,4,Torreense,Bubista,0
+2635d00a41a2456dba285bd5,730,30,3,Diney,DF,1995-01-17,31,30,2,Al Bataeh,Bubista,0
+b39b2f7287df42b5817425da,731,30,4,Roberto Lopes,DF,1992-06-17,33,45,0,Shamrock Rovers,Bubista,0
+ffe537aabf4347e59a0b6c7b,732,30,5,Logan Costa,DF,2001-04-01,25,28,0,Villarreal,Bubista,0
+a3f6ad4cfd0040148698d169,733,30,6,Kevin Pina,MF,1997-01-27,29,31,3,Krasnodar,Bubista,0
+cdc1dd09866c4a50b9a42548,734,30,7,Jovane Cabral,MF,1998-06-14,27,27,2,Estrela Amadora,Bubista,0
+a5372d1b01bb45b2aa312194,735,30,8,João Paulo,MF,1998-05-26,28,42,1,FCSB,Bubista,0
+05dd9e42e0de4b34aa5489bc,736,30,9,Gilson Benchimol,FW,2001-12-29,24,22,6,Akron Tolyatti,Bubista,0
+0698ba408d4a4a64857a79a6,737,30,10,Jamiro Monteiro,MF,1993-11-23,32,55,5,PEC Zwolle,Bubista,0
+fff7b04517be4a3a95f2b7d3,738,30,11,Garry Rodrigues,MF,1990-11-27,35,60,10,Apollon Limassol,Bubista,0
+9f1c51b076624f5da45986c6,739,30,12,Márcio Rosa,GK,1997-02-23,29,11,0,Montana,Bubista,0
+9686c0eb0f844d04842ff0c3,740,30,13,Sidny Lopes Cabral,DF,2002-09-18,23,9,3,Benfica,Bubista,0
+5543cddf5b1f4c2fba353b2f,741,30,14,Deroy Duarte,MF,1999-07-04,26,30,0,Ludogorets Razgrad,Bubista,0
+aeebdef4f2c14632ac3870d8,742,30,15,Laros Duarte,MF,1997-02-28,29,13,1,Puskás Akadémia,Bubista,0
+f122440c4234421e91435f7e,743,30,16,Yannick Semedo,MF,1995-12-29,30,10,1,Farense,Bubista,0
+3c1ddbe1e41a4c55b59eb2dc,744,30,17,Willy Semedo,MF,1994-04-27,32,38,3,Omonia,Bubista,0
+6e95cd45099b4bf4a2272a7b,745,30,18,Telmo Arcanjo,MF,2001-06-21,24,16,1,Vitória de Guimarães,Bubista,0
+4bf6d4fbc0ca4642bb75a7c5,746,30,19,Dailon Livramento,FW,2001-05-04,25,22,7,Casa Pia,Bubista,0
+56588640c6b148bf820e5bb4,747,30,20,Ryan Mendes,FW,1990-01-08,36,98,22,Iğdır,Bubista,0
+0113a4396c8b4310aec1cef4,748,30,21,Nuno da Costa,MF,1991-02-10,35,9,2,İstanbul Başakşehir,Bubista,0
+28d47330581c4b4e99dca100,749,30,22,Steven Moreira,DF,1994-08-13,31,20,0,Columbus Crew,Bubista,0
+3e44f2dc5a5d4e2d93f1c22e,750,30,23,CJ dos Santos,GK,2000-08-24,25,1,0,San Diego FC,Bubista,0
+73d17e983309461a93843887,751,30,24,Wagner Pina,DF,2002-11-03,23,13,0,Trabzonspor,Bubista,0
+b2f52d80983b43ff8764daf8,752,30,25,Kelvin Pires,DF,2000-06-05,26,5,1,SJK,Bubista,0
+bc8e218255bf469fa0ecb278,753,30,26,Hélio Varela,MF,2002-05-03,24,20,0,Maccabi Tel Aviv,Bubista,0
+fb397c53c41142d881010cc2,754,31,1,Nawaf Al-Aqidi,GK,2000-05-10,26,22,0,Al-Nassr,,0
+da0fa2d4d6d042a2a9191181,755,31,2,Ali Majrashi,DF,1999-10-02,26,21,0,Al-Ahli,,0
+5b560e1b112643388cf58d68,756,31,3,Ali Lajami,DF,1996-04-24,30,21,1,Al-Hilal,,0
+bd39cfb3e1b64a9494fe09cc,757,31,4,Abdulelah Al-Amri,DF,1997-01-15,29,42,1,Al-Nassr,,0
+f92b07a1d136472b9ac1a29c,758,31,5,Hassan Al-Tambakti,DF,1999-02-09,27,51,1,Al-Hilal,,0
+83d6c0bcfd8a46709d8fca57,759,31,6,Nasser Al-Dawsari,MF,1998-12-19,27,43,0,Al-Hilal,,0
+b83b075c84b94a0bad224747,760,31,7,Musab Al-Juwayr,MF,2003-06-20,22,34,6,Al-Qadsiah,,0
+8818f8b85b3b4bb3b866d66c,761,31,8,Ayman Yahya,FW,2001-05-14,25,26,0,Al-Nassr,,0
+0ccb914ce0534e9c8c7ee6a9,762,31,9,Firas Al-Buraikan,FW,2000-05-14,26,69,15,Al-Ahli,,0
+51fafdd074684f9b830913eb,763,31,10,Salem Al-Dawsari,FW,1991-08-19,34,109,27,Al-Hilal,,0
+a52ec7231609462e9812cfd1,764,31,11,Saleh Al-Shehri,FW,1993-11-01,32,55,18,Al-Ittihad,,0
+aa168a103e044d7fbb0df4ca,765,31,12,Saud Abdulhamid,DF,1999-07-18,26,54,1,Lens,,0
+bc8026943e8e463c89cc6a42,766,31,13,Nawaf Boushal,DF,1999-09-16,26,24,0,Al-Nassr,,0
+6013b77659e548dbb7c1deee,767,31,14,Hassan Kadesh,DF,1992-09-26,33,20,2,Al-Ittihad,,0
+df1671a12bfb4420b2eee1ca,768,31,15,Abdullah Al-Khaibari,MF,1996-08-16,29,39,0,Al-Nassr,,0
+156f07f910064b24af3c09b5,769,31,16,Ziyad Al-Johani,MF,2001-11-11,24,12,0,Al-Ahli,,0
+24b3268834cd4cc5beb6e38f,770,31,17,Khalid Al-Ghannam,FW,2000-11-08,25,6,0,Al-Ettifaq,,0
+7d0c014338174681b0124b37,771,31,18,Alaa Al-Hejji,MF,1995-12-03,30,2,0,Neom,,0
+253332e6d7c24addb3b4ced7,772,31,19,Abdullah Al-Hamdan,FW,1999-09-13,26,49,12,Al-Nassr,,0
+4531d2a5e2954c179b8aa620,773,31,20,Sultan Mandash,FW,1994-10-17,31,6,2,Al-Hilal,,0
+76ccaa69d48d4cb6ac7cd9db,774,31,21,Mohammed Al-Owais,GK,1991-10-10,34,63,0,Al-Ula,,0
+b18c157f14314ad8858b655c,775,31,22,Ahmed Al-Kassar,GK,1991-05-08,35,9,0,Al-Qadsiah,,0
+bd5a60b83bb44727b7f34c54,776,31,23,Mohamed Kanno,MF,1994-09-22,31,76,8,Al-Hilal,,0
+519756175bbe4c1eb04419f5,777,31,24,Moteb Al-Harbi,DF,2000-02-20,26,12,0,Al-Hilal,,0
+79fc1455ca6a474bb214b08b,778,31,25,Jehad Thakri,DF,2001-07-21,24,7,0,Al-Qadsiah,,0
+ee442af5281d4c1f80341d4a,779,31,26,Mohammed Abu Al-Shamat,DF,2002-08-11,23,6,0,Al-Qadsiah,,0
+8d01bd063ef5417b9d4a058f,780,29,1,David Raya,GK,1995-09-15,30,12,0,Arsenal,Luis de la Fuente,0
+ca11ed24004b4c8d996ccacb,781,29,2,Marc Pubill,DF,2003-06-20,22,1,0,Atlético Madrid,Luis de la Fuente,0
+d0354fa7016341d580a93d65,782,29,3,Álex Grimaldo,DF,1995-09-20,30,13,0,Bayer Leverkusen,Luis de la Fuente,0
+5e2ce42c168742bf8fc1fe4f,783,29,4,Eric García,DF,2001-01-09,25,20,0,Barcelona,Luis de la Fuente,0
+5c0b8fb85e8b4c6c8f25dfdb,784,29,5,Marcos Llorente,DF,1995-01-30,31,23,0,Atlético Madrid,Luis de la Fuente,0
+c5eda8fd2b184e30bd73476d,785,29,6,Mikel Merino,MF,1996-06-22,29,42,10,Arsenal,Luis de la Fuente,0
+760651351c164e118749f8a1,786,29,7,Ferran Torres,FW,2000-02-29,26,56,24,Barcelona,Luis de la Fuente,0
+56c2a2bb06a64291b95edaea,787,29,8,Fabián Ruiz,MF,1996-04-03,30,41,6,Paris Saint-Germain,Luis de la Fuente,0
+73d9691bd3b1428e95a9d44f,788,29,9,Gavi,MF,2004-08-05,21,29,5,Barcelona,Luis de la Fuente,0
+5a8cf22bf3e043b9bba99ce8,789,29,10,Dani Olmo,FW,1998-05-07,28,49,12,Barcelona,Luis de la Fuente,0
+823f1450b81743cab988fc7d,790,29,11,Yéremy Pino,FW,2002-10-20,23,22,4,Crystal Palace,Luis de la Fuente,0
+28049bf4e3db4cd2abcc94eb,791,29,12,Pedro Porro,DF,1999-09-13,26,17,0,Tottenham Hotspur,Luis de la Fuente,0
+d729c8382c594cbd958f5cd2,792,29,13,Joan Garcia,GK,2001-05-04,25,2,0,Barcelona,Luis de la Fuente,0
+a611816a7be1453cb72f530f,793,29,14,Aymeric Laporte,DF,1994-05-27,32,45,2,Athletic Bilbao,Luis de la Fuente,0
+3ef93f2aca814b74a36db579,794,29,15,Álex Baena,MF,2001-07-20,24,16,2,Atlético Madrid,Luis de la Fuente,0
+b84d941446064a428f84912c,795,29,16,Rodri,MF,1996-06-22,29,61,4,Manchester City,Luis de la Fuente,0
+3f488223ea94442285e88def,796,29,17,Nico Williams,FW,2002-07-12,23,30,6,Athletic Bilbao,Luis de la Fuente,0
+50e5a3cc744f438eaad0d638,797,29,18,Martín Zubimendi,MF,1999-02-02,27,25,3,Arsenal,Luis de la Fuente,0
+f825b98901644c3885171bf2,798,29,19,Lamine Yamal,FW,2007-07-13,18,25,6,Barcelona,Luis de la Fuente,0
+da23cde686384191a0270d01,799,29,20,Pedri,MF,2002-11-25,23,40,5,Barcelona,Luis de la Fuente,0
+d2d67088f0474e00af4932b8,800,29,21,Mikel Oyarzabal,FW,1997-04-21,29,52,24,Real Sociedad,Luis de la Fuente,0
+14bba1510aca43bcb4242054,801,29,22,Pau Cubarsí,DF,2007-01-22,19,11,0,Barcelona,Luis de la Fuente,0
+b0338ff757484728883b2e7c,802,29,23,Unai Simón,GK,1997-06-11,29,57,0,Athletic Bilbao,Luis de la Fuente,0
+525dfa00d4354cd3b8c5ecd1,803,29,24,Marc Cucurella,DF,1998-07-22,27,23,1,Chelsea,Luis de la Fuente,0
+8110e542ded34c5f8deac386,804,29,25,Víctor Muñoz,FW,2003-07-13,22,2,1,Osasuna,Luis de la Fuente,0
+3b7a003054554236bd88997a,805,29,26,Borja Iglesias,FW,1993-01-17,33,7,0,Celta Vigo,Luis de la Fuente,0
+9a1300e98d374c6dba8fee6e,806,32,1,Sergio Rochet,GK,1993-03-23,33,35,0,Internacional,,0
+99bab9dee78247caad96e665,807,32,2,José Giménez,DF,1995-01-20,31,99,8,Atlético Madrid,,0
+2b125e57ae9b4764b41fc692,808,32,3,Sebastián Cáceres,DF,1999-08-18,26,24,0,América,,0
+ba5466bdac0144748882b375,809,32,4,Ronald Araújo,DF,1999-03-07,27,27,1,Barcelona,,0
+ee08d5c0f73a422fb6b918d3,810,32,5,Manuel Ugarte,MF,2001-04-11,25,36,1,Manchester United,,0
+ded23ccaf5184a928ff86088,811,32,6,Rodrigo Bentancur,MF,1997-06-25,28,74,3,Tottenham Hotspur,,0
+db381710cfdf45d1b6ee343f,812,32,7,Nicolás de la Cruz,MF,1997-06-01,29,34,5,Flamengo,,0
+7097d2e235d3483b9d3c03ec,813,32,8,Federico Valverde,MF,1998-07-22,27,73,9,Real Madrid,,0
+404d15e0d5444f62a44f376f,814,32,9,Darwin Núñez,FW,1999-06-24,26,38,13,Al-Hilal,,0
+ff8ca032d23540daa0fcfee1,815,32,10,Giorgian de Arrascaeta,MF,1994-06-01,32,60,13,Flamengo,,0
+23cbb783e54d44a682b11707,816,32,11,Facundo Pellistri,FW,2001-12-20,24,39,2,Panathinaikos,,0
+970822416bad4f73807349ef,817,32,12,Santiago Mele,GK,1997-09-06,28,8,0,Monterrey,,0
+370c7e6770e945a9857548fb,818,32,13,Guillermo Varela,DF,1993-03-24,33,28,0,Flamengo,,0
+45f6893c40a14678920b6e53,819,32,14,Agustín Canobbio,MF,1998-10-01,27,15,1,Fluminense,,0
+491e63de14bb419aaf26ea00,820,32,15,Emiliano Martínez,MF,1999-08-17,26,10,0,Palmeiras,,0
+27ca3a1302bf4630a1989022,821,32,16,Mathías Olivera,DF,1997-10-31,28,35,2,Napoli,,0
+15b66ed722e2428e8c10df1c,822,32,17,Matías Viña,DF,1997-11-09,28,43,1,River Plate,,0
+4eed961177164b718f2af019,823,32,18,Brian Rodríguez,FW,2000-05-20,26,32,4,América,,0
+efe33ac65a554391abda7f84,824,32,19,Rodrigo Aguirre,FW,1994-10-01,31,10,3,UANL,,0
+bcbe0872161548efa9eda9f0,825,32,20,Maximiliano Araújo,MF,2000-02-15,26,28,3,Sporting CP,,0
+aa18e5ddb7c14c218ea5b9d1,826,32,21,Federico Viñas,FW,1998-06-30,27,11,2,Oviedo,,0
+0447c51b27884832bf058d88,827,32,22,Joaquín Piquerez,MF,1998-08-24,27,19,0,Palmeiras,,0
+b3d5104a0314481d978b7929,828,32,23,Fernando Muslera,GK,1986-06-16,39,134,0,Estudiantes,,0
+0cf985798a6d4f8c9bc73902,829,32,24,Santiago Bueno,DF,1998-11-09,27,8,0,Wolverhampton Wanderers,,0
+f585ef694d2849edbecddba4,830,32,25,Juan Manuel Sanabria,MF,2000-03-29,26,5,1,Real Salt Lake,,0
+5b101f402a634e08b971f7d4,831,32,26,Rodrigo Zalazar,MF,1999-08-12,26,8,2,Braga,,0
+672255d64b9244cc93e45db3,832,33,1,Brice Samba,GK,1994-04-25,32,4,0,Rennes,Didier Deschamps,0
+f2af70f05e59459abf513581,833,33,2,Malo Gusto,DF,2003-05-19,23,10,0,Chelsea,Didier Deschamps,0
+45e652d61a7b4ac69f161eb7,834,33,3,Lucas Digne,DF,1993-07-20,32,57,0,Aston Villa,Didier Deschamps,0
+0828c35285e449d8a6e24e29,835,33,4,Dayot Upamecano,DF,1998-10-27,27,37,2,Bayern Munich,Didier Deschamps,0
+08e9b23010914f94a911ea4b,836,33,5,Jules Koundé,DF,1998-11-12,27,47,0,Barcelona,Didier Deschamps,0
+7f65492199fc4273b5472fd9,837,33,6,Manu Koné,MF,2001-05-17,25,13,0,Roma,Didier Deschamps,0
+e00a40ac40864b3195114eb6,838,33,7,Ousmane Dembélé,FW,1997-05-15,29,58,7,Paris Saint-Germain,Didier Deschamps,0
+51d44a7df40e4d219339d254,839,33,8,Aurélien Tchouaméni,MF,2000-01-27,26,45,3,Real Madrid,Didier Deschamps,0
+999b4d99180f48eaae00be8d,840,33,9,Marcus Thuram,FW,1997-08-06,28,34,3,Inter Milan,Didier Deschamps,0
+c6de73b4454e4331aed69c19,841,33,10,Kylian Mbappé,FW,1998-12-20,27,97,56,Real Madrid,Didier Deschamps,0
+b304f9a28c5446d581912c5b,842,33,11,Michael Olise,FW,2001-12-12,24,16,4,Bayern Munich,Didier Deschamps,0
+be9f90126e444f1b8dcc653d,843,33,12,Bradley Barcola,FW,2002-09-02,23,19,3,Paris Saint-Germain,Didier Deschamps,0
+ddb8569a729d4ea7ab8144a0,844,33,13,N'Golo Kanté,MF,1991-03-29,35,68,2,Fenerbahçe,Didier Deschamps,0
+c917b144439b4a5fbcecee6e,845,33,14,Adrien Rabiot,MF,1995-04-03,31,58,7,Milan,Didier Deschamps,0
+63cc0ac4bd8c4e859dca42d7,846,33,15,Ibrahima Konaté,DF,1999-05-25,27,28,0,Liverpool,Didier Deschamps,0
+5f8123387b6a478280d8fc2c,847,33,16,Mike Maignan,GK,1995-07-03,30,39,0,Milan,Didier Deschamps,0
+e366ec18da9346d9a813a743,848,33,17,William Saliba,DF,2001-03-24,25,31,0,Arsenal,Didier Deschamps,0
+d8fc7ce2f6944d98b03066a8,849,33,18,Warren Zaïre-Emery,MF,2006-03-08,20,11,1,Paris Saint-Germain,Didier Deschamps,0
+3893a11cdfbc4a859946daf7,850,33,19,Théo Hernandez,DF,1997-10-06,28,43,2,Al-Hilal,Didier Deschamps,0
+e5103a31ac1e4fb5a7ca01f9,851,33,20,Désiré Doué,FW,2005-06-03,21,6,2,Paris Saint-Germain,Didier Deschamps,0
+670d67424ee34b1ba5e5de65,852,33,21,Lucas Hernandez,DF,1996-02-14,30,42,0,Paris Saint-Germain,Didier Deschamps,0
+fc67327dcc4c4d61b4c43844,853,33,22,Jean-Philippe Mateta,FW,1997-06-28,28,4,2,Crystal Palace,Didier Deschamps,0
+5224f265d003464e932c7551,854,33,23,Robin Risser,GK,2004-12-02,21,0,0,Lens,Didier Deschamps,0
+96e3534b17b34a3592a0eb33,855,33,24,Rayan Cherki,MF,2003-08-17,22,6,2,Manchester City,Didier Deschamps,0
+0d542a5946c0450f909432ec,856,33,25,Maghnes Akliouche,MF,2002-02-25,24,8,1,Monaco,Didier Deschamps,0
+84a7fe1396e0431b849a5720,857,33,26,Maxence Lacroix,DF,2000-04-06,26,3,0,Crystal Palace,Didier Deschamps,0
+184de89da1764dc1ba6ffdf9,858,35,1,Fahad Talib,GK,1994-10-21,31,21,0,Al-Talaba,,0
+5cc08e6667ae4b54a485f8b0,859,35,2,Rebin Sulaka,DF,1992-04-12,34,55,1,Port,,0
+a28037e5f91c440fac025716,860,35,3,Hussein Ali,DF,2002-03-01,24,26,1,Pogoń Szczecin,,0
+0f20825b9a6c4f0f941fe280,861,35,4,Zaid Tahseen,DF,2001-01-29,25,27,1,Pakhtakor,,0
+1e1c5b837add4a11b101a8cc,862,35,5,Akam Hashim,DF,1998-08-16,27,13,1,Al-Zawraa,,0
+8861579490fb415e900b84cb,863,35,6,Manaf Younis,DF,1996-11-16,29,33,1,Al-Shorta,,0
+036d67502aa547b791ecda8e,864,35,7,Youssef Amyn,MF,2003-08-21,22,26,2,AEK Larnaca,,0
+bd3a786e42af445ab03fa2c0,865,35,8,Ibrahim Bayesh,MF,2000-05-01,26,75,8,Al Dhafra,,0
+e6507d333e57421989ab7082,866,35,9,Ali Al-Hamadi,FW,2002-03-01,24,19,5,Luton Town,,0
+36536a383e7a473f9650c10b,867,35,10,Mohanad Ali,FW,2000-06-20,25,71,27,Dibba,,0
+bc41450fa7e44420a18b41d3,868,35,11,Ahmed Qasem,FW,2003-07-12,22,2,0,Nashville SC,,0
+84881f9018e742a0ab13cae5,869,35,12,Jalal Hassan,GK,1991-05-18,35,101,0,Al-Zawraa,,0
+dd33767eea294f1ea4f8a291,870,35,13,Ali Yousif,FW,1996-01-19,30,6,1,Al-Talaba,,0
+3ec61c8867e14878869c221e,871,35,14,Zidane Iqbal,MF,2003-04-27,23,24,2,Utrecht,,0
+3cdf5ae9c8cd4e41842dd862,872,35,15,Ahmed Maknzi,DF,2001-09-24,24,6,0,Al-Karma,,0
+762630d305fe4972b1ee15a8,873,35,16,Amir Al-Ammari,MF,1997-07-27,28,50,3,Cracovia,,0
+654402c7ee38487fa2d8c2fe,874,35,17,Ali Jasim,FW,2004-01-20,22,36,2,Al-Najma,,0
+b225a6040f0942108aea5f0b,875,35,18,Aymen Hussein,FW,1996-03-22,30,94,33,Al-Karma,,0
+ea3f2d33e69c4b349dd0583d,876,35,19,Kevin Yakob,MF,2000-10-10,25,8,0,AGF,,0
+22582d50d7e245d7bb63cf63,877,35,20,Aimar Sher,MF,2002-12-20,23,6,0,Sarpsborg 08,,0
+305ce011d1b440e9ad3946ae,878,35,21,Marko Farji,FW,2004-03-16,22,11,0,Venezia,,0
+6f4fd70e27d648bdb28d0144,879,35,22,Ahmed Basil,GK,1996-08-19,29,15,0,Al-Shorta,,0
+69da47b67ff9438dbbf42045,880,35,23,Merchas Doski,DF,1999-12-07,26,31,1,Viktoria Plzeň,,0
+8a8edd1359844c59ac0e99ef,881,35,24,Zaid Ismail,MF,2002-01-03,24,6,0,Al-Talaba,,0
+84235669bd2f40929cbe9557,882,35,25,Mustafa Saadoon,DF,2001-05-25,25,16,0,Al-Shorta,,0
+83ebcea927fd4d3fb463825c,883,35,26,Frans Putros,DF,1993-07-14,32,27,0,Persib,,0
+62c9fea4500a4e76b729d4f0,884,36,1,Ørjan Nyland,GK,1990-09-10,35,71,0,Sevilla,Ståle Solbakken,0
+03ef506f779047abb9e4f728,885,36,2,Morten Thorsby,MF,1996-05-05,30,31,0,Cremonese,Ståle Solbakken,0
+8aa8961198704100a4bcb31a,886,36,3,Kristoffer Ajer,DF,1998-04-17,28,52,2,Brentford,Ståle Solbakken,0
+b22562b6dc914ed7861bbcae,887,36,4,Leo Østigård,DF,1999-11-28,26,38,1,Genoa,Ståle Solbakken,0
+70033dceeca34f32896be977,888,36,5,David Møller Wolfe,DF,2002-04-23,24,22,1,Wolverhampton Wanderers,Ståle Solbakken,0
+201aaa2941154426be1ad3a0,889,36,6,Patrick Berg,MF,1997-11-24,28,43,0,Bodø/Glimt,Ståle Solbakken,0
+7de9a309e2b9407aa368ef03,890,36,7,Alexander Sørloth,FW,1995-12-05,30,72,26,Atlético Madrid,Ståle Solbakken,0
+6b3aabde6a1747babbc4725d,891,36,8,Sander Berge,MF,1998-02-14,28,66,1,Fulham,Ståle Solbakken,0
+6054a04e38ab4968984affcd,892,36,9,Erling Haaland,FW,2000-07-21,25,50,55,Manchester City,Ståle Solbakken,0
+405cc762cc0542c5b9507feb,893,36,10,Martin Ødegaard,MF,1998-12-17,27,68,5,Arsenal,Ståle Solbakken,0
+cdc0e29fd67a496189d7f97b,894,36,11,Jørgen Strand Larsen,FW,2000-02-06,26,28,6,Crystal Palace,Ståle Solbakken,0
+acc7f21a9f7b43b2886aeb4c,895,36,12,Sander Tangvik,GK,2002-11-29,23,0,0,Hamburger SV,Ståle Solbakken,0
+c83571bd518d417d8a3555f6,896,36,13,Egil Selvik,GK,1997-07-30,28,7,0,Watford,Ståle Solbakken,0
+f4d4eac4dc8744aea6cc42ee,897,36,14,Fredrik Aursnes,MF,1995-12-10,30,22,1,Benfica,Ståle Solbakken,0
+b8a1bb07f3784800915a4879,898,36,15,Fredrik André Bjørkan,DF,1998-08-21,27,21,1,Bodø/Glimt,Ståle Solbakken,0
+f1676f8bfdad435dbc2293ac,899,36,16,Marcus Holmgren Pedersen,DF,2000-07-16,25,32,0,Torino,Ståle Solbakken,0
+83a564df2ce94e388edcf5fa,900,36,17,Torbjørn Heggem,DF,1999-01-12,27,15,0,Bologna,Ståle Solbakken,0
+07f9a17609b643558100217f,901,36,18,Kristian Thorstvedt,MF,1999-03-13,27,37,4,Sassuolo,Ståle Solbakken,0
+3518a37225ac4612aa5149cb,902,36,19,Thelo Aasgaard,MF,2002-05-02,24,8,5,Rangers,Ståle Solbakken,0
+44016201d7094ac7968e575d,903,36,20,Antonio Nusa,FW,2005-04-17,21,24,8,RB Leipzig,Ståle Solbakken,0
+dc2ee523ed674d82aa94271b,904,36,21,Andreas Schjelderup,MF,2004-06-01,22,12,1,Benfica,Ståle Solbakken,0
+0529a6f5551841138b6c2cb3,905,36,22,Oscar Bobb,MF,2003-07-12,22,20,2,Fulham,Ståle Solbakken,0
+5f32fa0f66c443c69745496f,906,36,23,Jens Petter Hauge,MF,1999-10-12,26,15,1,Bodø/Glimt,Ståle Solbakken,0
+4f2ace2e746d447ab9c7949b,907,36,24,Sondre Langås,DF,2001-02-02,25,3,0,Derby County,Ståle Solbakken,0
+2f2eb09b1633494f9b58cbdb,908,36,25,Henrik Falchener,DF,2003-05-08,23,1,0,Viking,Ståle Solbakken,0
+8b3faf7c53e148eba8f20601,909,36,26,Julian Ryerson,FW,1997-11-17,28,43,1,Borussia Dortmund,Ståle Solbakken,0
+d240a0821b0f4b83b8857a97,910,34,1,Yehvann Diouf,GK,1999-11-16,26,2,0,Nice,Pape Thiaw,0
+4ad485e2c09241afabe054df,911,34,2,Mamadou Sarr,DF,2005-08-29,20,7,0,Chelsea,Pape Thiaw,0
+4718e7a102c3481c9df1a1b1,912,34,3,Kalidou Koulibaly,DF,1991-06-20,34,102,2,Al-Hilal,Pape Thiaw,0
+8294243087a9411ea87c8aa7,913,34,4,Abdoulaye Seck,DF,1992-06-04,34,22,4,Maccabi Haifa,Pape Thiaw,0
+84f98bf74b964465813633b4,914,34,5,Idrissa Gueye,MF,1989-09-26,36,130,7,Everton,Pape Thiaw,0
+75b24336e39a43a08ae713f8,915,34,6,Pathé Ciss,MF,1994-03-16,32,29,0,Rayo Vallecano,Pape Thiaw,0
+52cef5eb0c3f4f5889e7ade8,916,34,7,Assane Diao,FW,2005-09-07,20,5,0,Como,Pape Thiaw,0
+b3ff68ade7714e11ad402106,917,34,8,Lamine Camara,MF,2004-01-01,22,32,7,Monaco,Pape Thiaw,0
+b1b9e239807e4892b2f3c067,918,34,9,Bamba Dieng,FW,2000-03-23,26,22,2,Lorient,Pape Thiaw,0
+4d1ca0b761e540ac80a7a07f,919,34,10,Sadio Mané,FW,1992-04-10,34,127,55,Al-Nassr,Pape Thiaw,0
+fedc867dea1b4eee97aadf6c,920,34,11,Nicolas Jackson,FW,2001-06-20,24,32,8,Bayern Munich,Pape Thiaw,0
+12d6800322874d50a50bd313,921,34,12,Cherif Ndiaye,FW,1996-01-23,30,18,4,Samsunspor,Pape Thiaw,0
+baf511c8b3144570ac789b38,922,34,13,Iliman Ndiaye,FW,2000-03-06,26,39,4,Everton,Pape Thiaw,0
+b5ba4e2fed6e477fa15ac5f7,923,34,14,Ismail Jakobs,DF,1999-08-17,26,29,0,Galatasaray,Pape Thiaw,0
+4f051ebd00af4a8ca6a1a29b,924,34,15,Krépin Diatta,DF,1999-02-25,27,60,2,Monaco,Pape Thiaw,0
+6c1211f3dd04439587529498,925,34,16,Édouard Mendy,GK,1992-03-01,34,56,0,Al-Ahli,Pape Thiaw,0
+55157b4c59744cafab792d21,926,34,17,Pape Matar Sarr,MF,2002-09-14,23,39,4,Tottenham Hotspur,Pape Thiaw,0
+2d9cc57a950449c99cdd803a,927,34,18,Ismaïla Sarr,FW,1998-02-25,28,82,19,Crystal Palace,Pape Thiaw,0
+d386f963e55943c0a25921f0,928,34,19,Moussa Niakhaté,DF,1996-03-08,30,30,0,Lyon,Pape Thiaw,0
+c4f3d97a532b473698a4a374,929,34,20,Ibrahim Mbaye,FW,2008-01-24,18,10,3,Paris Saint-Germain,Pape Thiaw,0
+d975a64c3da44069b87c18d3,930,34,21,Habib Diarra,MF,2004-01-03,22,20,4,Sunderland,Pape Thiaw,0
+6a1c9d1e9e864703989be843,931,34,22,Bara Sapoko Ndiaye,MF,2007-12-31,18,1,0,Bayern Munich,Pape Thiaw,0
+c47a3843149544bc814fd47f,932,34,23,Mory Diaw,GK,1993-06-22,32,5,0,Le Havre,Pape Thiaw,0
+6e880e45be094ffbb328bf27,933,34,24,Antoine Mendy,DF,2004-05-27,22,6,0,Nice,Pape Thiaw,0
+eaebbd74bbb44428a4eaf9a0,934,34,25,El Hadji Malick Diouf,DF,2004-12-29,21,19,1,West Ham United,Pape Thiaw,0
+cd787e718ed94747ab5447d5,935,34,26,Pape Gueye,MF,1999-01-24,27,41,5,Villarreal,Pape Thiaw,0
+164ea92a30874f1bab9c908d,936,38,1,Melvin Mastil,GK,2000-02-19,26,1,0,Stade Nyonnais,,0
+739bf178ac52460c930e5208,937,38,2,Aïssa Mandi,DF,1991-10-22,34,117,7,Lille,,0
+faf2efd2e9bc4f0eb01421f6,938,38,3,Achref Abada,DF,1999-06-15,26,7,1,USM Alger,,0
+3e506deb35e34a20b9ba1f26,939,38,4,Mohamed Amine Tougai,DF,2000-01-22,26,29,2,Espérance de Tunis,,0
+c7cabe53a8b841b5bccccc43,940,38,5,Zineddine Belaïd,DF,1999-03-20,27,10,1,JS Kabylie,,0
+3d6197250be44919ba01e90c,941,38,6,Ramiz Zerrouki,MF,1998-05-26,28,52,3,Twente,,0
+76d2f77310bb4da9a70cabd9,942,38,7,Riyad Mahrez,FW,1991-02-21,35,114,38,Al-Ahli,,0
+3590f8ff727a4426b3c11eff,943,38,8,Houssem Aouar,MF,1998-06-30,27,20,6,Al-Ittihad,,0
+403f0469975640a980ceaee9,944,38,9,Amine Gouiri,FW,2000-02-16,26,22,8,Marseille,,0
+47cfcb61052245f5bab5430a,945,38,10,Farès Chaïbi,MF,2002-11-28,23,29,3,Eintracht Frankfurt,,0
+6e1704269acd4e098f02be30,946,38,11,Anis Hadj Moussa,FW,2002-02-11,24,14,1,Feyenoord,,0
+ad969f399f3a487f8275f132,947,38,12,Nadhir Benbouali,FW,2000-04-17,26,3,1,Győri ETO,,0
+54f02f67336c473b92b2abc1,948,38,13,Jaouen Hadjam,DF,2003-03-26,23,17,3,Young Boys,,0
+8328434316df45c5b5c6c5f5,949,38,14,Hicham Boudaoui,MF,1999-09-23,26,32,0,Nice,,0
+5248898f55e74613bbf8aa8d,950,38,15,Rayan Aït-Nouri,DF,2001-06-06,25,28,0,Manchester City,,0
+d8940b18f9e64a7eb93a9c50,951,38,16,Oussama Benbot,GK,1994-10-11,31,2,0,USM Alger,,0
+cf1689af1bf241289864cca5,952,38,17,Rafik Belghali,DF,2002-06-07,24,12,1,Hellas Verona,,0
+a3b86f46d6bf44b78fd33e9c,953,38,18,Mohamed Amoura,FW,2000-05-09,26,45,19,VfL Wolfsburg,,0
+ec65190277c9481fa6aab70b,954,38,19,Nabil Bentaleb,MF,1994-11-24,31,59,6,Lille,,0
+a99b7b8944eb4c2d988e3e3b,955,38,20,Adil Boulbina,FW,2003-05-02,23,11,6,Al-Duhail,,0
+3aab24bbf3ad4406aa7d136f,956,38,21,Ramy Bensebaini,DF,1995-04-16,31,81,7,Borussia Dortmund,,0
+8962ff0d57c24c2eb004cc02,957,38,22,Ibrahim Maza,MF,2005-11-24,20,16,2,Bayer Leverkusen,,0
+5c22cc873c4341f08fab6f90,958,38,23,Luca Zidane,GK,1998-05-13,28,7,0,Granada,,0
+9cdbabd8a76346b3b7c38e7b,959,38,24,Yacine Titraoui,MF,2003-08-26,22,5,0,Charleroi,,0
+db94a8124d624f2e8e9133e9,960,38,25,Farès Ghedjemis,FW,2002-09-06,23,1,1,Frosinone,,0
+e9786658b60544e1b1538438,961,38,26,Samir Chergui,DF,1999-02-06,27,4,0,Paris FC,,0
+c0faf2ed2f144219b4084a03,962,37,1,Juan Musso,GK,1994-05-06,32,4,0,Atlético Madrid,Lionel Scaloni,0
+5d315b74a2514fd0a4a67981,963,37,3,Nicolás Tagliafico,DF,1992-08-31,33,76,1,Lyon,Lionel Scaloni,0
+30d2342345bf4e3d859b1a7d,964,37,4,Gonzalo Montiel,DF,1997-01-01,29,38,2,River Plate,Lionel Scaloni,0
+ff8df7852c614a9b8681b063,965,37,5,Leandro Paredes,MF,1994-06-29,31,77,5,Boca Juniors,Lionel Scaloni,0
+1222ad2925284557ac6725e8,966,37,6,Lisandro Martínez,DF,1998-01-18,28,27,1,Manchester United,Lionel Scaloni,0
+880405d099d04bbc9a7e0936,967,37,7,Rodrigo De Paul,MF,1994-05-24,32,86,2,Inter Miami CF,Lionel Scaloni,0
+d5946f119ea245209e3e0057,968,37,8,Valentín Barco,MF,2004-07-23,21,3,1,Strasbourg,Lionel Scaloni,0
+02ab2dc682c145ddaa49e100,969,37,9,Julián Alvarez,FW,2000-01-31,26,51,14,Atlético Madrid,Lionel Scaloni,0
+c59f65da14a844629ac4cd95,970,37,10,Lionel Messi,FW,1987-06-24,38,198,116,Inter Miami CF,Lionel Scaloni,0
+ba5f207037154475bccb7637,971,37,11,Giovani Lo Celso,MF,1996-04-09,30,66,4,Real Betis,Lionel Scaloni,0
+23d719fe1a604ab7a3045454,972,37,12,Gerónimo Rulli,GK,1992-05-20,34,7,0,Marseille,Lionel Scaloni,0
+6d58d920e56f4cb7b7b5302a,973,37,13,Cristian Romero,DF,1998-04-27,28,50,3,Tottenham Hotspur,Lionel Scaloni,0
+80b497b949fe48488aaba374,974,37,14,Exequiel Palacios,MF,1998-10-05,27,39,0,Bayer Leverkusen,Lionel Scaloni,0
+762ce479168c47fda011c91d,975,37,15,Nicolás González,MF,1998-04-06,28,50,6,Atlético Madrid,Lionel Scaloni,0
+74293b155c3340c1bf1526a6,976,37,16,Thiago Almada,FW,2001-04-26,25,15,4,Atlético Madrid,Lionel Scaloni,0
+fff62af3ea58429d87e532e6,977,37,17,Giuliano Simeone,FW,2002-12-18,23,12,2,Atlético Madrid,Lionel Scaloni,0
+831d73542de84a42806e3e7f,978,37,18,Nico Paz,FW,2004-09-08,21,8,1,Como,Lionel Scaloni,0
+cc00a4a333a3455e928bdc7a,979,37,19,Nicolás Otamendi,DF,1988-02-12,38,131,8,Benfica,Lionel Scaloni,0
+081c5dd74c524c628f103bbf,980,37,20,Alexis Mac Allister,MF,1998-12-24,27,45,6,Liverpool,Lionel Scaloni,0
+8cb23cddc02940e0ac5ab303,981,37,21,José Manuel López,FW,2000-12-06,25,4,0,Palmeiras,Lionel Scaloni,0
+05485cc466954b608bf80b5e,982,37,22,Lautaro Martínez,FW,1997-08-22,28,76,37,Inter Milan,Lionel Scaloni,0
+53eab740d68f49048fbe8e29,983,37,23,Emiliano Martínez,GK,1992-09-02,33,59,0,Aston Villa,Lionel Scaloni,0
+af708f7ceae44405afeb54d4,984,37,24,Enzo Fernández,MF,2001-01-17,25,41,6,Chelsea,Lionel Scaloni,0
+000e53d7cf6245d7b21e009a,985,37,25,Facundo Medina,DF,1999-05-28,27,8,0,Marseille,Lionel Scaloni,0
+d011e58d69764bf59a1a0709,986,37,26,Nahuel Molina,DF,1998-04-06,28,58,1,Atlético Madrid,Lionel Scaloni,0
+4a0893f53f5e4196bdc80870,987,39,1,Alexander Schlager,GK,1996-02-01,30,26,0,Red Bull Salzburg,,0
+0e8edd1856204191a9f394ef,988,39,2,David Affengruber,DF,2001-03-19,25,1,0,Elche,,0
+9a587e90f5504c2ca6e4b180,989,39,3,Kevin Danso,DF,1998-09-19,27,32,0,Tottenham Hotspur,,0
+8a6fcf884d7f4184bd12df7b,990,39,4,Xaver Schlager,MF,1997-09-28,28,51,4,RB Leipzig,,0
+5c7ea285b30844d186343a87,991,39,5,Stefan Posch,DF,1997-05-14,29,52,5,Mainz 05,,0
+a7f8ee9b67b843468b95cc8f,992,39,6,Nicolas Seiwald,MF,2001-05-04,25,47,1,RB Leipzig,,0
+0f5f91f7267c446ca3640d37,993,39,7,Marko Arnautović,FW,1989-04-19,37,133,47,Red Star Belgrade,,0
+4f39b79f8f2e4b2b9cc65d9d,994,39,8,David Alaba,DF,1992-06-24,33,113,15,Real Madrid,,0
+36a4010c14394209b1f451fd,995,39,9,Marcel Sabitzer,MF,1994-03-17,32,98,26,Borussia Dortmund,,0
+589c582c2eae48f29829940d,996,39,10,Florian Grillitsch,MF,1995-08-07,30,58,1,Braga,,0
+7051a5a8658b4e3c8bae1fde,997,39,11,Michael Gregoritsch,FW,1994-04-18,32,75,24,FC Augsburg,,0
+374c06d61fcd41b4afb77fed,998,39,12,Florian Wiegele,GK,2001-03-21,25,1,0,Viktoria Plzeň,,0
+075c5dc514de4bb88ae0efd2,999,39,13,Patrick Pentz,GK,1997-01-02,29,18,0,Brøndby,,0
+b6346badef2146c5b86737d2,1000,39,14,Saša Kalajdžić,FW,1997-07-07,28,22,4,LASK,,0
+b4ae821d91f84361b2031107,1001,39,15,Philipp Lienhart,DF,1996-07-11,29,41,3,SC Freiburg,,0
+d14fe1b8c8864b33957522f4,1002,39,16,Phillipp Mwene,DF,1994-01-29,32,30,0,Mainz 05,,0
+be9c3c78e1524d96965b4021,1003,39,17,Carney Chukwuemeka,MF,2003-10-20,22,3,1,Borussia Dortmund,,0
+0b70986719c245bf955e5982,1004,39,18,Romano Schmid,MF,2000-01-27,26,34,3,Werder Bremen,,0
+7fb5247b5b384d37b80544e8,1005,39,20,Konrad Laimer,MF,1997-05-27,29,57,7,Bayern Munich,,0
+067430db39e647c4aa59c8a5,1006,39,21,Patrick Wimmer,FW,2001-05-30,25,30,1,VfL Wolfsburg,,0
+d882da981f9348abaeab982a,1007,39,22,Alexander Prass,MF,2001-05-26,25,19,0,TSG Hoffenheim,,0
+4e9a57ab5fe84a5cba0a78e3,1008,39,23,Marco Friedl,DF,1998-03-16,28,11,0,Werder Bremen,,0
+69dfd23ddc454276be45d747,1009,39,24,Paul Wanner,MF,2005-12-23,20,3,0,PSV Eindhoven,,0
+bb7aa723d7c643639aebb0f6,1010,39,25,Michael Svoboda,DF,1998-10-15,27,4,0,Venezia,,0
+4c89b66eb9624f29ae4c76bb,1011,39,26,Alessandro Schöpf,MF,1994-02-07,32,35,6,Wolfsberger AC,,0
+a3eb2a1b8b8140bdaa34a227,1012,40,1,Yazeed Abulaila,GK,1993-01-08,33,76,0,Al-Hussein,,0
+34b504c78aba4d5bb43de663,1013,40,2,Mohammad Abu Hashish,DF,1995-05-09,31,56,1,Al-Karma,,0
+5938122739fb485d890c1384,1014,40,3,Abdallah Nasib,DF,1994-02-25,32,65,3,Al-Zawraa,,0
+920ae77f8b6544b7a10f19ef,1015,40,4,Husam Abu Dahab,DF,2000-05-13,26,18,0,Al-Faisaly,,0
+cd9e1bc70d3548d297739e9e,1016,40,5,Yazan Al-Arab,DF,1996-01-31,30,80,3,FC Seoul,,0
+5cc28a8b14684cb0ac43b3c5,1017,40,6,Amer Jamous,MF,2002-07-03,23,19,1,Al-Zawraa,,0
+52d74660f041409abf0380f4,1018,40,7,Mohammad Abu Zrayq,FW,1997-12-30,28,41,5,Raja Casablanca,,0
+2d609a312ad4488c9e50d850,1019,40,8,Noor Al-Rawabdeh,MF,1997-02-24,29,68,3,Selangor,,0
+8db3ab677c5748649bbba9fd,1020,40,9,Ali Olwan,FW,2000-03-26,26,66,29,Al-Sailiya,,0
+cc36c18f2e394dfa9bf0fb32,1021,40,10,Musa Al-Taamari,FW,1997-06-10,29,92,24,Rennes,,0
+47d5c7938f764cc8a08a0761,1022,40,11,Odeh Al-Fakhouri,FW,2005-11-22,20,10,1,Pyramids,,0
+cc8cec1468b1400c95e7857b,1023,40,12,Nour Bani Attiah,GK,1993-01-25,33,5,0,Al-Faisaly,,0
+ab5cf65dd86640329db7f279,1024,40,13,Mahmoud Al-Mardi,FW,1993-10-06,32,89,9,Al-Hussein,,0
+5d7eda5baf764e619af20cd8,1025,40,14,Rajaei Ayed,MF,1993-07-25,32,72,0,Al-Hussein,,0
+48b680703678422fa81ba623,1026,40,15,Ibrahim Sadeh,MF,2000-04-27,26,57,3,Al-Karma,,0
+2405e477d73a416e8946d155,1027,40,16,Mo Abualnadi,DF,2001-02-08,25,18,0,Selangor,,0
+7a837e918d4f405e922055a0,1028,40,17,Salim Obaid,DF,1992-01-17,34,11,0,Al-Hussein,,0
+672114229d574c4191dd81ea,1029,40,19,Saed Al-Rosan,DF,1997-02-01,29,21,2,Al-Hussein,,0
+8f929311af974ec4b3eba96a,1030,40,20,Mohannad Abu Taha,MF,2003-02-02,23,29,1,Al-Quwa Al-Jawiya,,0
+63049679e26b4e7ea010f4af,1031,40,21,Nizar Al-Rashdan,MF,1999-03-23,27,47,4,Qatar SC,,0
+b282509683d64602a103bc7d,1032,40,22,Abdallah Al-Fakhouri,GK,2000-01-22,26,11,0,Al-Wehdat,,0
+f2f16cec56f14866910b6dac,1033,40,23,Ihsan Haddad,DF,1994-02-05,32,92,2,Al-Hussein,,0
+8aa28b0b2ebf4863a4227428,1034,40,24,Ali Azaizeh,FW,2004-04-13,22,4,0,Al-Shabab,,0
+3cc088ad8aff4a3da59f4116,1035,40,25,Mohammad Al-Dawoud,MF,1992-04-12,34,13,1,Al-Wehdat,,0
+032b11e51c62418996085e8f,1036,40,26,Anas Badawi,DF,1997-09-13,28,1,0,Al-Faisaly,,0
+7e5ec1e67c10482387fbc463,1037,44,1,David Ospina,GK,1988-08-31,37,130,0,Atlético Nacional,,0
+9db03cbad2144d35854a94c2,1038,44,2,Daniel Muñoz,DF,1996-05-26,30,46,3,Crystal Palace,,0
+da76f10aede44d23922cb45c,1039,44,3,Jhon Lucumí,DF,1998-06-26,27,37,1,Bologna,,0
+114d77a785714914b9230131,1040,44,4,Santiago Arias,DF,1992-01-13,34,68,0,Independiente,,0
+f101d39206c34b7b847269c6,1041,44,5,Kevin Castaño,MF,2000-09-29,25,25,0,River Plate,,0
+75f3908e72c44b5ebd1b054a,1042,44,6,Richard Ríos,MF,2000-06-02,26,32,2,Benfica,,0
+7fbd654a342e455287c0ab25,1043,44,7,Luis Díaz,FW,1997-01-13,29,74,22,Bayern Munich,,0
+80efb6883bab42ef9c25113e,1044,44,8,Jorge Carrascal,MF,1998-05-25,28,24,2,Flamengo,,0
+f360c8d22153478d97bb0182,1045,44,9,Jhon Córdoba,FW,1993-05-11,33,21,6,Krasnodar,,0
+33acb0c1921d47098b879496,1046,44,10,James Rodríguez,MF,1991-07-12,34,126,31,Minnesota United FC,,0
+48a09acb13104ee7a890ee61,1047,44,11,Jhon Arias,MF,1997-09-21,28,38,6,Palmeiras,,0
+9ad31bf7a95746ca9b6e1d7d,1048,44,12,Camilo Vargas,GK,1989-03-09,37,42,0,Atlas,,0
+ae5be49c72ad4d7abe74b33c,1049,44,13,Yerry Mina,DF,1994-09-23,31,54,8,Cagliari,,0
+18f7719e2f484d3e96ea69fd,1050,44,14,Gustavo Puerta,DF,2003-07-23,22,6,1,Racing Santander,,0
+8b645ddd3d874e6dabaf5d60,1051,44,15,Juan Portilla,MF,1998-09-12,27,10,0,Athletico Paranaense,,0
+6d573e4df2784970b4d89e82,1052,44,16,Jefferson Lerma,MF,1994-10-25,31,65,5,Crystal Palace,,0
+582eef4a5ba547b18365d15a,1053,44,17,Johan Mojica,DF,1992-08-21,33,45,1,Mallorca,,0
+08e8251642414ce09d9d3808,1054,44,18,Willer Ditta,DF,1998-01-23,28,5,0,Cruz Azul,,0
+994cb500fe254b2ea1408c9f,1055,44,19,Cucho Hernández,FW,1999-04-20,27,9,2,Real Betis,,0
+61701a41582641008f2b3e42,1056,44,20,Juan Fernando Quintero,MF,1993-01-18,33,49,6,River Plate,,0
+38bbb9845c8b46aaa3bef9f8,1057,44,21,Jaminton Campaz,FW,2000-05-24,26,10,1,Rosario Central,,0
+6da33ecc79e24c2285803810,1058,44,22,Deiver Machado,DF,1993-09-02,32,15,0,Nantes,,0
+3fd22cd44bd740c68c4cb0de,1059,44,23,Davinson Sánchez,DF,1996-06-12,29,79,4,Galatasaray,,0
+0457571c57454331a0e5be4e,1060,44,24,Álvaro Montero,GK,1995-03-29,31,12,0,Vélez Sarsfield,,0
+abc27538ea2d4d6aa74fc4e1,1061,44,25,Luis Suárez,FW,1997-12-02,28,12,5,Sporting CP,,0
+a1e65bb6e5e8483fb912b1ab,1062,44,26,Andrés Gómez,FW,2002-09-12,23,8,2,Vasco da Gama,,0
+d1a40d0f4e4d427a96173932,1063,42,1,Lionel Mpasi,GK,1994-08-01,31,28,0,Le Havre,,0
+9a52ba9445e44c05bb2efb2a,1064,42,2,Aaron Wan-Bissaka,DF,1997-11-26,28,11,0,West Ham United,,0
+97c87081e2ac41ad891b6f10,1065,42,3,Steve Kapuadi,DF,1998-04-30,28,4,0,Widzew Łódź,,0
+723ba011ef824be98b8bd153,1066,42,4,Axel Tuanzebe,DF,1997-11-14,28,13,1,Burnley,,0
+3c7f138d2dd54094acd49fd0,1067,42,5,Dylan Batubinsika,DF,1996-02-15,30,14,1,AEL,,0
+e7bca0cc404c4432a10fcce3,1068,42,6,Ngal'ayel Mukau,MF,2004-11-03,21,13,0,Lille,,0
+baab1faf7472495492da01ed,1069,42,7,Nathanaël Mbuku,MF,2002-03-16,24,18,2,Montpellier,,0
+a3055a40ea38493ebd7cee20,1070,42,8,Samuel Moutoussamy,MF,1996-08-12,29,57,0,Atromitos,,0
+8d82f87246c444c7a651a12f,1071,42,9,Brian Cipenga,FW,1998-03-11,28,7,0,Castellón,,0
+d9c89cfce78b4f578afe532e,1072,42,10,Théo Bongonda,MF,1995-11-20,30,37,7,Spartak Moscow,,0
+ea340eed9ad74746bccba78b,1073,42,11,Gaël Kakuta,FW,1991-06-21,34,30,5,AEL,,0
+887bd70f011042218f243f7d,1074,42,12,Joris Kayembe,DF,1994-08-08,31,25,0,Genk,,0
+f5c8ec6fd4594f5299ff3cdb,1075,42,13,Meschak Elia,FW,1997-08-06,28,68,12,Alanyaspor,,0
+f6d4c86c32144306b492adaa,1076,42,14,Noah Sadiki,MF,2004-12-17,21,19,0,Sunderland,,0
+42e2df5e74504bf4a6b92962,1077,42,15,Aaron Tshibola,MF,1995-01-02,31,16,1,Kilmarnock,,0
+cdfc26b8f84c48f7b18c8aa1,1078,42,16,Timothy Fayulu,GK,1999-07-24,26,3,0,Noah,,0
+625d48f3559146f6bcba4c06,1079,42,17,Cédric Bakambu,FW,1991-04-11,35,69,21,Real Betis,,0
+28e1e4fc438e459288105a4b,1080,42,18,Charles Pickel,MF,1997-05-15,29,34,1,Espanyol,,0
+31ef81939bcd4c0ebb349081,1081,42,19,Fiston Mayele,FW,1994-06-24,31,37,6,Pyramids,,0
+e892bae6c5114536949d8dbd,1082,42,20,Yoane Wissa,FW,1996-09-03,29,37,9,Newcastle United,,0
+67723d7076264acf99dc930e,1083,42,21,Matthieu Epolo,GK,2005-01-15,21,1,0,Standard Liège,,0
+62c5980e606149968172551b,1084,42,22,Chancel Mbemba,DF,1994-08-08,31,108,7,Lille,,0
+1239a8be07354011a4710c8d,1085,42,23,Simon Banza,FW,1996-08-13,29,15,2,Al Jazira,,0
+d807b7452ffc42f8b7723e0f,1086,42,24,Gédéon Kalulu,DF,1997-08-29,28,28,0,Aris Limassol,,0
+d7c23d9951114dafadf4ab32,1087,42,25,Edo Kayembe,MF,1998-06-03,28,42,2,Watford,,0
+f0f498f8887f47da9ea2fdbf,1088,42,26,Arthur Masuaku,DF,1993-11-07,32,45,4,Lens,,0
+21aac0d5dcd5419f9a57525f,1089,41,1,Diogo Costa,GK,1999-09-19,26,42,0,Porto,,0
+60fd5711953542a3bd096f6a,1090,41,2,Nélson Semedo,DF,1993-11-16,32,49,0,Fenerbahçe,,0
+6e4b2a5901a44e428b47c734,1091,41,3,Rúben Dias,DF,1997-05-14,29,75,3,Manchester City,,0
+2748d03a6d6c439381e53cfc,1092,41,4,Tomás Araújo,DF,2002-05-16,24,4,0,Benfica,,0
+5ec6eba69c944891bd8e6f5c,1093,41,5,Diogo Dalot,DF,1999-03-18,27,34,3,Manchester United,,0
+a2cecf13fa1345f2911c8f7c,1094,41,6,Matheus Nunes,MF,1998-08-27,27,19,2,Manchester City,,0
+ed155489f2974a0888cd690a,1095,41,7,Cristiano Ronaldo,FW,1985-02-05,41,227,143,Al-Nassr,,0
+b4946a81865b48f4a464907a,1096,41,8,Bruno Fernandes,MF,1994-09-08,31,88,29,Manchester United,,0
+c3f956482eff4a98a8d414af,1097,41,9,Gonçalo Ramos,FW,2001-06-20,24,24,10,Paris Saint-Germain,,0
+d1b28a0ea92f4c0e86992e8d,1098,41,10,Bernardo Silva,MF,1994-08-10,31,108,14,Manchester City,,0
+8d0d2522c56d48fb83b306e7,1099,41,11,João Félix,FW,1999-11-10,26,53,12,Al-Nassr,,0
+c03f75674042499f867eee05,1100,41,12,José Sá,GK,1993-01-17,33,5,0,Wolverhampton Wanderers,,0
+384c7a8344a444d5a9dc4083,1101,41,13,Renato Veiga,DF,2003-07-29,22,12,1,Villarreal,,0
+b1d4d26020f14d699eb39883,1102,41,14,Gonçalo Inácio,DF,2001-08-25,24,21,2,Sporting CP,,0
+6051bfe737f14148bb74c818,1103,41,15,João Neves,MF,2004-09-27,21,21,3,Paris Saint-Germain,,0
+13decb8c8bb34803b123e72d,1104,41,16,Francisco Trincão,FW,1999-12-29,26,17,3,Sporting CP,,0
+e8eb5fc32cab486db25f20b2,1105,41,17,Rafael Leão,FW,1999-06-10,27,44,5,Milan,,0
+fcea54383891406691dc2823,1106,41,18,Pedro Neto,FW,2000-03-09,26,24,2,Chelsea,,0
+48e3179d13b84822b1fb116f,1107,41,19,Gonçalo Guedes,FW,1996-11-29,29,34,8,Real Sociedad,,0
+d7728940c6564d8280b540d8,1108,41,20,João Cancelo,DF,1994-05-27,32,67,12,Barcelona,,0
+2f3a5fdc83c04c3b94c527eb,1109,41,21,Rúben Neves,MF,1997-03-13,29,66,1,Al-Hilal,,0
+62ba6cefe6b94f05ae4f2909,1110,41,22,Rui Silva,GK,1994-02-07,32,3,0,Sporting CP,,0
+b84c4f588f6d4f39a59676a8,1111,41,23,Vitinha,MF,2000-02-13,26,37,0,Paris Saint-Germain,,0
+d5746b21d8384d34b97e18c7,1112,41,24,Samú Costa,DF,2000-11-27,25,5,0,Mallorca,,0
+04c760ff3f6448e59402e087,1113,41,25,Nuno Mendes,DF,2002-06-19,23,43,1,Paris Saint-Germain,,0
+bac0ae1cc1c343218920b3a3,1114,41,26,Francisco Conceição,FW,2002-12-14,23,16,3,Juventus,,0
+5c6834aa19e64812b738ef9e,1115,43,1,Utkir Yusupov,GK,1991-01-04,35,39,0,Navbahor,,0
+2a5c313103eb4423bf4538bb,1116,43,2,Abdukodir Khusanov,DF,2004-02-29,22,26,0,Manchester City,,0
+a6bb778c0b2448b9872d4986,1117,43,3,Khojiakbar Alijonov,DF,1997-04-19,29,40,2,Pakhtakor,,0
+eecbf8729a7e483090936fa3,1118,43,4,Farrukh Sayfiev,DF,1991-01-17,35,45,1,Neftchi Fergana,,0
+6c9e121cae7e4c879ee1bf83,1119,43,5,Rustam Ashurmatov,DF,1996-07-07,29,48,1,Esteghlal,,0
+5e495124d0bc41d2b5473659,1120,43,6,Akmal Mozgovoy,MF,1999-04-02,27,24,1,Pakhtakor,,0
+64cfc1f9f0444732b8ccc3b9,1121,43,7,Otabek Shukurov,MF,1996-06-22,29,83,9,Baniyas,,0
+abd67ee78c084708b3918ea6,1122,43,8,Jamshid Iskanderov,MF,1993-10-16,32,37,4,Neftchi Fergana,,0
+b9fcb2dd6c2d4e73b6c9513b,1123,43,9,Odiljon Hamrobekov,MF,1996-02-13,30,72,1,Tractor,,0
+391d83de4f494d7eae1801ed,1124,43,10,Jaloliddin Masharipov,MF,1993-09-01,32,74,12,Esteghlal,,0
+9e7738a98fb8486bb9cdbb4c,1125,43,11,Oston Urunov,MF,2000-12-19,25,41,10,Persepolis,,0
+d2a2a4b7a73d4a50b7a37b2a,1126,43,12,Abduvohid Nematov,GK,2001-03-20,25,8,0,Nasaf,,0
+e11abf1eb6f14c3488e2391a,1127,43,13,Sherzod Nasrullaev,DF,1998-07-23,27,30,2,Nasaf,,0
+35b5722b8eeb4a678c57b5c4,1128,43,14,Eldor Shomurodov,FW,1995-06-29,30,91,44,İstanbul Başakşehir,,0
+d96ab30fc2a147e0a26d03d9,1129,43,15,Umar Eshmurodov,DF,1992-11-30,33,29,0,Nasaf,,0
+d5b2f8141fd443cc9b3bd9e9,1130,43,16,Botirali Ergashev,GK,1995-06-23,30,2,0,Neftchi Fergana,,0
+6752fedf65c4448787bae2de,1131,43,17,Dostonbek Khamdamov,MF,1996-07-24,29,33,5,Pakhtakor,,0
+9bb1175865244942add1b566,1132,43,18,Abdulla Abdullaev,DF,1997-09-01,28,17,0,Dibba,,0
+acc9ef5085364fdda8c34f5c,1133,43,19,Azizjon Ganiev,MF,1998-02-22,28,19,0,Al Bataeh,,0
+c254381199834f968789762a,1134,43,20,Azizbek Amonov,FW,1997-10-30,28,12,2,Dinamo Samarqand,,0
+a8f1d22b4dc949af91245ed6,1135,43,21,Igor Sergeev,FW,1993-04-30,33,82,24,Persepolis,,0
+a48b18b34c5e4b2c8f9c9c4c,1136,43,22,Abbosbek Fayzullaev,MF,2003-10-03,22,31,8,İstanbul Başakşehir,,0
+a2d39ed574894ac38a7fb154,1137,43,23,Sherzod Esanov,MF,2003-02-01,23,1,0,Bukhara,,0
+21d03906adf84534b85af2e9,1138,43,24,Bekhruz Karimov,DF,2007-08-07,18,2,0,Surkhon Termiz,,0
+519317ecbc4043eb93532092,1139,43,25,Avazbek Ulmasaliev,DF,2000-03-27,26,0,0,AGMK,,0
+d7b9fc23aabd46878ec08a12,1140,43,26,Jakhongir Urozov,DF,2004-01-18,22,3,0,Dinamo Samarqand,,0
+e9dec443cc044867817f1dea,1141,46,1,Dominik Livaković,GK,1995-01-09,31,75,0,Dinamo Zagreb,Zlatko Dalić,0
+1b684fe033f84ff7a8d4fe9b,1142,46,2,Josip Stanišić,DF,2000-04-02,26,31,0,Bayern Munich,Zlatko Dalić,0
+9a28548207c94ac3b32500b8,1143,46,3,Marin Pongračić,DF,1997-09-11,28,20,0,Fiorentina,Zlatko Dalić,0
+663e0514348a434fa91c7ad0,1144,46,4,Joško Gvardiol,DF,2002-01-23,24,48,4,Manchester City,Zlatko Dalić,0
+96fe22947f694aff88a5f512,1145,46,5,Duje Ćaleta-Car,DF,1996-09-17,29,38,1,Real Sociedad,Zlatko Dalić,0
+403f3c7b5f70497ba7a4a144,1146,46,6,Josip Šutalo,DF,2000-02-28,26,33,0,Ajax,Zlatko Dalić,0
+41f42f4a686f4bcc99f9f153,1147,46,7,Nikola Moro,MF,1998-03-12,28,10,0,Bologna,Zlatko Dalić,0
+433cdf01fd264f0595765542,1148,46,8,Mateo Kovačić,MF,1994-05-06,32,113,5,Manchester City,Zlatko Dalić,0
+14e08519444e40ea856b825a,1149,46,9,Andrej Kramarić,FW,1991-06-19,34,116,36,TSG Hoffenheim,Zlatko Dalić,0
+907eb24994b3431b89730f60,1150,46,10,Luka Modrić,MF,1985-09-09,40,198,29,Milan,Zlatko Dalić,0
+31534d7c6277415d9aff91a6,1151,46,11,Ante Budimir,FW,1991-07-22,34,38,6,Osasuna,Zlatko Dalić,0
+c6d1199b81904189b9d3f9b8,1152,46,12,Ivor Pandur,GK,2000-03-25,26,0,0,Hull City,Zlatko Dalić,0
+369e68e5f8434ff1864fa64b,1153,46,13,Nikola Vlašić,MF,1997-10-04,28,63,10,Torino,Zlatko Dalić,0
+a3efaa5d11ca40b58d1dcb73,1154,46,14,Ivan Perišić,FW,1989-02-02,37,154,38,PSV Eindhoven,Zlatko Dalić,0
+766c104f60954594970c004c,1155,46,15,Mario Pašalić,MF,1995-02-09,31,85,12,Atalanta,Zlatko Dalić,0
+cb1ba447fd964330a8ee00e9,1156,46,16,Martin Baturina,MF,2003-02-16,23,19,1,Como,Zlatko Dalić,0
+ac0685a6fb35407fa9aea03f,1157,46,17,Petar Sučić,MF,2003-10-25,22,17,1,Inter Milan,Zlatko Dalić,0
+42fa3afaea774a9cbefe5ad6,1158,46,18,Kristijan Jakić,DF,1997-05-14,29,17,2,FC Augsburg,Zlatko Dalić,0
+f4efd8ff31b04497ba51d8d6,1159,46,19,Toni Fruk,MF,2001-03-09,25,7,1,Rijeka,Zlatko Dalić,0
+552ee710361d49bb8bd2bf09,1160,46,20,Igor Matanović,FW,2003-03-31,23,9,2,SC Freiburg,Zlatko Dalić,0
+4288713040b94c2f9fe2ad53,1161,46,21,Luka Sučić,MF,2002-09-08,23,21,1,Real Sociedad,Zlatko Dalić,0
+312eb79aa6a4405aad6b48b2,1162,46,22,Luka Vušković,DF,2007-02-24,19,5,1,Hamburger SV,Zlatko Dalić,0
+9c9fa98c4add4fc3b80faa78,1163,46,23,Dominik Kotarski,GK,2000-02-10,26,4,0,Copenhagen,Zlatko Dalić,0
+120c426296de4954ae69a489,1164,46,24,Marco Pašalić,FW,2000-09-14,25,15,1,Orlando City SC,Zlatko Dalić,0
+9b29d8cc93f54b85a2e9f191,1165,46,25,Martin Erlić,DF,1998-01-24,28,13,1,Midtjylland,Zlatko Dalić,0
+bd172784b4634b6f98da4187,1166,46,26,Petar Musa,FW,1998-03-04,28,11,1,FC Dallas,Zlatko Dalić,0
+95bbec3a6e5e497484b892fd,1167,45,1,Jordan Pickford,GK,1994-03-07,32,83,0,Everton,,0
+7d6b89d5de18481a82bda40d,1168,45,2,Ezri Konsa,DF,1997-10-23,28,19,1,Aston Villa,,0
+9af1b20fda8346968a538e11,1169,45,3,Nico O'Reilly,DF,2005-03-21,21,4,0,Manchester City,,0
+78f77aeea0204ef285091e6c,1170,45,4,Declan Rice,MF,1999-01-14,27,72,6,Arsenal,,0
+09344ffd00bc40b38ca2b39e,1171,45,5,John Stones,DF,1994-05-28,32,88,3,Manchester City,,0
+873909709cc74cb4a8706115,1172,45,6,Marc Guéhi,DF,2000-07-13,25,28,1,Manchester City,,0
+a2c714bc525b499f8616a37b,1173,45,7,Bukayo Saka,FW,2001-09-05,24,48,14,Arsenal,,0
+10d52dfac5e24d6cbbdc395d,1174,45,8,Elliot Anderson,MF,2002-11-06,23,8,0,Nottingham Forest,,0
+754b3f9c33834ed0b7501d39,1175,45,9,Harry Kane,FW,1993-07-28,32,113,79,Bayern Munich,,0
+859db92a4576451d89b828e3,1176,45,10,Jude Bellingham,MF,2003-06-29,22,47,6,Real Madrid,,0
+8dc1a1b6376b439bbceaa427,1177,45,11,Marcus Rashford,FW,1997-10-31,28,71,18,Barcelona,,0
+df230f63384a4301b35c4755,1178,45,12,Tino Livramento,DF,2002-11-12,23,6,0,Newcastle United,,0
+9c26e0521e644acaaadb7131,1179,45,13,Dean Henderson,GK,1997-03-12,29,4,0,Crystal Palace,,0
+446ce470897d4f68a198f20f,1180,45,14,Jordan Henderson,MF,1990-06-17,35,90,3,Brentford,,0
+e3b24928dd524727ba95bd84,1181,45,15,Dan Burn,DF,1992-05-09,34,7,0,Newcastle United,,0
+4aa2a4df418543b3aac2629b,1182,45,16,Kobbie Mainoo,MF,2005-04-19,21,13,0,Manchester United,,0
+5449dcd747f44948940cbb42,1183,45,17,Morgan Rogers,MF,2002-07-26,23,14,1,Aston Villa,,0
+b7b816a200c149c7871d297e,1184,45,18,Anthony Gordon,FW,2001-02-24,25,18,2,Newcastle United,,0
+408ac7ab196a4e7d834e2ae6,1185,45,19,Ollie Watkins,FW,1995-12-30,30,21,6,Aston Villa,,0
+65728febf3b34699a191731d,1186,45,20,Noni Madueke,FW,2002-03-10,24,10,1,Arsenal,,0
+60f863a649854dc1a90e09aa,1187,45,21,Eberechi Eze,MF,1998-06-29,27,16,3,Arsenal,,0
+a008b7a0ed294db1a9fbeb8b,1188,45,22,Ivan Toney,FW,1996-03-16,30,8,1,Al-Ahli,,0
+6bacddc579f54a75905e9037,1189,45,23,James Trafford,GK,2002-10-10,23,2,0,Manchester City,,0
+3ec1f43ed9334148b002073f,1190,45,24,Reece James,DF,1999-12-08,26,23,1,Chelsea,,0
+5572ab6e54df4887a07b0cc4,1191,45,25,Djed Spence,DF,2000-08-09,25,5,0,Tottenham Hotspur,,0
+00b18d642849401b94862c36,1192,45,26,Jarell Quansah,DF,2003-01-29,23,2,0,Bayer Leverkusen,,0
+26205f4e74a2460db2c65615,1193,47,1,Lawrence Ati-Zigi,GK,1996-11-29,29,29,0,St. Gallen,,0
+3b564761f02f483195cca880,1194,47,2,Alidu Seidu,DF,2000-06-04,26,24,1,Rennes,,0
+d5a1ca9fd99845d19773b43b,1195,47,3,Caleb Yirenkyi,MF,2006-01-15,20,11,1,Nordsjælland,,0
+ccf60a0e78b94f3a94373430,1196,47,4,Jonas Adjetey,DF,2003-12-13,22,10,0,VfL Wolfsburg,,0
+cbac720778c146a3a8e6859e,1197,47,5,Thomas Partey,MF,1993-06-13,32,57,15,Villarreal,,0
+dca673969858498daf04d282,1198,47,6,Abdul Mumin,DF,1998-06-06,28,5,0,Rayo Vallecano,,0
+dddbeb7d10764dc592b6ac95,1199,47,7,Abdul Fatawu,FW,2004-03-08,22,28,3,Leicester City,,0
+f6b107db9ef5489a942801fa,1200,47,8,Kwasi Sibo,MF,1998-06-24,27,8,0,Oviedo,,0
+fef71c1e724e4bdb9243460f,1201,47,9,Jordan Ayew,FW,1991-09-11,34,120,34,Leicester City,,0
+c102e661aef942d5aba588ac,1202,47,10,Brandon Thomas-Asante,FW,1998-12-29,27,8,1,Coventry City,,0
+b41f3582bbac4d9da7450494,1203,47,11,Antoine Semenyo,MF,2000-01-07,26,34,3,Manchester City,,0
+aea445383a944924966f9899,1204,47,12,Joseph Anang,GK,2000-06-08,26,1,0,St Patrick's Athletic,,0
+d7d5410437c14dcb853c5bee,1205,47,13,Christopher Bonsu Baah,FW,2004-12-14,21,9,0,Al-Qadsiah,,0
+5a36c43597dd489d93142095,1206,47,14,Gideon Mensah,DF,1998-07-18,27,40,0,Auxerre,,0
+9c04c71ad3224776babf38bc,1207,47,15,Elisha Owusu,MF,1997-11-07,28,20,0,Auxerre,,0
+b833dc04ac9946c3a5d1a967,1208,47,16,Benjamin Asare,GK,1992-07-13,33,11,0,Hearts of Oak,,0
+09cdc4d6f96647b09322668b,1209,47,17,Abdul Rahman Baba,DF,1994-07-02,31,51,1,PAOK,,0
+dac8013c877f42b89e996192,1210,47,18,Jerome Opoku,DF,1998-10-14,27,11,1,İstanbul Başakşehir,,0
+862d7c7088e34a948eb6ad67,1211,47,19,Iñaki Williams,FW,1994-06-15,31,26,2,Athletic Bilbao,,0
+0b9b1671f2b64aecaf2b5fe7,1212,47,20,Augustine Boakye,MF,2000-11-03,25,0,0,Saint-Étienne,,0
+acf6d1d200be45169e8d5e0e,1213,47,21,Kojo Peprah Oppong,DF,2004-06-04,22,4,0,Nice,,0
+ca68e179e63a4462ac9dcb47,1214,47,22,Kamaldeen Sulemana,FW,2002-02-15,24,28,1,Atalanta,,0
+b8a08b54694e4bb2a8dafc80,1215,47,23,Derrick Luckassen,DF,1995-07-03,30,1,0,Pafos,,0
+721e44b5534d4bfe88a20834,1216,47,24,Ernest Nuamah,FW,2003-11-01,22,18,4,Lyon,,0
+1f77f87986b04525aeeaac3b,1217,47,25,Prince Kwabena Adu,FW,2003-09-23,22,5,0,Viktoria Plzeň,,0
+80f96d7488b04a349a57baea,1218,47,26,Marvin Senaya,DF,2001-01-28,25,2,0,Auxerre,,0
+7d68d6f6223b45d29ac76a81,1219,48,1,Luis Mejía,GK,1991-03-16,35,56,0,Nacional,,0
+332952c56cf345e6af93e65d,1220,48,2,César Blackman,DF,1998-04-02,28,40,3,Slovan Bratislava,,0
+a5ac9e3af60247108310d1e6,1221,48,3,José Córdoba,DF,2001-06-03,25,32,1,Norwich City,,0
+f19bb0e81f4040e0a0eeb1b3,1222,48,4,Fidel Escobar,DF,1995-01-09,31,99,4,Saprissa,,0
+28e8e2f733e8447ea76acfe0,1223,48,5,Edgardo Fariña,DF,2001-10-19,24,18,0,Pari Nizhny Novgorod,,0
+04c957bf38374ef49a09f202,1224,48,6,Cristian Martínez,MF,1997-02-06,29,66,2,Ironi Kiryat Shmona,,0
+3b2686590a924cac8bf3be18,1225,48,7,José Luis Rodríguez,MF,1998-06-19,27,70,8,Juárez,,0
+9a1e5065a17548e3a6c99fac,1226,48,8,Adalberto Carrasquilla,MF,1998-11-28,27,73,3,UNAM,,0
+441e7e63d16842b1ab9c5968,1227,48,9,Tomás Rodríguez,FW,1999-03-09,27,13,4,Saprissa,,0
+334013e1811f464abe989c88,1228,48,10,Ismael Díaz,MF,1997-05-12,29,57,17,León,,0
+3f4e04b9f32d46b6b3910673,1229,48,11,Yoel Bárcenas,MF,1993-10-23,32,104,10,Mazatlán,,0
+370ea2d513ee40d6a3e9eedf,1230,48,12,César Samudio,GK,1994-02-23,32,5,0,Marathón,,0
+ccd9cdb595bb4ac78469fe6d,1231,48,13,Jiovany Ramos,DF,1997-01-26,29,23,2,Puerto Cabello,,0
+8e1b7fbf3b534bb7a9159d18,1232,48,14,Carlos Harvey,DF,2000-02-03,26,28,3,Minnesota United FC,,0
+c916734afd1b42e2bb17dcff,1233,48,15,Eric Davis,DF,1991-03-31,35,107,9,Plaza Amador,,0
+30bf4ad0e01d453393bc1f09,1234,48,16,Andrés Andrade,DF,1998-10-16,27,50,1,LASK,,0
+d4fac93e3a2947998b8d9d52,1235,48,17,José Fajardo,FW,1993-08-18,32,68,17,Universidad Católica,,0
+c4da9513fc38481f971fcd24,1236,48,18,Cecilio Waterman,FW,1991-04-13,35,55,15,Universidad de Concepción,,0
+4f6ba03dde4142608f22abc8,1237,48,19,Alberto Quintero,MF,1987-12-18,38,141,7,Plaza Amador,,0
+cddcbf54c99c41089ff7109b,1238,48,20,Aníbal Godoy,MF,1990-02-10,36,159,4,San Diego FC,,0
+8017e98c4db94f5eb2752e0e,1239,48,21,César Yanis,MF,1996-01-28,30,56,5,Cobresal,,0
+429be79275874655a6b20a30,1240,48,22,Orlando Mosquera,GK,1994-12-25,31,48,0,Al-Fayha,,0
+c18c957c12d7412cb8f7aecf,1241,48,23,Michael Amir Murillo,DF,1996-02-11,30,94,9,Beşiktaş,,0
+07ff487552f44668b210c303,1242,48,24,Azarias Londoño,FW,2001-06-21,24,11,0,Universidad Católica,,0
+1394537c5093431c95cad9fe,1243,48,25,Roderick Miller,DF,1992-04-03,34,50,2,Turan Tovuz,,0
+22b2067ca97d4a8fbf6aea99,1244,48,26,Jorge Gutiérrez,DF,1998-09-01,27,18,0,Deportivo La Guaira,,0

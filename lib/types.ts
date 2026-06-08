@@ -7,6 +7,20 @@ export interface Team {
   group: string;
 }
 
+export interface SquadPlayer {
+  id: string;
+  teamId: string;
+  shirtNumber: string;
+  name: string;
+  position: string;
+  dateOfBirth: string;
+  age: number;
+  caps: number;
+  goals: number;
+  club: string;
+  coach: string;
+}
+
 export interface GroupStandingEntry {
   teamId: string;
   mp: number;
@@ -54,6 +68,7 @@ export interface WorldCupData {
   groups: Group[];
   matches: Match[];
   stadiums: Stadium[];
+  squads: SquadPlayer[];
 }
 
 export type TabId = "signal" | "groups" | "squads" | "fixtures" | "venues";

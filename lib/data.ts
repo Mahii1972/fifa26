@@ -1,6 +1,6 @@
 import { readCsv, num, bool } from "./csv";
 import { normalizeFlagUrl } from "./flags";
-import type { Group, Match, Stadium, Team, WorldCupData } from "./types";
+import type { Group, Match, SquadPlayer, Stadium, Team, WorldCupData } from "./types";
 
 function loadTeams(): Team[] {
   return readCsv("worldcup2026.teams.csv").map((row) => ({
@@ -47,6 +47,22 @@ function loadMatches(): Match[] {
   }));
 }
 
+function loadSquads(): SquadPlayer[] {
+  return readCsv("worldcup2026.squads.csv").map((row) => ({
+    id: row.id,
+    teamId: row.team_id,
+    shirtNumber: row.shirt_number,
+    name: row.name,
+    position: row.position,
+    dateOfBirth: row.date_of_birth,
+    age: num(row.age),
+    caps: num(row.caps),
+    goals: num(row.goals),
+    club: row.club,
+    coach: row.coach,
+  }));
+}
+
 function loadStadiums(): Stadium[] {
   return readCsv("worldcup2026.stadia.csv").map((row) => ({
     id: row.id,
@@ -65,6 +81,7 @@ export function getWorldCupData(): WorldCupData {
     groups: loadGroups(),
     matches: loadMatches(),
     stadiums: loadStadiums(),
+    squads: loadSquads(),
   };
 }
 
