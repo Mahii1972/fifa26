@@ -5,6 +5,7 @@ import type { TabId } from "@/lib/types";
 
 const TABS: { id: TabId; num: string; label: string }[] = [
   { id: "signal", num: "P100", label: "SIGNAL" },
+  { id: "live", num: "P150", label: "LIVE" },
   { id: "groups", num: "P200", label: "GROUPS" },
   { id: "squads", num: "P300", label: "SQUADS" },
   { id: "fixtures", num: "P400", label: "FIXTURES" },
@@ -19,7 +20,7 @@ export function TabBar({
   onChange: (tab: TabId) => void;
 }) {
   return (
-    <nav className="grid grid-cols-5 border-b-2 border-foreground">
+    <nav className="grid grid-cols-6 border-b-2 border-foreground">
       {TABS.map((tab) => {
         const isActive = active === tab.id;
         return (

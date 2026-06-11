@@ -8,6 +8,7 @@ import { TabBar } from "@/components/retro/tab-bar";
 import { Ticker } from "@/components/retro/ticker";
 import { BroadcastClock } from "@/components/retro/clock";
 import { SignalPanel } from "@/components/panels/signal-panel";
+import { LivePanel } from "@/components/panels/live-panel";
 import { GroupsPanel } from "@/components/panels/groups-panel";
 import { SquadsPanel } from "@/components/panels/squads-panel";
 import { FixturesPanel } from "@/components/panels/fixtures-panel";
@@ -58,6 +59,7 @@ export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
 
             <main className="p-3 sm:p-4 md:p-6">
               {tab === "signal" && <SignalPanel data={data} />}
+              {tab === "live" && <LivePanel />}
               {tab === "groups" && <GroupsPanel data={data} />}
               {tab === "squads" && <SquadsPanel data={data} />}
               {tab === "fixtures" && <FixturesPanel data={data} />}

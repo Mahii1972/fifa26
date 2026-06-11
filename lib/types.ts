@@ -96,4 +96,22 @@ export interface LiveOverlay {
   live: boolean;
 }
 
-export type TabId = "signal" | "groups" | "squads" | "fixtures" | "venues";
+export type TabId = "signal" | "live" | "groups" | "squads" | "fixtures" | "venues";
+
+/** A single playable feed for a live event/channel. */
+export interface LiveStream {
+  name: string;
+  url: string;
+  vip: boolean;
+}
+
+/** A featured live event (soccer) surfaced on the LIVE panel. */
+export interface LiveEvent {
+  url: string; // slug, used as /live/[slug]
+  name: string;
+  logo: string;
+  time: string; // ISO-ish kickoff, e.g. "2026-06-11T15:00"
+  featured: boolean;
+  vip: boolean;
+  streams: LiveStream[];
+}
