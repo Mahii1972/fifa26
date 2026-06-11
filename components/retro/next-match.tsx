@@ -97,18 +97,35 @@ export function NextMatchCard({
   const stadiumMap = new Map(stadiums.map((s) => [s.id, s]));
 
   const now = nowMs ?? 0;
-  const live = matches.find((m) => m.state === "in");
+  // ESPN sometimes lags flipping a kicked-off match to "in" (it may still read
+  // "pre"). Without bridging that gap the match falls out of "upcoming" (its
+  // kickoff is past) yet isn't "live" either, so the hero skips to the next
+  // fixture. Treat a not-yet-finished match whose kickoff has recently passed
+  // as in-progress until ESPN catches up or it goes "post".
+  const KICKOFF_GRACE_MS = 2.5 * 60 * 60 * 1000;
+  const espnLive = matches.find((m) => m.state === "in");
+  const presumedLive = matches.find(
+    (m) =>
+      m.state !== "post" &&
+      m.state !== "in" &&
+      kickoffMs(m) <= now &&
+      now - kickoffMs(m) < KICKOFF_GRACE_MS,
+  );
   const upcoming = matches
     .filter((m) => m.state !== "post" && m.state !== "in")
     .filter((m) => kickoffMs(m) > now)
     .sort((a, b) => kickoffMs(a) - kickoffMs(b));
 
-  const target = live ?? upcoming[0];
+  const target = espnLive ?? presumedLive ?? upcoming[0];
 
   const home = target ? teamMap.get(target.homeTeamId) : undefined;
   const away = target ? teamMap.get(target.awayTeamId) : undefined;
   const stadium = target ? stadiumMap.get(target.stadiumId) : undefined;
+  // ESPN-confirmed live (real score + clock) vs. presumed live (kickoff passed,
+  // ESPN feed still catching up — we don't trust the 0-0 it reports).
   const isLive = target?.state === "in";
+  const isPresumedLive = !isLive && !!target && target === presumedLive;
+  const showingLive = isLive || isPresumedLive;
 
   const kickoffLabel =
     target && getAllTimezoneLines(target.localDate, target.stadiumId)?.primary;
@@ -123,6 +140,15 @@ export function NextMatchCard({
           </p>
           <p className="glow-green animate-blink mt-1 text-[10px] tracking-widest text-teletext-green">
             {target.displayClock || "LIVE"}
+          </p>
+        </>
+      ) : isPresumedLive ? (
+        <>
+          <p className="font-display glow-green animate-blink text-3xl text-teletext-green">
+            LIVE
+          </p>
+          <p className="mt-1 text-[10px] tracking-widest text-teletext-green">
+            IN PROGRESS
           </p>
         </>
       ) : (
@@ -143,10 +169,10 @@ export function NextMatchCard({
       <div className="mb-4 flex items-center justify-between">
         <p
           className={`font-display text-[10px] tracking-[0.25em] ${
-            isLive ? "glow-green text-teletext-green" : "text-teletext-cyan"
+            showingLive ? "glow-green text-teletext-green" : "text-teletext-cyan"
           }`}
         >
-          {isLive ? "● LIVE NOW" : "▌NEXT KICKOFF"}
+          {showingLive ? "● LIVE NOW" : "▌NEXT KICKOFF"}
         </p>
         {target && (
           <span className="font-display text-[9px] tracking-widest text-teletext-amber">
