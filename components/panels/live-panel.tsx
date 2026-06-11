@@ -95,6 +95,19 @@ export function LivePanel() {
         </h2>
       </header>
 
+      <aside className="mb-6 border-2 border-teletext-amber/60 bg-teletext-amber/10 p-4">
+        <p className="font-display glow-soft text-[10px] tracking-wider text-teletext-amber">
+          ⚠ AD NOTICE
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Streams are served by third-party providers and contain pop-up ads.
+          For an ad-free experience, use an ad blocker like{" "}
+          <span className="text-teletext-cyan">uBlock Origin</span> or an
+          ad-blocking browser like{" "}
+          <span className="text-teletext-cyan">Brave</span>.
+        </p>
+      </aside>
+
       <section className="mb-6 border-2 border-foreground">
         <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
           ▓ CHANNELS

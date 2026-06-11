@@ -20,8 +20,8 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "WC/26 — Teletext Data Service",
-  description: "FIFA World Cup 2026 — retro broadcast data terminal",
+  title: "HEM's FIFA Calendar — WC/26",
+  description: "HEM's FIFA Calendar — FIFA World Cup 2026 retro broadcast data terminal",
 };
 
 export const viewport: Viewport = {

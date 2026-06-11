@@ -28,10 +28,10 @@ export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
               <div className="flex items-center justify-between gap-2 px-3 py-3 sm:px-4">
                 <div className="flex items-baseline gap-3 sm:gap-4">
                   <h1 className="font-display glow-yellow text-base leading-none tracking-tight sm:text-lg md:text-xl">
-                    WC/26
+                    HEM/26
                   </h1>
                   <span className="glow-cyan hidden text-[11px] tracking-[0.3em] text-teletext-cyan sm:inline">
-                    TELETEXT DATA SERVICE
+                    HEM&apos;S FIFA CALENDAR
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-[11px] tracking-widest text-teletext-cyan sm:gap-4">

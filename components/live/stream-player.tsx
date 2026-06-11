@@ -72,7 +72,8 @@ export function StreamPlayer({ streams }: { streams: LiveStream[] }) {
       )}
 
       <p className="border-t-2 border-foreground bg-card/40 px-4 py-3 text-xs tracking-wider text-muted-foreground">
-        STREAM PROVIDED BY THIRD-PARTY SOURCE · SIGNAL QUALITY MAY VARY
+        THIRD-PARTY SOURCE · CONTAINS ADS — USE UBLOCK ORIGIN OR A BROWSER LIKE
+        BRAVE FOR AN AD-FREE EXPERIENCE
       </p>
     </section>
   );
