@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Press_Start_2P, VT323 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -45,7 +46,10 @@ export default function RootLayout({
         vt323.variable,
       )}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
