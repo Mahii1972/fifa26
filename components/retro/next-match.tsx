@@ -215,6 +215,12 @@ export function NextMatchCard({
               <span className="text-teletext-yellow">{kickoffLabel}</span>
             )}
           </div>
+
+          {showingLive && (
+            <p className="mt-3 text-center text-xs tracking-wide text-teletext-amber sm:text-sm">
+              Score not up to date? Try refreshing the page.
+            </p>
+          )}
         </>
       )}
     </section>
