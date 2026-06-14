@@ -199,6 +199,10 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
             );
           })}
         </ul>
+
+        <p className="border-t-2 border-foreground bg-card/40 px-4 py-2 text-[10px] tracking-wide text-muted-foreground">
+          Scores not up to date? Try refreshing the page.
+        </p>
       </section>
     </div>
   );
