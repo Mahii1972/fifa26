@@ -1,5 +1,10 @@
 import { NextMatchCard } from "@/components/retro/next-match";
-import { StatusBadge, hasScore } from "@/components/retro/match-status";
+import {
+  StatusBadge,
+  hasScore,
+  isFinished,
+  isLive,
+} from "@/components/retro/match-status";
 import { getAllTimezoneLines } from "@/lib/timezones";
 import type { Match, WorldCupData } from "@/lib/types";
 
@@ -26,10 +31,20 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
     { label: "SEATS", value: `${(totalCapacity / 1_000_000).toFixed(1)}M` },
   ];
 
-  // Earliest fixtures by kickoff — the tournament openers.
-  const openingFixtures = [...data.matches]
-    .sort((a, b) => kickoffMs(a) - kickoffMs(b))
-    .slice(0, 6);
+  // Most recently played match (live or finished) — the last result we have.
+  const lastUpdated = [...data.matches]
+    .filter((m) => isLive(m) || isFinished(m))
+    .sort((a, b) => kickoffMs(b) - kickoffMs(a))[0];
+
+  // Fixtures that haven't kicked off yet, soonest first.
+  const upcoming = [...data.matches]
+    .filter((m) => !isLive(m) && !isFinished(m))
+    .sort((a, b) => kickoffMs(a) - kickoffMs(b));
+
+  // First row is the last updated match; the rest are upcoming fixtures.
+  const signalFixtures = (
+    lastUpdated ? [lastUpdated, ...upcoming] : upcoming
+  ).slice(0, 6);
 
   return (
     <div className="space-y-6">
@@ -82,7 +97,7 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
       <section className="border-2 border-foreground">
         <div className="flex items-center justify-between border-b-2 border-foreground bg-card/40 px-4 py-3">
           <h3 className="font-display glow-cyan text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-            ▓ OPENING FIXTURES
+            ▓ UPCOMING FIXTURES
           </h3>
           <span className="text-[10px] tracking-widest text-muted-foreground">
             TIMES IN IST
@@ -90,7 +105,7 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
         </div>
 
         <ul>
-          {openingFixtures.map((match) => {
+          {signalFixtures.map((match) => {
             const home = teamMap.get(match.homeTeamId);
             const away = teamMap.get(match.awayTeamId);
             const scored = hasScore(match);
