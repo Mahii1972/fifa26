@@ -23,10 +23,12 @@ export function StreamPlayer({ streams }: { streams: LiveStream[] }) {
 
   return (
     <section className="border-2 border-foreground">
-      <div className="font-display glow-cyan flex items-center justify-between border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-        <span>▓ NOW PLAYING · {current.name.toUpperCase()}</span>
-        <span className="flex items-center gap-2 text-teletext-green">
-          <span className="inline-block h-2.5 w-2.5 animate-blink bg-teletext-green" />
+      <div className="font-display glow-cyan flex items-center justify-between gap-2 border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+        <span className="min-w-0 truncate">
+          ▓ NOW PLAYING · {current.name.toUpperCase()}
+        </span>
+        <span className="flex shrink-0 items-center gap-2 whitespace-nowrap text-teletext-green">
+          <span className="inline-block h-2.5 w-2.5 shrink-0 animate-blink bg-teletext-green" />
           ON AIR
         </span>
       </div>

@@ -181,12 +181,12 @@ export function ChatPanel({ room }: { room: string }) {
 
   return (
     <section className="border-2 border-foreground">
-      <div className="font-display glow-cyan flex items-center justify-between border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-        <span>▓ MATCH CHAT</span>
-        <span className="flex items-center gap-2 text-teletext-green">
+      <div className="font-display glow-cyan flex items-center justify-between gap-2 border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+        <span className="min-w-0 truncate">▓ MATCH CHAT</span>
+        <span className="flex shrink-0 items-center gap-2 whitespace-nowrap text-teletext-green">
           <span
             className={cn(
-              "inline-block h-2.5 w-2.5",
+              "inline-block h-2.5 w-2.5 shrink-0",
               connected
                 ? "animate-blink bg-teletext-green"
                 : "bg-teletext-amber",
@@ -197,18 +197,17 @@ export function ChatPanel({ room }: { room: string }) {
       </div>
 
       {members.length > 0 && (
-        <div className="border-b-2 border-foreground bg-card/20 px-4 py-2 text-[10px] tracking-wider text-muted-foreground">
-          <span className="text-teletext-amber">▌ONLINE · </span>
+        <div className="flex flex-wrap gap-x-2 gap-y-1 border-b-2 border-foreground bg-card/20 px-4 py-2 text-[10px] tracking-wider text-muted-foreground">
+          <span className="shrink-0 text-teletext-amber">▌ONLINE</span>
           {members.map((m, i) => (
-            <span key={`${m}-${i}`}>
-              <span
-                className={cn(
-                  m === name ? "text-teletext-yellow" : "text-teletext-cyan",
-                )}
-              >
-                {m.toUpperCase()}
-              </span>
-              {i < members.length - 1 ? "  " : ""}
+            <span
+              key={`${m}-${i}`}
+              className={cn(
+                "max-w-full truncate",
+                m === name ? "text-teletext-yellow" : "text-teletext-cyan",
+              )}
+            >
+              {m.toUpperCase()}
             </span>
           ))}
         </div>
