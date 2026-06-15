@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { findLiveEvent } from "@/lib/live-events";
 import { StreamPlayer } from "@/components/live/stream-player";
+import { ChatPanel } from "@/components/live/chat-panel";
 import type { LiveStream } from "@/lib/types";
 
 // Always-on channels have no event entry — embed them directly by slug.
@@ -71,7 +72,10 @@ export default async function LiveWatchPage({
                 )}
               </header>
 
-              <StreamPlayer streams={streams} />
+              <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
+                <StreamPlayer streams={streams} />
+                <ChatPanel room={slug} />
+              </div>
             </main>
           </div>
         </div>

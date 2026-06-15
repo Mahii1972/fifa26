@@ -105,6 +105,14 @@ export interface LiveStream {
   vip: boolean;
 }
 
+/** A single ephemeral chat message relayed through Pusher (never persisted). */
+export interface ChatMessage {
+  id: string;
+  user: string;
+  text: string;
+  ts: number; // epoch ms, stamped server-side on send
+}
+
 /** A featured live event (soccer) surfaced on the LIVE panel. */
 export interface LiveEvent {
   url: string; // slug, used as /live/[slug]

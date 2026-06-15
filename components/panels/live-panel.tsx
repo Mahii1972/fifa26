@@ -18,14 +18,26 @@ function kickoff(iso: string): string {
   return `${date} · ${time}`;
 }
 
+function WatchingBadge({ count }: { count: number }) {
+  if (count <= 0) return null;
+  return (
+    <span className="ml-2 inline-flex items-center gap-1 border border-teletext-green/50 bg-teletext-green/10 px-1.5 py-0.5 text-[10px] tracking-wider text-teletext-green">
+      <span className="inline-block h-1.5 w-1.5 animate-blink bg-teletext-green" />
+      {count} WATCHING
+    </span>
+  );
+}
+
 function EventRow({
   event,
   index,
   label,
+  online = 0,
 }: {
   event: LiveEvent;
   index: number;
   label: string;
+  online?: number;
 }) {
   return (
     <Link
@@ -52,6 +64,7 @@ function EventRow({
         <p className="mt-1 text-xs tracking-wider text-muted-foreground">
           {event.streams.length} FEED{event.streams.length === 1 ? "" : "S"}{" "}
           AVAILABLE
+          <WatchingBadge count={online} />
         </p>
       </div>
       <span className="font-display shrink-0 text-[10px] tracking-wider text-teletext-cyan group-hover:text-teletext-yellow">
@@ -63,6 +76,7 @@ function EventRow({
 
 export function LivePanel() {
   const [events, setEvents] = useState<LiveEvent[]>([]);
+  const [online, setOnline] = useState<Record<string, number>>({});
   const [status, setStatus] = useState<"loading" | "ready" | "error">(
     "loading",
   );
@@ -79,6 +93,27 @@ export function LivePanel() {
       .catch(() => !cancelled && setStatus("error"));
     return () => {
       cancelled = true;
+    };
+  }, []);
+
+  // Poll live chat occupancy so each match shows how many are watching.
+  useEffect(() => {
+    let cancelled = false;
+    async function poll() {
+      try {
+        const res = await fetch("/api/chat/online", { cache: "no-store" });
+        if (!res.ok) return;
+        const d = (await res.json()) as { counts?: Record<string, number> };
+        if (!cancelled) setOnline(d.counts ?? {});
+      } catch {
+        /* keep last-known counts */
+      }
+    }
+    poll();
+    const id = setInterval(poll, 30_000);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
     };
   }, []);
 
@@ -126,6 +161,7 @@ export function LivePanel() {
                 </p>
                 <p className="glow-cyan mt-0.5 text-lg leading-tight tracking-wide text-teletext-cyan">
                   {c.name}
+                  <WatchingBadge count={online[c.slug] ?? 0} />
                 </p>
               </div>
               <span className="flex items-center gap-2 whitespace-nowrap text-[11px] tracking-widest text-teletext-green">
@@ -155,7 +191,13 @@ export function LivePanel() {
           </h3>
           <div className="space-y-0">
             {featured.map((e, i) => (
-              <EventRow key={e.url} event={e} index={i} label="MATCH" />
+              <EventRow
+                key={e.url}
+                event={e}
+                index={i}
+                label="MATCH"
+                online={online[e.url]}
+              />
             ))}
           </div>
         </section>
@@ -173,7 +215,13 @@ export function LivePanel() {
           ) : (
             <div className="space-y-0">
               {rest.map((e, i) => (
-                <EventRow key={e.url} event={e} index={i} label="FIXTURE" />
+                <EventRow
+                  key={e.url}
+                  event={e}
+                  index={i}
+                  label="FIXTURE"
+                  online={online[e.url]}
+                />
               ))}
             </div>
           )}
