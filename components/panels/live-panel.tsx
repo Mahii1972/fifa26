@@ -8,6 +8,7 @@ import type { LiveEvent } from "@/lib/types";
 // Always-on channel surfaced as a card alongside scheduled events.
 const CHANNELS = [
   { slug: "fox-sports-1", name: "FOX SPORTS 1", tag: "24/7 CHANNEL" },
+  { slug: "disney-xd", name: "DISNEY XD", tag: "24/7 CHANNEL" },
 ];
 
 function kickoff(iso: string): string {
