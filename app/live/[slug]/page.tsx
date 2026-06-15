@@ -6,6 +6,12 @@ import type { LiveStream } from "@/lib/types";
 // Always-on channels have no event entry — embed them directly by slug.
 const CHANNEL_NAMES: Record<string, string> = {
   "fox-sports-1": "FOX SPORTS 1",
+  "disney-xd": "DISNEY XD",
+};
+
+// Channels whose embed lives on a non-default provider URL.
+const CHANNEL_URLS: Record<string, string> = {
+  "disney-xd": "https://dami-tv.pro/embed/channel/?id=disney-xd",
 };
 
 function kickoff(iso: string): string {
@@ -28,7 +34,7 @@ export default async function LiveWatchPage({
     : [
         {
           name: CHANNEL_NAMES[slug] ?? slug,
-          url: `https://junkieembeds.pages.dev/embed/${slug}`,
+          url: CHANNEL_URLS[slug] ?? `https://junkieembeds.pages.dev/embed/${slug}`,
           vip: false,
         },
       ];
