@@ -9,10 +9,23 @@ import { genreLabel } from "@/lib/types";
 // How many channels to show before tucking the rest behind the accordion.
 const TOP_CHANNELS = 4;
 
+// Upstream kickoff strings are wall-clock US Eastern (UTC-4 / EDT for the
+// June 2026 tournament window), regardless of venue. Convert that fixed ET
+// instant into the viewer's own browser-local timezone so everyone sees the
+// time where they are.
+const ET_OFFSET_MIN = -240; // EDT, UTC-4
+
 function kickoff(iso: string): string {
-  // Render the upstream venue-local time without TZ shifting.
-  const [date, time] = iso.split("T");
-  if (!time) return iso;
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!m) return iso;
+  const [, y, mo, d, hh, mm] = m;
+  // Resolve the ET wall-clock to a real UTC instant…
+  const utcMs = Date.UTC(+y, +mo - 1, +d, +hh, +mm) - ET_OFFSET_MIN * 60_000;
+  // …then read it back through the browser's local timezone.
+  const local = new Date(utcMs);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const date = `${local.getFullYear()}-${pad(local.getMonth() + 1)}-${pad(local.getDate())}`;
+  const time = `${pad(local.getHours())}:${pad(local.getMinutes())}`;
   return `${date} · ${time}`;
 }
 
