@@ -19,12 +19,33 @@ function fullscreenElement(): Element | null {
   const d = document as FsDocument;
   return d.fullscreenElement ?? d.webkitFullscreenElement ?? null;
 }
-function requestFullscreen(el: FsElement): void {
-  (el.requestFullscreen ?? el.webkitRequestFullscreen)?.call(el);
+function requestFullscreen(el: FsElement): Promise<void> | void {
+  return (el.requestFullscreen ?? el.webkitRequestFullscreen)?.call(el);
 }
 function exitFullscreen(): void {
   const d = document as FsDocument;
   (d.exitFullscreen ?? d.webkitExitFullscreen)?.call(d);
+}
+
+// Screen Orientation lock — lock/unlock aren't in the TS DOM lib, and lock only
+// works while fullscreen on mobile (no-ops / rejects on desktop & iOS Safari).
+type OrientationApi = {
+  lock?: (orientation: string) => Promise<void>;
+  unlock?: () => void;
+};
+function orientationApi(): OrientationApi | undefined {
+  if (typeof screen === "undefined") return undefined;
+  return screen.orientation as unknown as OrientationApi;
+}
+function lockLandscape(): Promise<void> | void {
+  return orientationApi()?.lock?.("landscape");
+}
+function unlockOrientation(): void {
+  try {
+    orientationApi()?.unlock?.();
+  } catch {
+    /* unsupported — ignore */
+  }
 }
 
 /**
@@ -49,8 +70,12 @@ export function StreamPlayer({
   const current = streams[active];
 
   useEffect(() => {
-    const onChange = () =>
-      setIsFullscreen(fullscreenElement() === stageRef.current);
+    const onChange = () => {
+      const fs = fullscreenElement() === stageRef.current;
+      setIsFullscreen(fs);
+      // Release the orientation lock once we leave fullscreen.
+      if (!fs) unlockOrientation();
+    };
     document.addEventListener("fullscreenchange", onChange);
     document.addEventListener("webkitfullscreenchange", onChange);
     return () => {
@@ -59,11 +84,25 @@ export function StreamPlayer({
     };
   }, []);
 
-  function toggleFullscreen() {
+  async function toggleFullscreen() {
     const el = stageRef.current;
     if (!el) return;
-    if (fullscreenElement()) exitFullscreen();
-    else requestFullscreen(el);
+    if (fullscreenElement()) {
+      exitFullscreen();
+      return;
+    }
+    try {
+      const req = requestFullscreen(el);
+      if (req && typeof req.then === "function") await req;
+      // On mobile, force landscape so the stream isn't squeezed into portrait.
+      try {
+        await lockLandscape();
+      } catch {
+        /* desktop / iOS — orientation lock unsupported, ignore */
+      }
+    } catch {
+      /* fullscreen denied (e.g. an embedded preview blocks it) — ignore */
+    }
   }
 
   if (!current) {
@@ -105,21 +144,21 @@ export function StreamPlayer({
           title={current.name}
         />
 
+        {/* Sits over the embedded player's own fullscreen button (bottom-right)
+            so tapping there triggers our overlay-capable fullscreen instead. */}
         <button
           type="button"
           onClick={toggleFullscreen}
           aria-label="Toggle fullscreen"
           title={
-            isFullscreen
-              ? "Exit fullscreen"
-              : "Fullscreen with chat overlay"
+            isFullscreen ? "Exit fullscreen" : "Fullscreen with chat overlay"
           }
-          className="absolute top-2 right-2 z-20 border border-white/30 bg-black/60 p-1.5 text-white/90 backdrop-blur-sm transition-colors hover:bg-black/80"
+          className="absolute right-1.5 bottom-1.5 z-20 border border-white/30 bg-black/70 p-2 text-white/90 backdrop-blur-sm transition-colors hover:bg-black/90"
         >
           {isFullscreen ? (
-            <Minimize className="h-4 w-4" />
+            <Minimize className="h-5 w-5" />
           ) : (
-            <Maximize className="h-4 w-4" />
+            <Maximize className="h-5 w-5" />
           )}
         </button>
 
