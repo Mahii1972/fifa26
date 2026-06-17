@@ -176,11 +176,6 @@ export function StreamPlayer({
           frameBorder="0"
           scrolling="no"
           referrerPolicy="unsafe-url"
-          // Sandbox lets the player's scripts run but withholds the tokens these
-          // embeds abuse to break out: no allow-top-navigation (the "t.me took
-          // too long" redirect) and no allow-popups (popunder ads). The stream
-          // still plays; the hijack can't navigate or pop a new tab.
-          sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
           title={current.name}
