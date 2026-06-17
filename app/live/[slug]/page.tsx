@@ -73,7 +73,7 @@ export default async function LiveWatchPage({
               </header>
 
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] [&>*]:min-w-0">
-                <StreamPlayer streams={streams} />
+                <StreamPlayer streams={streams} room={slug} />
                 <ChatPanel room={slug} />
               </div>
             </main>
