@@ -1,19 +1,9 @@
 import Link from "next/link";
 import { findLiveEvent } from "@/lib/live-events";
+import { findChannel } from "@/lib/channels";
 import { StreamPlayer } from "@/components/live/stream-player";
 import { ChatPanel } from "@/components/live/chat-panel";
 import type { LiveStream } from "@/lib/types";
-
-// Always-on channels have no event entry — embed them directly by slug.
-const CHANNEL_NAMES: Record<string, string> = {
-  "fox-sports-1": "FOX SPORTS 1",
-  "disney-xd": "DISNEY XD",
-};
-
-// Channels whose embed lives on a non-default provider URL.
-const CHANNEL_URLS: Record<string, string> = {
-  "disney-xd": "https://dami-tv.pro/embed/channel/?id=disney-xd",
-};
 
 function kickoff(iso: string): string {
   const [date, time] = iso.split("T");
@@ -27,18 +17,21 @@ export default async function LiveWatchPage({
 }) {
   const { slug } = await params;
   const event = await findLiveEvent(slug);
+  // Not a scheduled event? It may be an always-on channel from the feed.
+  const channel = event ? undefined : await findChannel(slug);
 
-  // Event → its feeds; otherwise treat the slug as a direct channel embed.
-  const title = event?.name ?? CHANNEL_NAMES[slug] ?? slug.replace(/-/g, " ");
-  const streams: LiveStream[] = event
-    ? event.streams
-    : [
-        {
-          name: CHANNEL_NAMES[slug] ?? slug,
-          url: CHANNEL_URLS[slug] ?? `https://junkieembeds.pages.dev/embed/${slug}`,
-          vip: false,
-        },
-      ];
+  // Event/channel → its feeds; otherwise treat the slug as a direct embed.
+  const title =
+    event?.name ?? channel?.name ?? slug.replace(/-/g, " ");
+  const streams: LiveStream[] =
+    event?.streams ??
+    channel?.streams ?? [
+      {
+        name: slug,
+        url: `https://junkieembeds.pages.dev/embed/${slug}`,
+        vip: false,
+      },
+    ];
 
   return (
     <div className="min-h-screen p-2 sm:p-5 md:p-8 lg:p-10">

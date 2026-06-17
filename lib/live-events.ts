@@ -6,12 +6,12 @@
  * server-side — a browser fetch from our origin would be blocked. We send the
  * headers it expects and degrade gracefully (empty list) on any failure.
  *
- * genre 1 === Soccer in the upstream taxonomy; we only surface soccer here.
+ * We surface every sport the feed carries (see GENRES in ./types for the
+ * taxonomy); the panel groups them by genre.
  */
 import type { LiveEvent } from "./types";
 
 const UPSTREAM = "https://api.nuevasantino.xyz/api/live-upcoming";
-const SOCCER_GENRE = 1;
 
 interface UpstreamEvent {
   url: string;
@@ -24,7 +24,7 @@ interface UpstreamEvent {
   streams: { name: string; url: string; vip: boolean }[];
 }
 
-/** Fetch + filter the upstream feed to soccer events. Never throws. */
+/** Fetch + normalize the upstream feed (all sports). Never throws. */
 export async function fetchLiveEvents(revalidate = 60): Promise<LiveEvent[]> {
   try {
     const res = await fetch(UPSTREAM, {
@@ -43,11 +43,12 @@ export async function fetchLiveEvents(revalidate = 60): Promise<LiveEvent[]> {
     const events = data.events ?? [];
 
     return events
-      .filter((e) => e.genre === SOCCER_GENRE && Array.isArray(e.streams))
+      .filter((e) => Array.isArray(e.streams))
       .map((e) => ({
         url: e.url,
         name: e.name,
         logo: e.logo,
+        genre: e.genre,
         time: e.time,
         featured: Boolean(e.featured),
         vip: Boolean(e.vip),
@@ -62,8 +63,8 @@ export async function fetchLiveEvents(revalidate = 60): Promise<LiveEvent[]> {
   }
 }
 
-/** Featured soccer events only — the LIVE panel grid. */
-export async function fetchFeaturedSoccerEvents(
+/** Featured events only — the LIVE panel highlight row. */
+export async function fetchFeaturedEvents(
   revalidate = 60,
 ): Promise<LiveEvent[]> {
   const events = await fetchLiveEvents(revalidate);

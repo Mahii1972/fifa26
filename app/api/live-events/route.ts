@@ -3,8 +3,8 @@ import { fetchLiveEvents } from "@/lib/live-events";
 /**
  * Same-origin proxy for the LIVE panel. The upstream feed gates on Origin/
  * Referer, so the client can't hit it directly — it polls this instead.
- * Returns all soccer events (sorted by kickoff); the panel splits out the
- * featured ones for its highlight row.
+ * Returns all events across every sport (sorted by kickoff); the panel splits
+ * out the featured ones and groups the rest by genre.
  */
 export const dynamic = "force-dynamic";
 

@@ -113,11 +113,56 @@ export interface ChatMessage {
   ts: number; // epoch ms, stamped server-side on send
 }
 
-/** A featured live event (soccer) surfaced on the LIVE panel. */
+/**
+ * Upstream sport/category taxonomy. The feed sends a numeric `genre`; this maps
+ * each id to its display label. Note genre 1 is "Soccer" upstream but we surface
+ * it as "Football" to match the rest of this site.
+ */
+export const GENRES: Record<number, string> = {
+  1: "Football",
+  2: "Motorsport",
+  3: "MMA",
+  4: "Full-Contact Combat",
+  5: "Boxing",
+  6: "Wrestling",
+  7: "Basketball",
+  8: "American Football",
+  9: "Baseball",
+  10: "Tennis",
+  11: "Hockey",
+  12: "Darts",
+  13: "Cricket",
+  14: "Cycling",
+  15: "Rugby",
+  16: "Live Shows",
+  17: "Others",
+};
+
+/** Display label for a genre id, falling back to "Others" for unknown ids. */
+export function genreLabel(genre: number): string {
+  return GENRES[genre] ?? GENRES[17];
+}
+
+/**
+ * An always-on 24/7 channel from the upstream channels feed. Note `genre` here
+ * uses the channels taxonomy (Entertainment/Sports/Cartoons/News), which is
+ * separate from the live-events GENRES map above.
+ */
+export interface Channel {
+  url: string; // slug, used as /live/[slug]
+  name: string;
+  logo: string;
+  genre: number;
+  vip: boolean;
+  streams: LiveStream[];
+}
+
+/** A live event/fixture surfaced on the LIVE panel. */
 export interface LiveEvent {
   url: string; // slug, used as /live/[slug]
   name: string;
   logo: string;
+  genre: number; // upstream sport/category id — see GENRES
   time: string; // ISO-ish kickoff, e.g. "2026-06-11T15:00"
   featured: boolean;
   vip: boolean;
