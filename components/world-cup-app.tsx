@@ -7,6 +7,7 @@ import { WavyBackground } from "@/components/retro/wavy-background";
 import { TabBar } from "@/components/retro/tab-bar";
 import { Ticker } from "@/components/retro/ticker";
 import { BroadcastClock } from "@/components/retro/clock";
+import { LightsOutToggle } from "@/components/retro/lights-out-toggle";
 import { SignalPanel } from "@/components/panels/signal-panel";
 import { LivePanel } from "@/components/panels/live-panel";
 import { GroupsPanel } from "@/components/panels/groups-panel";
@@ -50,6 +51,7 @@ export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
                     }`}
                   />
                   <BroadcastClock />
+                  <LightsOutToggle />
                 </div>
               </div>
               <Ticker data={data} />

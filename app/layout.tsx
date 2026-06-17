@@ -3,6 +3,11 @@ import { Press_Start_2P, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { LightsOutSync } from "@/components/retro/lights-out-sync";
+
+// Apply the saved lights-out preference to <html> before first paint so dark
+// pages never flash blue on load. Keep the key in sync with lib/use-lights-out.
+const lightsOutBootScript = `try{if(localStorage.getItem("hem-lights-out")==="1"){document.documentElement.classList.add("crt-dark")}}catch(e){}`;
 
 // 8-bit display face — used for headings, labels, accents (kept small; it's wide).
 const pressStart = Press_Start_2P({
@@ -40,6 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         "h-full antialiased",
         pressStart.variable,
@@ -47,6 +53,8 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full">
+        <script dangerouslySetInnerHTML={{ __html: lightsOutBootScript }} />
+        <LightsOutSync />
         {children}
         <Analytics />
       </body>

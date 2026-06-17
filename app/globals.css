@@ -186,6 +186,43 @@
 }
 
 /* ============================================================= *
+ *  LIGHTS-OUT MODE — pure-black screen (top-right header toggle).
+ *  Toggled on <html> (see LightsOutSync), so it themes every route.
+ *  Every background surface goes black; borders, text and the
+ *  teletext accent colours stay, so it reads as classic black
+ *  teletext rather than a flat void. These vars are inherited by
+ *  the whole subtree, and `@theme inline` makes the bg-* utilities
+ *  resolve them at runtime — so overriding here is enough.
+ * ============================================================= */
+.crt-dark {
+  --background: #000000;
+  --card: #000000;
+  --popover: #000000;
+  --secondary: #000000;
+  --muted: #000000;
+  --input: #000000;
+  --sidebar: #000000;
+  background: #000000;
+}
+/* Black out the "room" the CRT sits in (body paints over the html bg). */
+.crt-dark body {
+  background-color: #000000;
+  background-image: none;
+}
+.crt-dark .crt-shell {
+  background-color: #000000;
+  /* Drop the blue phosphor radial gradient. */
+  background-image: none;
+}
+.crt-dark .wavy-bg {
+  background: #000000;
+}
+/* Remove the animated marble stripes + blue wash entirely. */
+.crt-dark .wavy-stage {
+  display: none;
+}
+
+/* ============================================================= *
  *  CRT MONITOR BEZEL — the physical screen housing
  * ============================================================= */
 .crt-bezel {
