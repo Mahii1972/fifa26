@@ -4,11 +4,11 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import PusherClient from "pusher-js";
 import { cn } from "@/lib/utils";
 import { CHAT_EVENT, chatChannel } from "@/lib/chat-shared";
+import { getChatLog, getServerSnapshot } from "@/lib/chat-log";
 import type { ChatMessage } from "@/lib/types";
 
 const NAME_KEY = "fifa26-chat-user";
 const NAME_EVENT = "fifa26-chat-name"; // same-tab notifier (storage event is cross-tab only)
-const MAX_MESSAGES = 100; // ring buffer — this is ephemeral, no history
 const SEND_COOLDOWN_MS = 1000; // light anti-spam: ~1 msg/sec per client
 
 /**
@@ -42,13 +42,19 @@ function setStoredName(value: string): void {
 }
 
 /**
- * Ephemeral per-room live chat. Messages live only in React state and on the
- * Pusher channel — refresh and the log is empty, by design. First-time
+ * Per-room live chat over a Pusher presence channel. The wire is ephemeral
+ * (Pusher replays nothing), but the last 50 messages are kept in localStorage
+ * via getChatLog so a refresh restores the recent conversation. First-time
  * visitors are asked to pick a (non-blank) handle before they can join.
  */
 export function ChatPanel({ room }: { room: string }) {
   const name = useSyncExternalStore(subscribeName, getName, () => null);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const log = getChatLog(room);
+  const messages = useSyncExternalStore(
+    log.subscribe,
+    log.getSnapshot,
+    getServerSnapshot,
+  );
   const [members, setMembers] = useState<string[]>([]);
   const [connected, setConnected] = useState(false);
   const [draft, setDraft] = useState("");
@@ -101,7 +107,7 @@ export function ChatPanel({ room }: { room: string }) {
       channel.bind("pusher:member_removed", refresh);
 
       channel.bind(CHAT_EVENT, (data: ChatMessage) => {
-        setMessages((prev) => [...prev, data].slice(-MAX_MESSAGES));
+        getChatLog(room).append(data);
       });
     })();
 
