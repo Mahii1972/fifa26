@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Maximize, Minimize } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChatOverlay } from "@/components/live/chat-overlay";
@@ -66,8 +66,28 @@ export function StreamPlayer({
 }) {
   const [active, setActive] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [controlsVisible, setControlsVisible] = useState(true);
   const stageRef = useRef<HTMLDivElement>(null);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const overButton = useRef(false); // keep controls up while the cursor is on the button
   const current = streams[active];
+
+  const HIDE_AFTER = 2800;
+
+  const scheduleHide = useCallback(() => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => {
+      if (!overButton.current) setControlsVisible(false);
+    }, HIDE_AFTER);
+  }, []);
+
+  // Show the fullscreen control, then auto-hide it after a spell of no activity
+  // (like a video player). Note: the parent can't see mouse movement over the
+  // cross-origin iframe, so reveal also happens on hovering the button corner.
+  const revealControls = useCallback(() => {
+    setControlsVisible(true);
+    scheduleHide();
+  }, [scheduleHide]);
 
   useEffect(() => {
     const onChange = () => {
@@ -75,6 +95,8 @@ export function StreamPlayer({
       setIsFullscreen(fs);
       // Release the orientation lock once we leave fullscreen.
       if (!fs) unlockOrientation();
+      overButton.current = false; // layout shifted; clear any stale hover
+      revealControls();
     };
     document.addEventListener("fullscreenchange", onChange);
     document.addEventListener("webkitfullscreenchange", onChange);
@@ -82,7 +104,20 @@ export function StreamPlayer({
       document.removeEventListener("fullscreenchange", onChange);
       document.removeEventListener("webkitfullscreenchange", onChange);
     };
-  }, []);
+  }, [revealControls]);
+
+  // Reveal on any pointer/touch activity the page can observe; start hidden-timer.
+  useEffect(() => {
+    const onMove = () => revealControls();
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("touchstart", onMove, { passive: true });
+    hideTimer.current = setTimeout(() => setControlsVisible(false), HIDE_AFTER);
+    return () => {
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("touchstart", onMove);
+      if (hideTimer.current) clearTimeout(hideTimer.current);
+    };
+  }, [revealControls]);
 
   async function toggleFullscreen() {
     const el = stageRef.current;
@@ -127,6 +162,8 @@ export function StreamPlayer({
 
       <div
         ref={stageRef}
+        onPointerMove={revealControls}
+        onTouchStart={revealControls}
         className={cn(
           "relative w-full bg-black",
           isFullscreen ? "h-screen" : "aspect-video",
@@ -149,11 +186,23 @@ export function StreamPlayer({
         <button
           type="button"
           onClick={toggleFullscreen}
+          onPointerEnter={() => {
+            overButton.current = true;
+            if (hideTimer.current) clearTimeout(hideTimer.current);
+            setControlsVisible(true);
+          }}
+          onPointerLeave={() => {
+            overButton.current = false;
+            scheduleHide();
+          }}
           aria-label="Toggle fullscreen"
           title={
             isFullscreen ? "Exit fullscreen" : "Fullscreen with chat overlay"
           }
-          className="absolute right-1.5 bottom-1.5 z-20 border border-white/30 bg-black/70 p-2 text-white/90 backdrop-blur-sm transition-colors hover:bg-black/90"
+          className={cn(
+            "absolute right-1.5 bottom-1.5 z-20 border border-white/30 bg-black/70 p-2 text-white/90 backdrop-blur-sm transition-all duration-300 hover:bg-black/90",
+            controlsVisible ? "opacity-100" : "opacity-0",
+          )}
         >
           {isFullscreen ? (
             <Minimize className="h-5 w-5" />
