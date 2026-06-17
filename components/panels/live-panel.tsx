@@ -82,7 +82,7 @@ function ChannelCard({
   return (
     <Link
       href={`/live/${channel.url}`}
-      className="group flex items-center gap-3 border-b border-foreground/20 p-4 transition-colors last:border-0 hover:bg-muted"
+      className="group flex min-w-0 items-center gap-3 border-b border-foreground/20 p-4 transition-colors last:border-0 hover:bg-muted"
     >
       {channel.logo && (
         <Image
