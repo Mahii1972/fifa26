@@ -191,12 +191,28 @@ export function ChatPanel({ room }: { room: string }) {
     if (el) el.scrollTop = el.scrollHeight;
   }, [messages]);
 
-  function saveName(e: React.FormEvent) {
+  async function saveName(e: React.FormEvent) {
     e.preventDefault();
     const value = draft.trim();
     if (!value) return;
     setStoredName(value.slice(0, 32));
     setDraft("");
+    // Joining is a user gesture — prompt for notification permission now so new
+    // messages can ping you, and turn alerts on if you allow it. The bell in
+    // the header lets you mute later.
+    if ("Notification" in window) {
+      try {
+        let p: NotificationPermission = Notification.permission;
+        if (p === "default") p = await Notification.requestPermission();
+        setPerm(p);
+        if (p === "granted") {
+          setNotify(true);
+          writeNotifyPref(true);
+        }
+      } catch {
+        /* ignore — alerts can still be enabled later via the bell */
+      }
+    }
   }
 
   async function send(e: React.FormEvent) {
@@ -259,6 +275,10 @@ export function ChatPanel({ room }: { room: string }) {
           >
             ENTER CHAT
           </button>
+          <p className="text-[10px] leading-relaxed tracking-wider text-muted-foreground">
+            ▸ ALLOW NOTIFICATIONS TO GET PINGED ON NEW MESSAGES WHEN THIS TAB IS
+            IN THE BACKGROUND
+          </p>
         </form>
       </section>
     );
