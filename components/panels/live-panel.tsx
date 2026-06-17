@@ -103,7 +103,7 @@ function ChannelCard({
           <WatchingBadge count={online} />
         </p>
       </div>
-      <span className="flex items-center gap-2 whitespace-nowrap text-[11px] tracking-widest text-teletext-green">
+      <span className="flex shrink-0 items-center gap-2 whitespace-nowrap text-[11px] tracking-widest text-teletext-green">
         <span className="inline-block h-2.5 w-2.5 animate-blink bg-teletext-green" />
         LIVE
       </span>
