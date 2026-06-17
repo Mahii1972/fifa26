@@ -9,6 +9,38 @@ import type { Channel } from "./types";
 
 const UPSTREAM = "https://api.nuevasantino.xyz/api/channels";
 
+/**
+ * Locally-defined channels we inject alongside the upstream feed. Each entry is
+ * a single /live/[slug] page that bundles several run-machine-hd embeds as
+ * selectable feeds, so all the sources live behind one "channel".
+ */
+const LOCAL_CHANNELS: Channel[] = [
+  {
+    url: "backup-fifa",
+    name: "Backup FIFA",
+    logo: "",
+    genre: 2, // Sports (channels taxonomy)
+    vip: false,
+    streams: [
+      { id: "caze-tv", label: "Cazé TV" },
+      { id: "fifa", label: "FIFA" },
+      { id: "zee-hindi", label: "Zee Hindi" },
+      { id: "fox-sports", label: "Fox Sports" },
+      { id: "sportv", label: "SporTV" },
+      { id: "telemundo", label: "Telemundo" },
+      { id: "benin", label: "Benin" },
+      { id: "dsports", label: "DSports" },
+      { id: "tsn", label: "TSN" },
+      { id: "zee-eng", label: "Zee Eng" },
+      { id: "ios-2", label: "iOS 2" },
+    ].map(({ id, label }) => ({
+      name: label,
+      url: `https://run-machine-hd.pages.dev/?id=${id}`,
+      vip: false,
+    })),
+  },
+];
+
 interface UpstreamChannel {
   url: string;
   name: string;
@@ -31,12 +63,12 @@ export async function fetchChannels(revalidate = 300): Promise<Channel[]> {
       },
       next: { revalidate },
     });
-    if (!res.ok) return [];
+    if (!res.ok) return [...LOCAL_CHANNELS];
 
     const data = (await res.json()) as { channels?: UpstreamChannel[] };
     const channels = data.channels ?? [];
 
-    return channels
+    const upstream = channels
       .filter((c) => Array.isArray(c.streams))
       .map((c) => ({
         url: c.url,
@@ -50,8 +82,11 @@ export async function fetchChannels(revalidate = 300): Promise<Channel[]> {
           vip: Boolean(s.vip),
         })),
       }));
+
+    // Local channels first so they're easy to find at the top of the panel.
+    return [...LOCAL_CHANNELS, ...upstream];
   } catch {
-    return [];
+    return [...LOCAL_CHANNELS];
   }
 }
 
