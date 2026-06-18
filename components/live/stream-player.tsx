@@ -1,10 +1,46 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Maximize, Minimize } from "lucide-react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import { Maximize, MessageSquare, MessageSquareOff, Minimize } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChatOverlay } from "@/components/live/chat-overlay";
 import type { LiveStream } from "@/lib/types";
+
+// Persisted "show chat over the video in fullscreen" preference. Read through
+// useSyncExternalStore so it's SSR-safe (defaults on) and updates across tabs.
+const FS_CHAT_KEY = "fifa26-fs-chat";
+const FS_CHAT_EVENT = "fifa26-fs-chat-change"; // same-tab notifier (storage event is cross-tab only)
+
+function subscribeFsChat(cb: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("storage", cb);
+  window.addEventListener(FS_CHAT_EVENT, cb);
+  return () => {
+    window.removeEventListener("storage", cb);
+    window.removeEventListener(FS_CHAT_EVENT, cb);
+  };
+}
+function getFsChat(): boolean {
+  try {
+    return localStorage.getItem(FS_CHAT_KEY) !== "0"; // default on
+  } catch {
+    return true;
+  }
+}
+function setFsChat(on: boolean): void {
+  try {
+    localStorage.setItem(FS_CHAT_KEY, on ? "1" : "0");
+  } catch {
+    /* storage disabled — preference just won't persist */
+  }
+  window.dispatchEvent(new Event(FS_CHAT_EVENT));
+}
 
 // Fullscreen API with webkit (older Safari) fallbacks — not in the TS DOM lib.
 type FsElement = HTMLElement & {
@@ -66,6 +102,7 @@ export function StreamPlayer({
 }) {
   const [active, setActive] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const fsChatOn = useSyncExternalStore(subscribeFsChat, getFsChat, () => true);
   const [controlsVisible, setControlsVisible] = useState(true);
   const stageRef = useRef<HTMLDivElement>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -181,6 +218,36 @@ export function StreamPlayer({
           title={current.name}
         />
 
+        {/* In fullscreen, let the viewer turn the chat overlay on/off. */}
+        {isFullscreen && room && (
+          <button
+            type="button"
+            onClick={() => setFsChat(!fsChatOn)}
+            onPointerEnter={() => {
+              overButton.current = true;
+              if (hideTimer.current) clearTimeout(hideTimer.current);
+              setControlsVisible(true);
+            }}
+            onPointerLeave={() => {
+              overButton.current = false;
+              scheduleHide();
+            }}
+            aria-pressed={fsChatOn}
+            aria-label="Toggle chat overlay"
+            title={fsChatOn ? "Hide chat overlay" : "Show chat overlay"}
+            className={cn(
+              "absolute right-14 bottom-1.5 z-20 border border-white/30 bg-black/70 p-2 text-white/90 backdrop-blur-sm transition-all duration-300 hover:bg-black/90",
+              controlsVisible ? "opacity-100" : "opacity-0",
+            )}
+          >
+            {fsChatOn ? (
+              <MessageSquare className="h-5 w-5" />
+            ) : (
+              <MessageSquareOff className="h-5 w-5" />
+            )}
+          </button>
+        )}
+
         {/* Sits over the embedded player's own fullscreen button (bottom-right)
             so tapping there triggers our overlay-capable fullscreen instead. */}
         <button
@@ -211,7 +278,7 @@ export function StreamPlayer({
           )}
         </button>
 
-        {isFullscreen && room && <ChatOverlay room={room} />}
+        {isFullscreen && room && fsChatOn && <ChatOverlay room={room} />}
       </div>
 
       {streams.length > 1 && (

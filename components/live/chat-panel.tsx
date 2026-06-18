@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import PusherClient from "pusher-js";
-import { Bell, BellOff } from "lucide-react";
+import { Bell, BellOff, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CHAT_EVENT, chatChannel } from "@/lib/chat-shared";
+import { CHAT_EVENT, SYNC_EVENT, chatChannel } from "@/lib/chat-shared";
 import { getChatLog, getServerSnapshot } from "@/lib/chat-log";
 import type { ChatMessage } from "@/lib/types";
+import type { SyncPayload } from "@/lib/watch-party";
 
 const NAME_KEY = "fifa26-chat-user";
 const NAME_EVENT = "fifa26-chat-name"; // same-tab notifier (storage event is cross-tab only)
@@ -76,9 +77,11 @@ function setStoredName(value: string): void {
 export function ChatPanel({
   room,
   onMembersChange,
+  onSync,
 }: {
   room: string;
   onMembersChange?: (members: string[]) => void;
+  onSync?: (state: SyncPayload) => void;
 }) {
   const name = useSyncExternalStore(subscribeName, getName, () => null);
   const log = getChatLog(room);
@@ -111,6 +114,11 @@ export function ChatPanel({
   useEffect(() => {
     onMembersChangeRef.current = onMembersChange;
   }, [onMembersChange]);
+
+  const onSyncRef = useRef(onSync);
+  useEffect(() => {
+    onSyncRef.current = onSync;
+  }, [onSync]);
 
   // Connect to Pusher and join this room's presence channel once we have a name.
   useEffect(() => {
@@ -157,6 +165,10 @@ export function ChatPanel({
       channel.bind("pusher:subscription_succeeded", refresh);
       channel.bind("pusher:member_added", refresh);
       channel.bind("pusher:member_removed", refresh);
+
+      channel.bind(SYNC_EVENT, (data: SyncPayload) => {
+        onSyncRef.current?.(data);
+      });
 
       channel.bind(CHAT_EVENT, (data: ChatMessage) => {
         getChatLog(room).append(data);
@@ -304,6 +316,16 @@ export function ChatPanel({
       <div className="font-display glow-cyan flex items-center justify-between gap-2 border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
         <span className="min-w-0 truncate">▓ MATCH CHAT</span>
         <span className="flex shrink-0 items-center gap-2.5">
+          {messages.length > 0 && (
+            <button
+              type="button"
+              onClick={log.clear}
+              title="Clear chat (this device only)"
+              className="pixel-press flex items-center border-2 border-teletext-cyan/40 p-1 text-teletext-cyan/70 transition-colors hover:border-teletext-yellow hover:text-teletext-yellow"
+            >
+              <Trash2 className="h-3 w-3" />
+            </button>
+          )}
           {perm !== "unsupported" && (
             <button
               type="button"

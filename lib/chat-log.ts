@@ -89,6 +89,15 @@ class ChatLog {
     this.emit();
   };
 
+  // Clears this client's local history. Chat is ephemeral on the wire, so this
+  // only affects the local view — it doesn't wipe anyone else's log.
+  clear = (): void => {
+    if (!this.messages.length) return;
+    this.messages = [];
+    persist(this.room, this.messages);
+    this.emit();
+  };
+
   private emit(): void {
     this.listeners.forEach((l) => l());
   }

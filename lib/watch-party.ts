@@ -39,6 +39,20 @@ export interface ParsedParty {
 }
 
 /**
+ * Host playback state broadcast to the room (soft sync). The embed can't be
+ * remote-controlled, so this drives an indicator/catch-up hint, not enforced
+ * play/pause. See components/live/watch-party-room.
+ */
+export interface SyncPayload {
+  status: string; // play | pause | playing | seeked | ended | ready
+  progress: number; // seconds into the movie
+  duration: number; // total seconds
+  host: string; // host's display handle
+  hostId: string; // host's per-tab id — identifies the single active controller
+  at: number; // Date.now() when sent — used to detect a stale/absent host
+}
+
+/**
  * Reconstruct a party's movie from its slug. Pure (no randomness) so it is safe
  * to call on the server (the room page) and the client (the lobby). Returns null
  * when the slug carries no IMDb id.

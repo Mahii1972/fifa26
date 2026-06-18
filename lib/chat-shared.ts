@@ -6,6 +6,10 @@
 
 export const CHAT_EVENT = "message";
 
+// Watch-party playback sync: the host's player state, fanned out on the same
+// room channel as chat (so no extra presence membership / occupancy inflation).
+export const SYNC_EVENT = "sync";
+
 // Presence channels MUST start with "presence-". One channel per room carries
 // both the member list and the messages.
 export const CHANNEL_PREFIX = "presence-chat-";
