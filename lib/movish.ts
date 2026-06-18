@@ -1,22 +1,36 @@
 /**
- * movish.net World Cup channels (third-party) — the "Backup Live 2" source.
+ * movish.net channels (third-party) — the "Backup Live 2" source.
  *
- * Surfaced as a SINGLE entry ("FIFA World Cup 2026 — Live Channels"); its watch
- * page exposes every channel as a selectable feed.
+ * Two groups:
+ *  - "FIFA World Cup": a single entry whose watch page fans out to every WC
+ *    channel as a selectable feed (scraped fresh from /world-cup, since the set
+ *    changes per match).
+ *  - "24/7 Channels": a curated set of always-on entertainment channels.
  *
- * Flow: GET /world-cup yields the primary feed inline (TSN 1 → /iptv-embed/<id>)
- * plus a row of alternate channels as /live-broadcast/<slug> links (no embed id).
- * To play an alternate we fetch its channel page and pull out its
- * /iptv-embed/<id>. The channel set changes per match, so we always scrape fresh.
+ * Flow: each channel is a /live-broadcast/<slug> page whose playable stream is
+ * its inline /iptv-embed/<id>. We resolve that id when the watch page opens.
  */
 import type { LiveEvent, LiveStream } from "./types";
 
 const MOVISH_ORIGIN = "https://movish.net";
 const MOVISH_WC = `${MOVISH_ORIGIN}/world-cup`;
-// Single /live/[slug] entry that fans out to all channels as feeds.
+// Single /live/[slug] entry that fans out to all WC channels as feeds.
 export const MOVISH_SLUG = "movish-wc";
+// Prefix for a single movish channel: /live/movish-ch-<channelSlug>.
+const CHANNEL_PREFIX = "movish-ch-";
 const BROWSER_UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36";
+
+// Curated always-on entertainment channels (movish /live-broadcast slugs).
+const CHANNELS_247: { name: string; slug: string }[] = [
+  { name: "HBO", slug: "hbo-usa" },
+  { name: "Cinemax", slug: "cinemax-usa" },
+  { name: "AMC", slug: "amc-usa" },
+  { name: "Comedy Central", slug: "comedy-central" },
+  { name: "Cartoon Network", slug: "cartoon-network" },
+  { name: "Adult Swim", slug: "adult-swim" },
+  { name: "Disney XD", slug: "disney-xd" },
+];
 
 interface MovishChannel {
   name: string;
@@ -45,8 +59,21 @@ async function fetchHtml(url: string, revalidate: number): Promise<string> {
   }
 }
 
-/** Parse the /world-cup page into the current channel list. */
-function parseChannels(html: string): MovishChannel[] {
+/** Resolve a /live-broadcast/<slug> channel page to its iptv-embed URL. */
+async function resolveChannelEmbed(
+  channelSlug: string,
+  revalidate: number,
+): Promise<string | undefined> {
+  const page = await fetchHtml(
+    `${MOVISH_ORIGIN}/live-broadcast/${channelSlug}`,
+    revalidate,
+  );
+  const id = page.match(/iptv-embed\/(\d+)/)?.[1];
+  return id ? `${MOVISH_ORIGIN}/iptv-embed/${id}` : undefined;
+}
+
+/** Parse the /world-cup page into the current WC channel list. */
+function parseWorldCupChannels(html: string): MovishChannel[] {
   const channels: MovishChannel[] = [];
 
   // Primary feed: the first /iptv-embed/<id> on the page is the default (TSN 1).
@@ -68,50 +95,85 @@ function parseChannels(html: string): MovishChannel[] {
   return channels;
 }
 
-/**
- * The movish backup as a single LiveEvent row. Its `streams` carry the channel
- * names (count → "N FEEDS"); the real embed URLs are resolved on the watch page.
- */
-export async function fetchMovishGroups(revalidate = 60): Promise<MovishGroup[]> {
-  const channels = parseChannels(await fetchHtml(MOVISH_WC, revalidate));
-  if (!channels.length) return [];
-  const event: LiveEvent = {
-    url: MOVISH_SLUG,
-    name: "FIFA World Cup 2026 — Live Channels",
+/** A LiveEvent row carrying `count` placeholder feeds (resolved on watch). */
+function channelRow(url: string, name: string, feeds: string[]): LiveEvent {
+  return {
+    url,
+    name,
     logo: "",
     genre: 0,
     time: "",
     featured: false,
     vip: false,
-    streams: channels.map((c) => ({ name: c.name, url: "", vip: false })),
+    streams: feeds.map((n) => ({ name: n, url: "", vip: false })),
   };
-  return [{ category: "FIFA World Cup", events: [event] }];
 }
 
-/** Resolve every channel to a playable iptv-embed feed (parallel). */
-export async function findMovishStreams(
-  revalidate = 60,
+/** Backup Live 2 listing: the WC entry + the curated 24/7 channels. */
+export async function fetchMovishGroups(revalidate = 60): Promise<MovishGroup[]> {
+  const groups: MovishGroup[] = [];
+
+  const wc = parseWorldCupChannels(await fetchHtml(MOVISH_WC, revalidate));
+  if (wc.length) {
+    groups.push({
+      category: "FIFA World Cup",
+      events: [
+        channelRow(
+          MOVISH_SLUG,
+          "FIFA World Cup 2026 — Live Channels",
+          wc.map((c) => c.name),
+        ),
+      ],
+    });
+  }
+
+  groups.push({
+    category: "24/7 Channels",
+    events: CHANNELS_247.map((c) =>
+      channelRow(`${CHANNEL_PREFIX}${c.slug}`, c.name, [c.name]),
+    ),
+  });
+
+  return groups;
+}
+
+/** Resolve every WC channel to a playable iptv-embed feed (parallel). */
+async function findWorldCupStreams(
+  revalidate: number,
 ): Promise<{ name: string; streams: LiveStream[] } | undefined> {
-  const channels = parseChannels(await fetchHtml(MOVISH_WC, revalidate));
+  const channels = parseWorldCupChannels(await fetchHtml(MOVISH_WC, revalidate));
   if (!channels.length) return undefined;
 
   const resolved = await Promise.all(
     channels.map(async (c): Promise<LiveStream | null> => {
-      let embedId = c.embedId;
-      if (!embedId && c.channelSlug) {
-        const page = await fetchHtml(
-          `${MOVISH_ORIGIN}/live-broadcast/${c.channelSlug}`,
-          revalidate,
-        );
-        embedId = page.match(/iptv-embed\/(\d+)/)?.[1];
-      }
-      return embedId
-        ? { name: c.name, url: `${MOVISH_ORIGIN}/iptv-embed/${embedId}`, vip: false }
-        : null;
+      const url = c.embedId
+        ? `${MOVISH_ORIGIN}/iptv-embed/${c.embedId}`
+        : c.channelSlug
+          ? await resolveChannelEmbed(c.channelSlug, revalidate)
+          : undefined;
+      return url ? { name: c.name, url, vip: false } : null;
     }),
   );
 
   const streams = resolved.filter((s): s is LiveStream => s !== null);
   if (!streams.length) return undefined;
   return { name: "FIFA World Cup 2026", streams };
+}
+
+/** Resolve any `movish-` slug (the WC fan-out or a single 24/7 channel). */
+export async function findMovishStream(
+  slug: string,
+  revalidate = 60,
+): Promise<{ name: string; streams: LiveStream[] } | undefined> {
+  if (slug === MOVISH_SLUG) return findWorldCupStreams(revalidate);
+
+  if (slug.startsWith(CHANNEL_PREFIX)) {
+    const channelSlug = slug.slice(CHANNEL_PREFIX.length);
+    const name =
+      CHANNELS_247.find((c) => c.slug === channelSlug)?.name ?? channelSlug;
+    const url = await resolveChannelEmbed(channelSlug, revalidate);
+    return url ? { name, streams: [{ name, url, vip: false }] } : undefined;
+  }
+
+  return undefined;
 }

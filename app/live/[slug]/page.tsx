@@ -2,7 +2,7 @@ import Link from "next/link";
 import { findLiveEvent } from "@/lib/live-events";
 import { findChannel } from "@/lib/channels";
 import { findPpvEvent } from "@/lib/ppv-events";
-import { findMovishStreams } from "@/lib/movish";
+import { findMovishStream } from "@/lib/movish";
 import { StreamPlayer } from "@/components/live/stream-player";
 import { ChatPanel } from "@/components/live/chat-panel";
 import { WavyBackground } from "@/components/retro/wavy-background";
@@ -30,7 +30,7 @@ export default async function LiveWatchPage({
       ? slug.startsWith("ppv-")
         ? await findPpvEvent(slug.slice(4))
         : slug.startsWith("movish-")
-          ? await findMovishStreams()
+          ? await findMovishStream(slug)
           : undefined
       : undefined;
 
