@@ -73,7 +73,13 @@ function setStoredName(value: string): void {
  * via getChatLog so a refresh restores the recent conversation. First-time
  * visitors are asked to pick a (non-blank) handle before they can join.
  */
-export function ChatPanel({ room }: { room: string }) {
+export function ChatPanel({
+  room,
+  onMembersChange,
+}: {
+  room: string;
+  onMembersChange?: (members: string[]) => void;
+}) {
   const name = useSyncExternalStore(subscribeName, getName, () => null);
   const log = getChatLog(room);
   const messages = useSyncExternalStore(
@@ -98,6 +104,13 @@ export function ChatPanel({ room }: { room: string }) {
   useEffect(() => {
     notifyRef.current = notifyOn;
   }, [notifyOn]);
+
+  // Latest presence callback, held in a ref so the subscribe effect doesn't
+  // depend on (and reconnect over) the caller's changing function identity.
+  const onMembersChangeRef = useRef(onMembersChange);
+  useEffect(() => {
+    onMembersChangeRef.current = onMembersChange;
+  }, [onMembersChange]);
 
   // Connect to Pusher and join this room's presence channel once we have a name.
   useEffect(() => {
@@ -139,6 +152,7 @@ export function ChatPanel({ room }: { room: string }) {
         const names: string[] = [];
         roster.members.each((m) => names.push(m.info?.name ?? "anon"));
         setMembers(names);
+        onMembersChangeRef.current?.(names);
       };
       channel.bind("pusher:subscription_succeeded", refresh);
       channel.bind("pusher:member_added", refresh);
@@ -182,6 +196,7 @@ export function ChatPanel({ room }: { room: string }) {
       }
       setConnected(false);
       setMembers([]);
+      onMembersChangeRef.current?.([]);
     };
   }, [name, room]);
 

@@ -96,7 +96,7 @@ export interface LiveOverlay {
   live: boolean;
 }
 
-export type TabId = "signal" | "live" | "groups" | "squads" | "fixtures" | "venues";
+export type TabId = "signal" | "live" | "groups" | "squads" | "fixtures" | "watchparty";
 
 /** A single playable feed for a live event/channel. */
 export interface LiveStream {

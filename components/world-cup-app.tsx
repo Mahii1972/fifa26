@@ -13,7 +13,7 @@ import { LivePanel } from "@/components/panels/live-panel";
 import { GroupsPanel } from "@/components/panels/groups-panel";
 import { SquadsPanel } from "@/components/panels/squads-panel";
 import { FixturesPanel } from "@/components/panels/fixtures-panel";
-import { VenuesPanel } from "@/components/panels/venues-panel";
+import { WatchPartyPanel } from "@/components/panels/watch-party-panel";
 
 export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
   const [tab, setTab] = useState<TabId>("signal");
@@ -65,7 +65,7 @@ export function WorldCupApp({ data: initialData }: { data: WorldCupData }) {
               {tab === "groups" && <GroupsPanel data={data} />}
               {tab === "squads" && <SquadsPanel data={data} />}
               {tab === "fixtures" && <FixturesPanel data={data} />}
-              {tab === "venues" && <VenuesPanel data={data} />}
+              {tab === "watchparty" && <WatchPartyPanel />}
             </main>
           </div>
         </div>

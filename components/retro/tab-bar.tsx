@@ -9,7 +9,7 @@ const TABS: { id: TabId; num: string; label: string }[] = [
   { id: "groups", num: "P200", label: "GROUPS" },
   { id: "squads", num: "P300", label: "SQUADS" },
   { id: "fixtures", num: "P400", label: "FIXTURES" },
-  { id: "venues", num: "P500", label: "VENUES" },
+  { id: "watchparty", num: "P500", label: "WATCH PARTY" },
 ];
 
 export function TabBar({

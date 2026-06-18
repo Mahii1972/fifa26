@@ -3,10 +3,12 @@
 import { useMemo, useState } from "react";
 import { MatchTimeRow } from "@/components/match-time";
 import { StatusBadge, hasScore, isLive } from "@/components/retro/match-status";
+import { VenuesPanel } from "@/components/panels/venues-panel";
 import { FILTER_ACTIVE, FILTER_INACTIVE } from "@/lib/teletext";
+import { cn } from "@/lib/utils";
 import type { WorldCupData } from "@/lib/types";
 
-export function FixturesPanel({ data }: { data: WorldCupData }) {
+function FixturesList({ data }: { data: WorldCupData }) {
   const [groupFilter, setGroupFilter] = useState<string>("ALL");
   const [matchdayFilter, setMatchdayFilter] = useState<string>("ALL");
 
@@ -210,6 +212,44 @@ export function FixturesPanel({ data }: { data: WorldCupData }) {
       <p className="mt-3 text-sm tracking-wider text-muted-foreground">
         SHOWING {filtered.length} OF {data.matches.length} FIXTURES
       </p>
+    </div>
+  );
+}
+
+/** Fixtures tab: a FIXTURES schedule subpanel and a VENUES subpanel. */
+export function FixturesPanel({ data }: { data: WorldCupData }) {
+  const [sub, setSub] = useState<"fixtures" | "venues">("fixtures");
+
+  const subTabs = [
+    { id: "fixtures" as const, label: "FIXTURES" },
+    { id: "venues" as const, label: "VENUES" },
+  ];
+
+  return (
+    <div>
+      <div className="mb-6 grid grid-cols-2 border-2 border-foreground">
+        {subTabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => setSub(t.id)}
+            className={cn(
+              "pixel-press font-display flex items-center justify-center gap-2 border-r-2 border-foreground px-3 py-3 text-center text-[9px] tracking-wider last:border-r-0 sm:text-[11px]",
+              sub === t.id
+                ? "glow-soft bg-primary text-primary-foreground"
+                : "bg-secondary/40 text-teletext-cyan hover:bg-muted hover:text-teletext-yellow",
+            )}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {sub === "fixtures" ? (
+        <FixturesList data={data} />
+      ) : (
+        <VenuesPanel data={data} />
+      )}
     </div>
   );
 }
