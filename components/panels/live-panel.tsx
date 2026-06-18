@@ -3,7 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import type { Channel, LiveEvent } from "@/lib/types";
+import type { PpvGroup } from "@/lib/ppv-events";
+import type { MovishGroup } from "@/lib/movish";
 import { genreLabel } from "@/lib/types";
 
 // How many channels to show before tucking the rest behind the accordion.
@@ -132,6 +135,17 @@ export function LivePanel() {
   const [status, setStatus] = useState<"loading" | "ready" | "error">(
     "loading",
   );
+  // Subpanels: "Main Stream" (the live feed list), "Backup Live 1" (ppv.to) and
+  // "Backup Live 2" (movish.net). "idle" doubles as each backup's loading state.
+  const [sub, setSub] = useState<"main" | "backup1" | "backup2">("main");
+  const [ppvGroups, setPpvGroups] = useState<PpvGroup[]>([]);
+  const [ppvStatus, setPpvStatus] = useState<"idle" | "ready" | "error">(
+    "idle",
+  );
+  const [movishGroups, setMovishGroups] = useState<MovishGroup[]>([]);
+  const [movishStatus, setMovishStatus] = useState<"idle" | "ready" | "error">(
+    "idle",
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -184,6 +198,39 @@ export function LivePanel() {
     };
   }, []);
 
+  // Load the ppv.to backup feed up front so its online total shows on the tab
+  // (not just after the tab is opened).
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/ppv-events")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: PpvGroup[] }) => {
+        if (cancelled) return;
+        setPpvGroups(d.groups ?? []);
+        setPpvStatus("ready");
+      })
+      .catch(() => !cancelled && setPpvStatus("error"));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Load the movish.net backup feed up front so its online total shows on the tab.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/movish-events")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: MovishGroup[] }) => {
+        if (cancelled) return;
+        setMovishGroups(d.groups ?? []);
+        setMovishStatus("ready");
+      })
+      .catch(() => !cancelled && setMovishStatus("error"));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const featured = useMemo(() => events.filter((e) => e.featured), [events]);
   // All events grouped by sport, ordered by genre id (Football === 1 sorts
   // first). Featured events appear in the FEATURED highlight row AND under their
@@ -202,6 +249,37 @@ export function LivePanel() {
     ? channels
     : channels.slice(0, TOP_CHANNELS);
   const hiddenCount = Math.max(0, channels.length - TOP_CHANNELS);
+
+  // Total people watching (our chat occupancy) in each subpanel, summed across
+  // its rooms — shown on the tabs so you can see where the activity is.
+  const mainOnline = useMemo(
+    () =>
+      [...events, ...channels].reduce(
+        (sum, x) => sum + (online[x.url] ?? 0),
+        0,
+      ),
+    [events, channels, online],
+  );
+  const backupOnline = useMemo(
+    () =>
+      ppvGroups
+        .flatMap((g) => g.events)
+        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
+    [ppvGroups, online],
+  );
+  const backup2Online = useMemo(
+    () =>
+      movishGroups
+        .flatMap((g) => g.events)
+        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
+    [movishGroups, online],
+  );
+
+  const subTabs = [
+    { id: "main" as const, label: "MAIN STREAM", online: mainOnline },
+    { id: "backup1" as const, label: "BACKUP LIVE 1", online: backupOnline },
+    { id: "backup2" as const, label: "BACKUP LIVE 2", online: backup2Online },
+  ];
 
   return (
     <div>
@@ -227,6 +305,127 @@ export function LivePanel() {
         </p>
       </aside>
 
+      <div className="mb-6 grid grid-cols-3 border-2 border-foreground">
+        {subTabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => setSub(t.id)}
+            className={cn(
+              "pixel-press font-display flex items-center justify-center gap-2 border-r-2 border-foreground px-3 py-3 text-center text-[9px] tracking-wider last:border-r-0 sm:text-[11px]",
+              sub === t.id
+                ? "glow-soft bg-primary text-primary-foreground"
+                : "bg-secondary/40 text-teletext-cyan hover:bg-muted hover:text-teletext-yellow",
+            )}
+          >
+            {t.label}
+            {t.online > 0 && (
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 border px-1.5 py-0.5 text-[9px] leading-none",
+                  sub === t.id
+                    ? "border-primary-foreground/40 text-primary-foreground"
+                    : "border-teletext-green/50 bg-teletext-green/10 text-teletext-green",
+                )}
+              >
+                <span className="inline-block h-1.5 w-1.5 animate-blink bg-current" />
+                {t.online}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {sub === "backup1" && (
+        <>
+          {ppvStatus === "idle" && (
+            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
+              ░ TUNING BACKUP SIGNAL…
+            </p>
+          )}
+          {ppvStatus === "error" && (
+            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
+              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
+            </p>
+          )}
+          {ppvStatus === "ready" && ppvGroups.length === 0 && (
+            <section className="border-2 border-foreground">
+              <p className="p-6 text-sm tracking-wider text-muted-foreground">
+                NO BACKUP FIXTURES
+              </p>
+            </section>
+          )}
+          {ppvStatus === "ready" &&
+            ppvGroups.map((g) => (
+              <section
+                key={g.category}
+                className="mb-6 border-2 border-foreground last:mb-0"
+              >
+                <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+                  ▓ {g.category.toUpperCase()} · {g.events.length}
+                </h3>
+                <div className="space-y-0">
+                  {g.events.map((e, i) => (
+                    <EventRow
+                      key={e.url}
+                      event={e}
+                      index={i}
+                      label="BACKUP"
+                      online={online[e.url]}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
+        </>
+      )}
+
+      {sub === "backup2" && (
+        <>
+          {movishStatus === "idle" && (
+            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
+              ░ TUNING BACKUP SIGNAL…
+            </p>
+          )}
+          {movishStatus === "error" && (
+            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
+              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
+            </p>
+          )}
+          {movishStatus === "ready" && movishGroups.length === 0 && (
+            <section className="border-2 border-foreground">
+              <p className="p-6 text-sm tracking-wider text-muted-foreground">
+                NO BACKUP CHANNELS
+              </p>
+            </section>
+          )}
+          {movishStatus === "ready" &&
+            movishGroups.map((g) => (
+              <section
+                key={g.category}
+                className="mb-6 border-2 border-foreground last:mb-0"
+              >
+                <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+                  ▓ {g.category.toUpperCase()} · {g.events.length}
+                </h3>
+                <div className="space-y-0">
+                  {g.events.map((e, i) => (
+                    <EventRow
+                      key={e.url}
+                      event={e}
+                      index={i}
+                      label="CHANNEL"
+                      online={online[e.url]}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
+        </>
+      )}
+
+      {sub === "main" && (
+        <>
       {channels.length > 0 && (
         <section className="mb-6 border-2 border-foreground">
           <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
@@ -311,6 +510,8 @@ export function LivePanel() {
             NO FIXTURES SCHEDULED
           </p>
         </section>
+      )}
+        </>
       )}
     </div>
   );

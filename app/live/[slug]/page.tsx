@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { findLiveEvent } from "@/lib/live-events";
 import { findChannel } from "@/lib/channels";
+import { findPpvEvent } from "@/lib/ppv-events";
+import { findMovishStreams } from "@/lib/movish";
 import { StreamPlayer } from "@/components/live/stream-player";
 import { ChatPanel } from "@/components/live/chat-panel";
+import { WavyBackground } from "@/components/retro/wavy-background";
 import { LightsOutToggle } from "@/components/retro/lights-out-toggle";
 import type { LiveStream } from "@/lib/types";
 
@@ -20,13 +23,24 @@ export default async function LiveWatchPage({
   const event = await findLiveEvent(slug);
   // Not a scheduled event? It may be an always-on channel from the feed.
   const channel = event ? undefined : await findChannel(slug);
+  // Backup sources, resolved by slug prefix: "ppv-" (ppv.to) and "movish-"
+  // (movish.net World Cup channels).
+  const backup =
+    !event && !channel
+      ? slug.startsWith("ppv-")
+        ? await findPpvEvent(slug.slice(4))
+        : slug.startsWith("movish-")
+          ? await findMovishStreams()
+          : undefined
+      : undefined;
 
-  // Event/channel → its feeds; otherwise treat the slug as a direct embed.
+  // Event/channel/backup → its feeds; otherwise treat the slug as a direct embed.
   const title =
-    event?.name ?? channel?.name ?? slug.replace(/-/g, " ");
+    event?.name ?? channel?.name ?? backup?.name ?? slug.replace(/-/g, " ");
   const streams: LiveStream[] =
     event?.streams ??
-    channel?.streams ?? [
+    channel?.streams ??
+    backup?.streams ?? [
       {
         name: slug,
         url: `https://junkieembeds.pages.dev/embed/${slug}`,
@@ -36,8 +50,9 @@ export default async function LiveWatchPage({
 
   return (
     <div className="min-h-screen p-2 sm:p-5 md:p-8 lg:p-10">
-      <div className="crt-bezel mx-auto max-w-5xl">
+      <div className="crt-bezel mx-auto max-w-7xl">
         <div className="crt-shell min-h-[88vh]">
+          <WavyBackground />
           <div className="crt-content">
             <header className="flex items-center justify-between gap-3 border-b-2 border-foreground px-3 py-3 sm:px-4">
               <Link

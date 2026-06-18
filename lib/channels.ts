@@ -9,34 +9,6 @@ import type { Channel } from "./types";
 
 const UPSTREAM = "https://api.nuevasantino.xyz/api/channels";
 
-/**
- * Locally-defined channels we inject alongside the upstream feed. Each entry is
- * a single /live/[slug] page that bundles several run-machine-hd embeds as
- * selectable feeds, so all the sources live behind one "channel".
- */
-const LOCAL_CHANNELS: Channel[] = [
-  {
-    url: "backup-fifa",
-    name: "Backup FIFA",
-    logo: "",
-    genre: 2, // Sports (channels taxonomy)
-    vip: false,
-    streams: [
-      { path: "", label: "Main" },
-      { path: "/fox", label: "FOX" },
-      { path: "/fox-4k", label: "FOX 4K (HEVC)" },
-      { path: "/uk", label: "BBC One" },
-      { path: "/telemundo", label: "Telemundo" },
-      { path: "/telemundo-4k", label: "Telemundo 4K (HEVC)" },
-      { path: "/zdf", label: "ZDF Germany" },
-    ].map(({ path, label }) => ({
-      name: label,
-      url: `https://embedindia.st/embed/wc/2026-06-17/por-cod${path}`,
-      vip: false,
-    })),
-  },
-];
-
 interface UpstreamChannel {
   url: string;
   name: string;
@@ -59,7 +31,7 @@ export async function fetchChannels(revalidate = 300): Promise<Channel[]> {
       },
       next: { revalidate },
     });
-    if (!res.ok) return [...LOCAL_CHANNELS];
+    if (!res.ok) return [];
 
     const data = (await res.json()) as { channels?: UpstreamChannel[] };
     const channels = data.channels ?? [];
@@ -79,10 +51,9 @@ export async function fetchChannels(revalidate = 300): Promise<Channel[]> {
         })),
       }));
 
-    // Local channels first so they're easy to find at the top of the panel.
-    return [...LOCAL_CHANNELS, ...upstream];
+    return upstream;
   } catch {
-    return [...LOCAL_CHANNELS];
+    return [];
   }
 }
 
