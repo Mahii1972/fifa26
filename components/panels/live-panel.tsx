@@ -278,7 +278,12 @@ export function LivePanel() {
   const subTabs = [
     { id: "main" as const, label: "MAIN STREAM", online: mainOnline },
     { id: "backup1" as const, label: "BACKUP LIVE 1", online: backupOnline },
-    { id: "backup2" as const, label: "BACKUP LIVE 2", online: backup2Online },
+    {
+      id: "backup2" as const,
+      label: "BACKUP LIVE 2",
+      sub: "UNRELIABLE",
+      online: backup2Online,
+    },
   ];
 
   return (
@@ -318,7 +323,14 @@ export function LivePanel() {
                 : "bg-secondary/40 text-teletext-cyan hover:bg-muted hover:text-teletext-yellow",
             )}
           >
-            {t.label}
+            <span className="flex flex-col items-center gap-0.5">
+              {t.label}
+              {t.sub && (
+                <span className="text-[7px] tracking-wider text-teletext-amber sm:text-[8px]">
+                  {t.sub}
+                </span>
+              )}
+            </span>
             {t.online > 0 && (
               <span
                 className={cn(
