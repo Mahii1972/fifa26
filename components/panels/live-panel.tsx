@@ -6,11 +6,14 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { Channel, LiveEvent } from "@/lib/types";
 import type { PpvGroup } from "@/lib/ppv-events";
+import type { StreamiGroup } from "@/lib/streami";
 import type { MovishGroup } from "@/lib/movish";
 import { genreLabel } from "@/lib/types";
 
 // How many channels to show before tucking the rest behind the accordion.
 const TOP_CHANNELS = 4;
+// Same idea for each backup category section.
+const BACKUP_TOP = 4;
 
 // Upstream kickoff strings are wall-clock US Eastern (UTC-4 / EDT for the
 // June 2026 tournament window), regardless of venue. Convert that fixed ET
@@ -127,6 +130,51 @@ function ChannelCard({
   );
 }
 
+/**
+ * One backup category section. Shows the first BACKUP_TOP events and tucks the
+ * rest behind a "show more" accordion, mirroring the 24/7 channels section.
+ */
+function BackupCategorySection({
+  category,
+  events,
+  online,
+}: {
+  category: string;
+  events: LiveEvent[];
+  online: Record<string, number>;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? events : events.slice(0, BACKUP_TOP);
+  const hidden = Math.max(0, events.length - BACKUP_TOP);
+  return (
+    <section className="mb-6 border-2 border-foreground last:mb-0">
+      <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
+        ▓ {category.toUpperCase()} · {events.length}
+      </h3>
+      <div className="space-y-0">
+        {visible.map((e, i) => (
+          <EventRow
+            key={e.url}
+            event={e}
+            index={i}
+            label="BACKUP"
+            online={online[e.url]}
+          />
+        ))}
+      </div>
+      {hidden > 0 && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="font-display block w-full border-t-2 border-foreground bg-card/40 px-4 py-3 text-center text-[11px] tracking-wider text-teletext-cyan transition-colors hover:bg-muted hover:text-teletext-yellow"
+        >
+          {expanded ? "▲ SHOW LESS" : `▼ SHOW ${hidden} MORE`}
+        </button>
+      )}
+    </section>
+  );
+}
+
 export function LivePanel() {
   const [events, setEvents] = useState<LiveEvent[]>([]);
   const [channels, setChannels] = useState<Channel[]>([]);
@@ -135,9 +183,12 @@ export function LivePanel() {
   const [status, setStatus] = useState<"loading" | "ready" | "error">(
     "loading",
   );
-  // Subpanels: "Main Stream" (the live feed list), "Backup Live 1" (ppv.to) and
-  // "Backup Live 2" (movish.net). "idle" doubles as each backup's loading state.
-  const [sub, setSub] = useState<"main" | "backup1" | "backup2">("main");
+  // Subpanels: "Main Stream" (the live feed list), "Backup Live 1" (ppv.to),
+  // "Backup Live 2" (movish.net) and "Backup Live 3" (streami.click). "idle"
+  // doubles as each backup's loading state.
+  const [sub, setSub] = useState<
+    "main" | "backup1" | "backup2" | "backup3"
+  >("main");
   const [ppvGroups, setPpvGroups] = useState<PpvGroup[]>([]);
   const [ppvStatus, setPpvStatus] = useState<"idle" | "ready" | "error">(
     "idle",
@@ -146,6 +197,10 @@ export function LivePanel() {
   const [movishStatus, setMovishStatus] = useState<"idle" | "ready" | "error">(
     "idle",
   );
+  const [streamiGroups, setStreamiGroups] = useState<StreamiGroup[]>([]);
+  const [streamiStatus, setStreamiStatus] = useState<
+    "idle" | "ready" | "error"
+  >("idle");
 
   useEffect(() => {
     let cancelled = false;
@@ -231,6 +286,22 @@ export function LivePanel() {
     };
   }, []);
 
+  // Load the streami.click backup feed up front so its online total shows on the tab.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/streami-events")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: StreamiGroup[] }) => {
+        if (cancelled) return;
+        setStreamiGroups(d.groups ?? []);
+        setStreamiStatus("ready");
+      })
+      .catch(() => !cancelled && setStreamiStatus("error"));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const featured = useMemo(() => events.filter((e) => e.featured), [events]);
   // All events grouped by sport, ordered by genre id (Football === 1 sorts
   // first). Featured events appear in the FEATURED highlight row AND under their
@@ -267,23 +338,25 @@ export function LivePanel() {
         .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
     [ppvGroups, online],
   );
-  const backup2Online = useMemo(
+  const backup3Online = useMemo(
     () =>
-      movishGroups
+      streamiGroups
         .flatMap((g) => g.events)
         .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
-    [movishGroups, online],
+    [streamiGroups, online],
   );
 
-  const subTabs = [
+  // Backup Live 2 (movish) is hidden for now; streami takes the "Backup Live 2"
+  // label (its internal id stays "backup3").
+  const subTabs: {
+    id: "main" | "backup1" | "backup2" | "backup3";
+    label: string;
+    sub?: string;
+    online: number;
+  }[] = [
     { id: "main" as const, label: "MAIN STREAM", online: mainOnline },
     { id: "backup1" as const, label: "BACKUP LIVE 1", online: backupOnline },
-    {
-      id: "backup2" as const,
-      label: "BACKUP LIVE 2",
-      sub: "UNRELIABLE",
-      online: backup2Online,
-    },
+    { id: "backup3" as const, label: "BACKUP LIVE 2", online: backup3Online },
   ];
 
   return (
@@ -432,6 +505,37 @@ export function LivePanel() {
                   ))}
                 </div>
               </section>
+            ))}
+        </>
+      )}
+
+      {sub === "backup3" && (
+        <>
+          {streamiStatus === "idle" && (
+            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
+              ░ TUNING BACKUP SIGNAL…
+            </p>
+          )}
+          {streamiStatus === "error" && (
+            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
+              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
+            </p>
+          )}
+          {streamiStatus === "ready" && streamiGroups.length === 0 && (
+            <section className="border-2 border-foreground">
+              <p className="p-6 text-sm tracking-wider text-muted-foreground">
+                NO BACKUP FIXTURES
+              </p>
+            </section>
+          )}
+          {streamiStatus === "ready" &&
+            streamiGroups.map((g) => (
+              <BackupCategorySection
+                key={g.category}
+                category={g.category}
+                events={g.events}
+                online={online}
+              />
             ))}
         </>
       )}
