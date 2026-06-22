@@ -4,15 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import type { Channel, LiveEvent } from "@/lib/types";
+import type { LiveEvent } from "@/lib/types";
 import type { PpvGroup } from "@/lib/ppv-events";
-import type { StreamiGroup } from "@/lib/streami";
-import type { MovishGroup } from "@/lib/movish";
-import { genreLabel } from "@/lib/types";
+import type { XyzGroup } from "@/lib/xyzstreams";
 
-// How many channels to show before tucking the rest behind the accordion.
-const TOP_CHANNELS = 4;
-// Same idea for each backup category section.
+// How many events to show in each category before the "show more" accordion.
 const BACKUP_TOP = 4;
 
 // Upstream kickoff strings are wall-clock US Eastern (UTC-4 / EDT for the
@@ -73,7 +69,8 @@ function EventRow({
       )}
       <div className="min-w-0 flex-1">
         <p className="text-xs tracking-widest text-teletext-amber">
-          {label} {String(index + 1).padStart(2, "0")} · {kickoff(event.time)}
+          {label} {String(index + 1).padStart(2, "0")}
+          {event.time ? ` · ${kickoff(event.time)}` : ""}
         </p>
         <p className="glow-soft mt-0.5 truncate text-lg leading-tight tracking-wide group-hover:text-teletext-cyan">
           {event.name}
@@ -91,56 +88,19 @@ function EventRow({
   );
 }
 
-function ChannelCard({
-  channel,
-  online = 0,
-}: {
-  channel: Channel;
-  online?: number;
-}) {
-  return (
-    <Link
-      href={`/live/${channel.url}`}
-      className="group flex min-w-0 items-center gap-3 border-b border-foreground/20 p-4 transition-colors last:border-0 hover:bg-muted"
-    >
-      {channel.logo && (
-        <Image
-          src={channel.logo}
-          alt=""
-          width={56}
-          height={36}
-          unoptimized
-          className="h-9 w-14 shrink-0 border border-foreground/30 bg-black object-contain"
-        />
-      )}
-      <div className="min-w-0 flex-1">
-        <p className="text-xs tracking-widest text-teletext-amber">
-          24/7 CHANNEL
-        </p>
-        <p className="glow-cyan mt-0.5 truncate text-lg leading-tight tracking-wide text-teletext-cyan group-hover:text-teletext-yellow">
-          {channel.name}
-          <WatchingBadge count={online} />
-        </p>
-      </div>
-      <span className="flex shrink-0 items-center gap-2 whitespace-nowrap text-[11px] tracking-widest text-teletext-green">
-        <span className="inline-block h-2.5 w-2.5 animate-blink bg-teletext-green" />
-        LIVE
-      </span>
-    </Link>
-  );
-}
-
 /**
- * One backup category section. Shows the first BACKUP_TOP events and tucks the
- * rest behind a "show more" accordion, mirroring the 24/7 channels section.
+ * One category section. Shows the first BACKUP_TOP events and tucks the rest
+ * behind a "show more" accordion.
  */
-function BackupCategorySection({
+function CategorySection({
   category,
   events,
+  label,
   online,
 }: {
   category: string;
   events: LiveEvent[];
+  label: string;
   online: Record<string, number>;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -157,7 +117,7 @@ function BackupCategorySection({
             key={e.url}
             event={e}
             index={i}
-            label="BACKUP"
+            label={label}
             online={online[e.url]}
           />
         ))}
@@ -175,64 +135,52 @@ function BackupCategorySection({
   );
 }
 
+/** Loading / error / empty states shared by both feeds. */
+function FeedStatus({
+  status,
+  empty,
+}: {
+  status: "idle" | "ready" | "error";
+  empty: boolean;
+}) {
+  if (status === "idle")
+    return (
+      <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
+        ░ TUNING SIGNAL…
+      </p>
+    );
+  if (status === "error")
+    return (
+      <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
+        ⚠ FEED UNAVAILABLE · RETRY LATER
+      </p>
+    );
+  if (status === "ready" && empty)
+    return (
+      <section className="border-2 border-foreground">
+        <p className="p-6 text-sm tracking-wider text-muted-foreground">
+          NO FIXTURES AVAILABLE
+        </p>
+      </section>
+    );
+  return null;
+}
+
 export function LivePanel() {
-  const [events, setEvents] = useState<LiveEvent[]>([]);
-  const [channels, setChannels] = useState<Channel[]>([]);
-  const [channelsExpanded, setChannelsExpanded] = useState(false);
   const [online, setOnline] = useState<Record<string, number>>({});
-  const [status, setStatus] = useState<"loading" | "ready" | "error">(
-    "loading",
-  );
-  // Subpanels: "Main Stream" (the live feed list), "Backup Live 1" (ppv.to),
-  // "Backup Live 2" (movish.net) and "Backup Live 3" (streami.click). "idle"
-  // doubles as each backup's loading state.
-  const [sub, setSub] = useState<
-    "main" | "backup1" | "backup2" | "backup3"
-  >("main");
+  // Two feeds: "xyz" (xyzstreams.shop — the MAIN World Cup source) and
+  // "backup1" (ppv.to — Backup Server 1). "idle" doubles as the loading state.
+  const [sub, setSub] = useState<"xyz" | "backup1">("xyz");
   const [ppvGroups, setPpvGroups] = useState<PpvGroup[]>([]);
   const [ppvStatus, setPpvStatus] = useState<"idle" | "ready" | "error">(
     "idle",
   );
-  const [movishGroups, setMovishGroups] = useState<MovishGroup[]>([]);
-  const [movishStatus, setMovishStatus] = useState<"idle" | "ready" | "error">(
+  const [xyzGroups, setXyzGroups] = useState<XyzGroup[]>([]);
+  const [xyzStatus, setXyzStatus] = useState<"idle" | "ready" | "error">(
     "idle",
   );
-  const [streamiGroups, setStreamiGroups] = useState<StreamiGroup[]>([]);
-  const [streamiStatus, setStreamiStatus] = useState<
-    "idle" | "ready" | "error"
-  >("idle");
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/channels")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: { channels: Channel[] }) => {
-        if (!cancelled) setChannels(d.channels ?? []);
-      })
-      .catch(() => {
-        /* channels are non-critical — leave the section empty */
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/live-events")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: { events: LiveEvent[] }) => {
-        if (cancelled) return;
-        setEvents(d.events ?? []);
-        setStatus("ready");
-      })
-      .catch(() => !cancelled && setStatus("error"));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  // Poll live chat occupancy so each match shows how many are watching.
+  // Poll live chat occupancy so each feed shows how many are watching.
   useEffect(() => {
     let cancelled = false;
     async function poll() {
@@ -253,8 +201,24 @@ export function LivePanel() {
     };
   }, []);
 
-  // Load the ppv.to backup feed up front so its online total shows on the tab
-  // (not just after the tab is opened).
+  // Load the xyzstreams.shop World Cup feed (MAIN) up front so its online total
+  // shows on the tab without opening it.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/xyzstreams")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: XyzGroup[] }) => {
+        if (cancelled) return;
+        setXyzGroups(d.groups ?? []);
+        setXyzStatus("ready");
+      })
+      .catch(() => !cancelled && setXyzStatus("error"));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Load the ppv.to backup feed up front so its online total shows on the tab.
   useEffect(() => {
     let cancelled = false;
     fetch("/api/ppv-events")
@@ -270,66 +234,14 @@ export function LivePanel() {
     };
   }, []);
 
-  // Load the movish.net backup feed up front so its online total shows on the tab.
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/movish-events")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: { groups: MovishGroup[] }) => {
-        if (cancelled) return;
-        setMovishGroups(d.groups ?? []);
-        setMovishStatus("ready");
-      })
-      .catch(() => !cancelled && setMovishStatus("error"));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  // Load the streami.click backup feed up front so its online total shows on the tab.
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/streami-events")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: { groups: StreamiGroup[] }) => {
-        if (cancelled) return;
-        setStreamiGroups(d.groups ?? []);
-        setStreamiStatus("ready");
-      })
-      .catch(() => !cancelled && setStreamiStatus("error"));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const featured = useMemo(() => events.filter((e) => e.featured), [events]);
-  // All events grouped by sport, ordered by genre id (Football === 1 sorts
-  // first). Featured events appear in the FEATURED highlight row AND under their
-  // sport here. Each group keeps the upstream kickoff order from the API.
-  const groups = useMemo(() => {
-    const byGenre = new Map<number, LiveEvent[]>();
-    for (const e of events) {
-      const list = byGenre.get(e.genre);
-      if (list) list.push(e);
-      else byGenre.set(e.genre, [e]);
-    }
-    return [...byGenre.entries()].sort((a, b) => a[0] - b[0]);
-  }, [events]);
-
-  const visibleChannels = channelsExpanded
-    ? channels
-    : channels.slice(0, TOP_CHANNELS);
-  const hiddenCount = Math.max(0, channels.length - TOP_CHANNELS);
-
-  // Total people watching (our chat occupancy) in each subpanel, summed across
-  // its rooms — shown on the tabs so you can see where the activity is.
-  const mainOnline = useMemo(
+  // Total people watching (our chat occupancy) per feed, summed across rooms —
+  // shown on the tabs so you can see where the activity is.
+  const xyzOnline = useMemo(
     () =>
-      [...events, ...channels].reduce(
-        (sum, x) => sum + (online[x.url] ?? 0),
-        0,
-      ),
-    [events, channels, online],
+      xyzGroups
+        .flatMap((g) => g.events)
+        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
+    [xyzGroups, online],
   );
   const backupOnline = useMemo(
     () =>
@@ -338,25 +250,10 @@ export function LivePanel() {
         .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
     [ppvGroups, online],
   );
-  const backup3Online = useMemo(
-    () =>
-      streamiGroups
-        .flatMap((g) => g.events)
-        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
-    [streamiGroups, online],
-  );
 
-  // Backup Live 2 (movish) is hidden for now; streami takes the "Backup Live 2"
-  // label (its internal id stays "backup3").
-  const subTabs: {
-    id: "main" | "backup1" | "backup2" | "backup3";
-    label: string;
-    sub?: string;
-    online: number;
-  }[] = [
-    { id: "main" as const, label: "MAIN STREAM", online: mainOnline },
-    { id: "backup1" as const, label: "BACKUP LIVE 1", online: backupOnline },
-    { id: "backup3" as const, label: "BACKUP LIVE 2", online: backup3Online },
+  const subTabs: { id: "xyz" | "backup1"; label: string; online: number }[] = [
+    { id: "xyz", label: "MAIN", online: xyzOnline },
+    { id: "backup1", label: "BACKUP SERVER 1", online: backupOnline },
   ];
 
   return (
@@ -383,7 +280,7 @@ export function LivePanel() {
         </p>
       </aside>
 
-      <div className="mb-6 grid grid-cols-3 border-2 border-foreground">
+      <div className="mb-6 grid grid-cols-2 border-2 border-foreground">
         {subTabs.map((t) => (
           <button
             key={t.id}
@@ -396,14 +293,7 @@ export function LivePanel() {
                 : "bg-secondary/40 text-teletext-cyan hover:bg-muted hover:text-teletext-yellow",
             )}
           >
-            <span className="flex flex-col items-center gap-0.5">
-              {t.label}
-              {t.sub && (
-                <span className="text-[7px] tracking-wider text-teletext-amber sm:text-[8px]">
-                  {t.sub}
-                </span>
-              )}
-            </span>
+            <span className="flex flex-col items-center gap-0.5">{t.label}</span>
             {t.online > 0 && (
               <span
                 className={cn(
@@ -421,212 +311,35 @@ export function LivePanel() {
         ))}
       </div>
 
-      {sub === "backup1" && (
+      {sub === "xyz" && (
         <>
-          {ppvStatus === "idle" && (
-            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
-              ░ TUNING BACKUP SIGNAL…
-            </p>
-          )}
-          {ppvStatus === "error" && (
-            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
-              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
-            </p>
-          )}
-          {ppvStatus === "ready" && ppvGroups.length === 0 && (
-            <section className="border-2 border-foreground">
-              <p className="p-6 text-sm tracking-wider text-muted-foreground">
-                NO BACKUP FIXTURES
-              </p>
-            </section>
-          )}
-          {ppvStatus === "ready" &&
-            ppvGroups.map((g) => (
-              <section
-                key={g.category}
-                className="mb-6 border-2 border-foreground last:mb-0"
-              >
-                <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-                  ▓ {g.category.toUpperCase()} · {g.events.length}
-                </h3>
-                <div className="space-y-0">
-                  {g.events.map((e, i) => (
-                    <EventRow
-                      key={e.url}
-                      event={e}
-                      index={i}
-                      label="BACKUP"
-                      online={online[e.url]}
-                    />
-                  ))}
-                </div>
-              </section>
-            ))}
-        </>
-      )}
-
-      {sub === "backup2" && (
-        <>
-          {movishStatus === "idle" && (
-            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
-              ░ TUNING BACKUP SIGNAL…
-            </p>
-          )}
-          {movishStatus === "error" && (
-            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
-              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
-            </p>
-          )}
-          {movishStatus === "ready" && movishGroups.length === 0 && (
-            <section className="border-2 border-foreground">
-              <p className="p-6 text-sm tracking-wider text-muted-foreground">
-                NO BACKUP CHANNELS
-              </p>
-            </section>
-          )}
-          {movishStatus === "ready" &&
-            movishGroups.map((g) => (
-              <section
-                key={g.category}
-                className="mb-6 border-2 border-foreground last:mb-0"
-              >
-                <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-                  ▓ {g.category.toUpperCase()} · {g.events.length}
-                </h3>
-                <div className="space-y-0">
-                  {g.events.map((e, i) => (
-                    <EventRow
-                      key={e.url}
-                      event={e}
-                      index={i}
-                      label="CHANNEL"
-                      online={online[e.url]}
-                    />
-                  ))}
-                </div>
-              </section>
-            ))}
-        </>
-      )}
-
-      {sub === "backup3" && (
-        <>
-          {streamiStatus === "idle" && (
-            <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
-              ░ TUNING BACKUP SIGNAL…
-            </p>
-          )}
-          {streamiStatus === "error" && (
-            <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
-              ⚠ BACKUP FEED UNAVAILABLE · RETRY LATER
-            </p>
-          )}
-          {streamiStatus === "ready" && streamiGroups.length === 0 && (
-            <section className="border-2 border-foreground">
-              <p className="p-6 text-sm tracking-wider text-muted-foreground">
-                NO BACKUP FIXTURES
-              </p>
-            </section>
-          )}
-          {streamiStatus === "ready" &&
-            streamiGroups.map((g) => (
-              <BackupCategorySection
+          <FeedStatus status={xyzStatus} empty={xyzGroups.length === 0} />
+          {xyzStatus === "ready" &&
+            xyzGroups.map((g) => (
+              <CategorySection
                 key={g.category}
                 category={g.category}
                 events={g.events}
+                label="FEED"
                 online={online}
               />
             ))}
         </>
       )}
 
-      {sub === "main" && (
+      {sub === "backup1" && (
         <>
-      {channels.length > 0 && (
-        <section className="mb-6 border-2 border-foreground">
-          <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-            ▓ 24/7 CHANNELS · {channels.length}
-          </h3>
-          <div className="grid gap-0 sm:grid-cols-2">
-            {visibleChannels.map((c) => (
-              <ChannelCard
-                key={c.url}
-                channel={c}
-                online={online[c.url] ?? 0}
+          <FeedStatus status={ppvStatus} empty={ppvGroups.length === 0} />
+          {ppvStatus === "ready" &&
+            ppvGroups.map((g) => (
+              <CategorySection
+                key={g.category}
+                category={g.category}
+                events={g.events}
+                label="BACKUP"
+                online={online}
               />
             ))}
-          </div>
-          {hiddenCount > 0 && (
-            <button
-              type="button"
-              onClick={() => setChannelsExpanded((v) => !v)}
-              className="font-display block w-full border-t-2 border-foreground bg-card/40 px-4 py-3 text-center text-[11px] tracking-wider text-teletext-cyan transition-colors hover:bg-muted hover:text-teletext-yellow"
-            >
-              {channelsExpanded
-                ? "▲ SHOW LESS"
-                : `▼ SHOW ${hiddenCount} MORE CHANNEL${hiddenCount === 1 ? "" : "S"}`}
-            </button>
-          )}
-        </section>
-      )}
-
-      {status === "loading" && (
-        <p className="animate-blink border-2 border-foreground p-6 text-sm tracking-wider text-teletext-cyan">
-          ░ TUNING SIGNAL…
-        </p>
-      )}
-      {status === "error" && (
-        <p className="border-2 border-foreground p-6 text-sm tracking-wider text-teletext-amber">
-          ⚠ FEED UNAVAILABLE · RETRY LATER
-        </p>
-      )}
-
-      {status === "ready" && featured.length > 0 && (
-        <section className="mb-6 border-2 border-foreground">
-          <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-            ▓ FEATURED
-          </h3>
-          <div className="space-y-0">
-            {featured.map((e, i) => (
-              <EventRow
-                key={e.url}
-                event={e}
-                index={i}
-                label="MATCH"
-                online={online[e.url]}
-              />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {status === "ready" &&
-        groups.map(([genre, list]) => (
-          <section key={genre} className="mb-6 border-2 border-foreground last:mb-0">
-            <h3 className="font-display glow-cyan border-b-2 border-foreground bg-card/40 px-4 py-3 text-[11px] tracking-wide text-teletext-cyan sm:text-xs">
-              ▓ {genreLabel(genre).toUpperCase()} · {list.length}
-            </h3>
-            <div className="space-y-0">
-              {list.map((e, i) => (
-                <EventRow
-                  key={e.url}
-                  event={e}
-                  index={i}
-                  label="FIXTURE"
-                  online={online[e.url]}
-                />
-              ))}
-            </div>
-          </section>
-        ))}
-
-      {status === "ready" && featured.length === 0 && groups.length === 0 && (
-        <section className="border-2 border-foreground">
-          <p className="p-6 text-sm tracking-wider text-muted-foreground">
-            NO FIXTURES SCHEDULED
-          </p>
-        </section>
-      )}
         </>
       )}
     </div>
