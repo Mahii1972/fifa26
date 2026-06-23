@@ -1,5 +1,6 @@
 /**
- * streami.click event feed (third-party) — the "Backup Live 3" source.
+ * Streami event feed (third-party) — the "Backup Server 2" source. Lives at
+ * streamic.ru (the project's current domain; formerly streami.click).
  *
  * Two endpoints:
  *  - /api/J.php          → a small JSON array of "popular" events.
@@ -14,7 +15,7 @@
  */
 import type { LiveEvent, LiveStream } from "./types";
 
-const ORIGIN = "https://streami.click";
+const ORIGIN = "https://streamic.ru";
 // Static signing header the site sends with getEvents.php (lifted from its JS).
 const SSIG = "bytmo8xialhem066";
 const BROWSER_UA =
@@ -70,7 +71,12 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 function categoryLabel(raw: string): string {
-  const key = raw.toLowerCase().replace(/[^a-z]/g, "");
+  // "_wazne" = Polish "important"; fold it into the base category (e.g.
+  // "pilkanozna_wazne" → Football) so it doesn't show up as its own heading.
+  const key = raw
+    .toLowerCase()
+    .replace(/[^a-z]/g, "")
+    .replace(/wazne$/, "");
   return (
     CATEGORY_LABELS[key] ??
     raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase()

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import type { LiveEvent } from "@/lib/types";
 import type { PpvGroup } from "@/lib/ppv-events";
 import type { XyzGroup } from "@/lib/xyzstreams";
+import type { StreamiGroup } from "@/lib/streami";
 
 // How many events to show in each category before the "show more" accordion.
 const BACKUP_TOP = 4;
@@ -168,9 +169,10 @@ function FeedStatus({
 
 export function LivePanel() {
   const [online, setOnline] = useState<Record<string, number>>({});
-  // Two feeds: "xyz" (xyzstreams.shop — the MAIN World Cup source) and
-  // "backup1" (ppv.to — Backup Server 1). "idle" doubles as the loading state.
-  const [sub, setSub] = useState<"xyz" | "backup1">("xyz");
+  // Three feeds: "xyz" (xyzstreams.shop — the MAIN World Cup source),
+  // "backup1" (ppv.to — Backup Server 1) and "backup3" (streamic.ru — Backup
+  // Server 2). "idle" doubles as each feed's loading state.
+  const [sub, setSub] = useState<"xyz" | "backup1" | "backup3">("xyz");
   const [ppvGroups, setPpvGroups] = useState<PpvGroup[]>([]);
   const [ppvStatus, setPpvStatus] = useState<"idle" | "ready" | "error">(
     "idle",
@@ -179,6 +181,10 @@ export function LivePanel() {
   const [xyzStatus, setXyzStatus] = useState<"idle" | "ready" | "error">(
     "idle",
   );
+  const [streamiGroups, setStreamiGroups] = useState<StreamiGroup[]>([]);
+  const [streamiStatus, setStreamiStatus] = useState<
+    "idle" | "ready" | "error"
+  >("idle");
 
   // Poll live chat occupancy so each feed shows how many are watching.
   useEffect(() => {
@@ -234,6 +240,23 @@ export function LivePanel() {
     };
   }, []);
 
+  // Load the streamic.ru backup feed up front so its online total shows on the
+  // tab.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/streami-events")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: StreamiGroup[] }) => {
+        if (cancelled) return;
+        setStreamiGroups(d.groups ?? []);
+        setStreamiStatus("ready");
+      })
+      .catch(() => !cancelled && setStreamiStatus("error"));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   // Total people watching (our chat occupancy) per feed, summed across rooms —
   // shown on the tabs so you can see where the activity is.
   const xyzOnline = useMemo(
@@ -250,10 +273,22 @@ export function LivePanel() {
         .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
     [ppvGroups, online],
   );
+  const streamiOnline = useMemo(
+    () =>
+      streamiGroups
+        .flatMap((g) => g.events)
+        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
+    [streamiGroups, online],
+  );
 
-  const subTabs: { id: "xyz" | "backup1"; label: string; online: number }[] = [
+  const subTabs: {
+    id: "xyz" | "backup1" | "backup3";
+    label: string;
+    online: number;
+  }[] = [
     { id: "xyz", label: "MAIN", online: xyzOnline },
     { id: "backup1", label: "BACKUP SERVER 1", online: backupOnline },
+    { id: "backup3", label: "BACKUP SERVER 2", online: streamiOnline },
   ];
 
   return (
@@ -280,7 +315,7 @@ export function LivePanel() {
         </p>
       </aside>
 
-      <div className="mb-6 grid grid-cols-2 border-2 border-foreground">
+      <div className="mb-6 grid grid-cols-3 border-2 border-foreground">
         {subTabs.map((t) => (
           <button
             key={t.id}
@@ -332,6 +367,25 @@ export function LivePanel() {
           <FeedStatus status={ppvStatus} empty={ppvGroups.length === 0} />
           {ppvStatus === "ready" &&
             ppvGroups.map((g) => (
+              <CategorySection
+                key={g.category}
+                category={g.category}
+                events={g.events}
+                label="BACKUP"
+                online={online}
+              />
+            ))}
+        </>
+      )}
+
+      {sub === "backup3" && (
+        <>
+          <FeedStatus
+            status={streamiStatus}
+            empty={streamiGroups.length === 0}
+          />
+          {streamiStatus === "ready" &&
+            streamiGroups.map((g) => (
               <CategorySection
                 key={g.category}
                 category={g.category}
