@@ -5,6 +5,7 @@ import { findPpvEvent } from "@/lib/ppv-events";
 import { findStreamiEvent } from "@/lib/streami";
 import { findXyzStream } from "@/lib/xyzstreams";
 import { findMovishStream } from "@/lib/movish";
+import { findTimstreamsEvent } from "@/lib/timstreams";
 import { StreamPlayer } from "@/components/live/stream-player";
 import { ChatPanel } from "@/components/live/chat-panel";
 import { WavyBackground } from "@/components/retro/wavy-background";
@@ -26,8 +27,8 @@ export default async function LiveWatchPage({
   // Not a scheduled event? It may be an always-on channel from the feed.
   const channel = event ? undefined : await findChannel(slug);
   // Backup sources, resolved by slug prefix: "ppv-" (ppv.to), "streami-"
-  // (streami.click), "xyz-" (xyzstreams.st World Cup feeds) and "movish-"
-  // (movish.net World Cup channels).
+  // (streami.click), "xyz-" (xyzstreams.st World Cup feeds), "movish-"
+  // (movish.net World Cup channels), and "timstreams-" (api.vixnuvew.uk).
   const backup =
     !event && !channel
       ? slug.startsWith("ppv-")
@@ -38,7 +39,9 @@ export default async function LiveWatchPage({
             ? await findXyzStream(slug.slice(4))
             : slug.startsWith("movish-")
               ? await findMovishStream(slug)
-              : undefined
+              : slug.startsWith("timstreams-")
+                ? await findTimstreamsEvent(slug.slice(11))
+                : undefined
       : undefined;
 
   // Event/channel/backup → its feeds; otherwise treat the slug as a direct embed.

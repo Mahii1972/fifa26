@@ -8,6 +8,7 @@ import type { LiveEvent } from "@/lib/types";
 import type { PpvGroup } from "@/lib/ppv-events";
 import type { XyzGroup } from "@/lib/xyzstreams";
 import type { StreamiGroup } from "@/lib/streami";
+import type { TimstreamsGroup } from "@/lib/timstreams";
 
 // How many events to show in each category before the "show more" accordion.
 const BACKUP_TOP = 4;
@@ -169,10 +170,11 @@ function FeedStatus({
 
 export function LivePanel() {
   const [online, setOnline] = useState<Record<string, number>>({});
-  // Three feeds: "xyz" (xyzstreams.st — the MAIN World Cup source),
-  // "backup1" (ppv.to — Backup Server 1) and "backup3" (streamic.ru — Backup
-  // Server 2). "idle" doubles as each feed's loading state.
-  const [sub, setSub] = useState<"xyz" | "backup1" | "backup3">("xyz");
+  // Four feeds: "xyz" (MAIN), "backup1" (ppv.to), "backup2" (streamic.ru),
+  // and "backup3" (api.vixnuvew.uk). "idle" doubles as each loading state.
+  const [sub, setSub] = useState<
+    "xyz" | "backup1" | "backup2" | "backup3"
+  >("xyz");
   const [ppvGroups, setPpvGroups] = useState<PpvGroup[]>([]);
   const [ppvStatus, setPpvStatus] = useState<"idle" | "ready" | "error">(
     "idle",
@@ -183,6 +185,12 @@ export function LivePanel() {
   );
   const [streamiGroups, setStreamiGroups] = useState<StreamiGroup[]>([]);
   const [streamiStatus, setStreamiStatus] = useState<
+    "idle" | "ready" | "error"
+  >("idle");
+  const [timstreamsGroups, setTimstreamsGroups] = useState<TimstreamsGroup[]>(
+    [],
+  );
+  const [timstreamsStatus, setTimstreamsStatus] = useState<
     "idle" | "ready" | "error"
   >("idle");
 
@@ -204,6 +212,22 @@ export function LivePanel() {
     return () => {
       cancelled = true;
       clearInterval(id);
+    };
+  }, []);
+
+  // Load the TimStreams-style backup feed as Backup Server 3.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/timstreams-events")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { groups: TimstreamsGroup[] }) => {
+        if (cancelled) return;
+        setTimstreamsGroups(d.groups ?? []);
+        setTimstreamsStatus("ready");
+      })
+      .catch(() => !cancelled && setTimstreamsStatus("error"));
+    return () => {
+      cancelled = true;
     };
   }, []);
 
@@ -280,15 +304,23 @@ export function LivePanel() {
         .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
     [streamiGroups, online],
   );
+  const timstreamsOnline = useMemo(
+    () =>
+      timstreamsGroups
+        .flatMap((g) => g.events)
+        .reduce((sum, e) => sum + (online[e.url] ?? 0), 0),
+    [timstreamsGroups, online],
+  );
 
   const subTabs: {
-    id: "xyz" | "backup1" | "backup3";
+    id: "xyz" | "backup1" | "backup2" | "backup3";
     label: string;
     online: number;
   }[] = [
     { id: "xyz", label: "MAIN", online: xyzOnline },
     { id: "backup1", label: "BACKUP SERVER 1", online: backupOnline },
-    { id: "backup3", label: "BACKUP SERVER 2", online: streamiOnline },
+    { id: "backup2", label: "BACKUP SERVER 2", online: streamiOnline },
+    { id: "backup3", label: "BACKUP SERVER 3", online: timstreamsOnline },
   ];
 
   return (
@@ -315,7 +347,7 @@ export function LivePanel() {
         </p>
       </aside>
 
-      <div className="mb-6 grid grid-cols-3 border-2 border-foreground">
+      <div className="mb-6 grid grid-cols-2 border-2 border-foreground sm:grid-cols-4 [&>button:nth-child(2n)]:border-r-0 [&>button:nth-child(n+3)]:border-t-2 sm:[&>button:nth-child(2n)]:border-r-2 sm:[&>button:nth-child(4n)]:border-r-0 sm:[&>button:nth-child(n+3)]:border-t-0">
         {subTabs.map((t) => (
           <button
             key={t.id}
@@ -378,7 +410,7 @@ export function LivePanel() {
         </>
       )}
 
-      {sub === "backup3" && (
+      {sub === "backup2" && (
         <>
           <FeedStatus
             status={streamiStatus}
@@ -386,6 +418,25 @@ export function LivePanel() {
           />
           {streamiStatus === "ready" &&
             streamiGroups.map((g) => (
+              <CategorySection
+                key={g.category}
+                category={g.category}
+                events={g.events}
+                label="BACKUP"
+                online={online}
+              />
+            ))}
+        </>
+      )}
+
+      {sub === "backup3" && (
+        <>
+          <FeedStatus
+            status={timstreamsStatus}
+            empty={timstreamsGroups.length === 0}
+          />
+          {timstreamsStatus === "ready" &&
+            timstreamsGroups.map((g) => (
               <CategorySection
                 key={g.category}
                 category={g.category}
