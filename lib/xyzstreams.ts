@@ -1,5 +1,5 @@
 /**
- * xyzstreams.shop World Cup feed (third-party) — the "Backup Live 3" source.
+ * xyzstreams.st World Cup feed (third-party) — the "Backup Live 3" source.
  *
  * Their /wc-1 page is a World Cup hub: a single inline `const streams = [...]`
  * array of broadcaster feeds (FOX, BBC, TSN, beIN, Telemundo + 4K variants).
@@ -14,7 +14,7 @@
  */
 import type { LiveEvent, LiveStream } from "./types";
 
-const ORIGIN = "https://xyzstreams.shop";
+const ORIGIN = "https://xyzstreams.st";
 // The World Cup hub page that aggregates every broadcaster feed.
 const HUB = `${ORIGIN}/wc-1`;
 const BROWSER_UA =

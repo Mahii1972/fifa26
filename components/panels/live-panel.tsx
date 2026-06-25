@@ -169,7 +169,7 @@ function FeedStatus({
 
 export function LivePanel() {
   const [online, setOnline] = useState<Record<string, number>>({});
-  // Three feeds: "xyz" (xyzstreams.shop — the MAIN World Cup source),
+  // Three feeds: "xyz" (xyzstreams.st — the MAIN World Cup source),
   // "backup1" (ppv.to — Backup Server 1) and "backup3" (streamic.ru — Backup
   // Server 2). "idle" doubles as each feed's loading state.
   const [sub, setSub] = useState<"xyz" | "backup1" | "backup3">("xyz");
@@ -207,7 +207,7 @@ export function LivePanel() {
     };
   }, []);
 
-  // Load the xyzstreams.shop World Cup feed (MAIN) up front so its online total
+  // Load the xyzstreams.st World Cup feed (MAIN) up front so its online total
   // shows on the tab without opening it.
   useEffect(() => {
     let cancelled = false;

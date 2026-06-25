@@ -26,7 +26,7 @@ export default async function LiveWatchPage({
   // Not a scheduled event? It may be an always-on channel from the feed.
   const channel = event ? undefined : await findChannel(slug);
   // Backup sources, resolved by slug prefix: "ppv-" (ppv.to), "streami-"
-  // (streami.click), "xyz-" (xyzstreams.shop World Cup feeds) and "movish-"
+  // (streami.click), "xyz-" (xyzstreams.st World Cup feeds) and "movish-"
   // (movish.net World Cup channels).
   const backup =
     !event && !channel
