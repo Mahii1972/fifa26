@@ -12,6 +12,10 @@ function kickoffMs(m: Match): number {
   return m.kickoffUtc ? new Date(m.kickoffUtc).getTime() : Number.POSITIVE_INFINITY;
 }
 
+function fixtureStageLabel(group: string): string {
+  return group === "R32" ? "R32" : group;
+}
+
 export function SignalPanel({ data }: { data: WorldCupData }) {
   const countries = [...new Set(data.stadiums.map((s) => s.country))];
   const totalCapacity = data.stadiums.reduce((sum, s) => sum + s.capacity, 0);
@@ -121,7 +125,7 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
                 className="flex items-center gap-2 border-b border-foreground/20 px-3 py-3 transition-colors last:border-0 hover:bg-muted sm:gap-4 sm:px-4"
               >
                 <span className="font-display w-5 shrink-0 text-center text-[9px] text-teletext-amber sm:w-6">
-                  {match.group}
+                  {fixtureStageLabel(match.group)}
                 </span>
 
                 {/* Home */}

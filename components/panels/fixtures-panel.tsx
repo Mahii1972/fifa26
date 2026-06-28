@@ -8,6 +8,10 @@ import { FILTER_ACTIVE, FILTER_INACTIVE } from "@/lib/teletext";
 import { cn } from "@/lib/utils";
 import type { WorldCupData } from "@/lib/types";
 
+function fixtureStageLabel(group: string): string {
+  return group === "R32" ? "R32" : group;
+}
+
 function FixturesList({ data }: { data: WorldCupData }) {
   const [groupFilter, setGroupFilter] = useState<string>("ALL");
   const [matchdayFilter, setMatchdayFilter] = useState<string>("ALL");
@@ -57,7 +61,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
       <div className="mb-4 flex flex-wrap gap-x-6 gap-y-4 border-2 border-foreground bg-card/40 p-4">
         <div>
           <p className="mb-2 text-xs tracking-widest text-teletext-cyan">
-            GROUP
+            GROUP/STAGE
           </p>
           <div className="flex flex-wrap gap-1.5">
             {groups.map((g) => (
@@ -96,7 +100,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
       <div className="border-2 border-foreground">
         <div className="grid grid-cols-[3rem_3rem_1fr_5rem_1fr_1fr] border-b-2 border-teletext-yellow bg-teletext-yellow px-3 py-2.5 font-display text-[8px] tracking-widest text-background max-lg:hidden">
           <span>NO</span>
-          <span>GRP</span>
+          <span>STG</span>
           <span>HOME</span>
           <span className="text-center">SCORE</span>
           <span>AWAY</span>
@@ -127,7 +131,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
                   #{match.id.padStart(2, "0")}
                 </span>
                 <span className="font-display text-[9px] text-teletext-amber">
-                  {match.group}
+                  {fixtureStageLabel(match.group)}
                 </span>
                 <span className="glow-soft truncate">
                   <span className="text-teletext-cyan">
@@ -167,7 +171,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
               <div className="px-3 py-3 lg:hidden">
                 <div className="mb-2 flex items-center justify-between">
                   <span className="font-display text-[9px] text-teletext-amber">
-                    GRP {match.group}
+                    STG {fixtureStageLabel(match.group)}
                   </span>
                   <div className="flex items-center gap-2">
                     {played && <StatusBadge match={match} />}
