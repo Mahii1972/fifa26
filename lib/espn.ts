@@ -16,8 +16,8 @@ const SCOREBOARD =
 const STANDINGS =
   "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings";
 
-/** Group stage window (104-match tournament; CSV holds the 72 group games). */
-const GROUP_STAGE_RANGE = "20260611-20260627";
+/** Full tournament window (group stage through final). */
+const TOURNAMENT_RANGE = "20260611-20260719";
 
 /** Shape of the bits we read from a scoreboard event. */
 export interface EspnMatch {
@@ -78,7 +78,7 @@ function normalizeState(state: unknown): "pre" | "in" | "post" {
 
 export async function fetchEspnMatches(opts: FetchOpts = {}): Promise<EspnMatch[]> {
   const data = (await getJson(
-    `${SCOREBOARD}?dates=${GROUP_STAGE_RANGE}`,
+    `${SCOREBOARD}?dates=${TOURNAMENT_RANGE}`,
     opts,
   )) as any;
   const events = data?.events;
