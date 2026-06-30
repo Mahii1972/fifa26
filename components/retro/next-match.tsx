@@ -9,7 +9,17 @@ function kickoffMs(m: Match): number {
   return m.kickoffUtc ? new Date(m.kickoffUtc).getTime() : Number.POSITIVE_INFINITY;
 }
 
-function TeamSide({ team, align }: { team?: Team; align: "left" | "right" }) {
+function TeamSide({
+  team,
+  align,
+  code,
+  name,
+}: {
+  team?: Team;
+  align: "left" | "right";
+  code: string;
+  name: string;
+}) {
   const flag = team?.flag ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -22,10 +32,10 @@ function TeamSide({ team, align }: { team?: Team; align: "left" | "right" }) {
   const text = (
     <div className="min-w-0">
       <p className="font-display glow-cyan text-sm text-teletext-cyan sm:text-base">
-        {team?.fifaCode ?? "TBD"}
+        {code}
       </p>
       <p className="truncate text-[10px] text-muted-foreground sm:text-xs">
-        {team?.name}
+        {name}
       </p>
     </div>
   );
@@ -45,7 +55,15 @@ function TeamSide({ team, align }: { team?: Team; align: "left" | "right" }) {
 }
 
 /** Compact stacked team chip (flag over code) used in the mobile layout. */
-function TeamChip({ team }: { team?: Team }) {
+function TeamChip({
+  team,
+  code,
+  name,
+}: {
+  team?: Team;
+  code: string;
+  name: string;
+}) {
   return (
     <div className="flex w-20 flex-col items-center gap-1 text-center">
       {team?.flag && (
@@ -57,10 +75,10 @@ function TeamChip({ team }: { team?: Team }) {
         />
       )}
       <span className="font-display glow-cyan text-base text-teletext-cyan">
-        {team?.fifaCode ?? "TBD"}
+        {code}
       </span>
       <span className="w-full truncate text-[10px] text-muted-foreground">
-        {team?.name}
+        {name}
       </span>
     </div>
   );
@@ -120,6 +138,10 @@ export function NextMatchCard({
 
   const home = target ? teamMap.get(target.homeTeamId) : undefined;
   const away = target ? teamMap.get(target.awayTeamId) : undefined;
+  const homeCode = home?.fifaCode ?? target?.homeDisplayCode ?? "TBD";
+  const awayCode = away?.fifaCode ?? target?.awayDisplayCode ?? "TBD";
+  const homeName = home?.name ?? target?.homeDisplayName ?? "";
+  const awayName = away?.name ?? target?.awayDisplayName ?? "";
   const stadium = target ? stadiumMap.get(target.stadiumId) : undefined;
   // ESPN-confirmed live (real score + clock) vs. presumed live (kickoff passed,
   // ESPN feed still catching up — we don't trust the 0-0 it reports).
@@ -190,20 +212,20 @@ export function NextMatchCard({
           {/* Mobile: teams on one row, countdown big underneath. */}
           <div className="sm:hidden">
             <div className="flex items-start justify-center gap-4">
-              <TeamChip team={home} />
+              <TeamChip team={home} code={homeCode} name={homeName} />
               <span className="font-display mt-3 text-[10px] tracking-widest text-muted-foreground">
                 VS
               </span>
-              <TeamChip team={away} />
+              <TeamChip team={away} code={awayCode} name={awayName} />
             </div>
             <div className="mt-4">{center}</div>
           </div>
 
           {/* Desktop: team — center — team. */}
           <div className="hidden grid-cols-[1fr_auto_1fr] items-center gap-4 sm:grid">
-            <TeamSide team={home} align="left" />
+            <TeamSide team={home} align="left" code={homeCode} name={homeName} />
             <div className="shrink-0 px-1">{center}</div>
-            <TeamSide team={away} align="right" />
+            <TeamSide team={away} align="right" code={awayCode} name={awayName} />
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 border-t border-foreground/20 pt-3 text-center text-[11px] text-muted-foreground sm:justify-between sm:text-left sm:text-xs">

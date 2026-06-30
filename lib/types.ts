@@ -62,6 +62,11 @@ export interface Match {
   displayClock?: string;
   /** Absolute kickoff in ISO UTC — from ESPN if matched, else derived from CSV. */
   kickoffUtc?: string;
+  /** ESPN display fallback for knockout rows whose teams are still placeholders. */
+  homeDisplayCode?: string;
+  homeDisplayName?: string;
+  awayDisplayCode?: string;
+  awayDisplayName?: string;
   /** Where score/status came from for this match. */
   source?: "espn" | "csv";
 }

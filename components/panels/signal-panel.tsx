@@ -112,6 +112,10 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
           {signalFixtures.map((match) => {
             const home = teamMap.get(match.homeTeamId);
             const away = teamMap.get(match.awayTeamId);
+            const homeCode = home?.fifaCode ?? match.homeDisplayCode ?? "TBD";
+            const awayCode = away?.fifaCode ?? match.awayDisplayCode ?? "TBD";
+            const homeName = home?.name ?? match.homeDisplayName ?? "";
+            const awayName = away?.name ?? match.awayDisplayName ?? "";
             const scored = hasScore(match);
             // primary looks like "21:30 IST · 13/06/2026 (+1)"
             const [koTime, koDate] = (
@@ -132,10 +136,10 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
                 <div className="flex min-w-0 flex-1 items-center justify-end gap-2 text-right">
                   <span className="glow-soft truncate text-sm sm:text-base">
                     <span className="text-teletext-cyan">
-                      {home?.fifaCode ?? "TBD"}
+                      {homeCode}
                     </span>{" "}
                     <span className="hidden text-muted-foreground sm:inline">
-                      {home?.name}
+                      {homeName}
                     </span>
                   </span>
                   {home?.flag && (
@@ -186,10 +190,10 @@ export function SignalPanel({ data }: { data: WorldCupData }) {
                   )}
                   <span className="glow-soft truncate text-sm sm:text-base">
                     <span className="text-teletext-cyan">
-                      {away?.fifaCode ?? "TBD"}
+                      {awayCode}
                     </span>{" "}
                     <span className="hidden text-muted-foreground sm:inline">
-                      {away?.name}
+                      {awayName}
                     </span>
                   </span>
                 </div>

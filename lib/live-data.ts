@@ -29,33 +29,50 @@ function csvKickoffUtc(match: Match): string | undefined {
 }
 
 function overlayMatches(base: WorldCupData, espn: Awaited<ReturnType<typeof fetchEspnMatches>>): Match[] {
+  const codeMap = teamByCode(base.teams);
   const codeOf = (id: string) =>
     base.teams.find((t) => t.id === id)?.fifaCode;
+  const idOfCode = (code: string) => codeMap.get(code)?.id;
 
   // Index ESPN matches by "HOME-AWAY" fifa-code pair (orientation-sensitive).
   const espnByPair = new Map(espn.map((m) => [`${m.homeCode}-${m.awayCode}`, m]));
+  const espnByKickoff = new Map(
+    espn
+      .filter((m) => m.kickoffUtc)
+      .map((m) => [new Date(m.kickoffUtc).getTime(), m]),
+  );
 
   return base.matches.map((match) => {
     const homeCode = codeOf(match.homeTeamId);
     const awayCode = codeOf(match.awayTeamId);
-    const live = homeCode && awayCode
-      ? espnByPair.get(`${homeCode}-${awayCode}`)
-      : undefined;
+    const kickoffUtc = csvKickoffUtc(match);
+    const live =
+      homeCode && awayCode
+        ? espnByPair.get(`${homeCode}-${awayCode}`)
+        : kickoffUtc
+          ? espnByKickoff.get(new Date(kickoffUtc).getTime())
+          : undefined;
 
     if (!live) {
       // No ESPN match — keep CSV values, still expose a derived kickoff.
-      return { ...match, kickoffUtc: csvKickoffUtc(match), source: "csv" as const };
+      return { ...match, kickoffUtc, source: "csv" as const };
     }
 
     return {
       ...match,
+      homeTeamId: match.homeTeamId || idOfCode(live.homeCode) || "",
+      awayTeamId: match.awayTeamId || idOfCode(live.awayCode) || "",
       homeScore: live.homeScore,
       awayScore: live.awayScore,
       finished: live.state === "post",
       state: live.state,
       statusDetail: live.statusDetail,
       displayClock: live.displayClock,
-      kickoffUtc: live.kickoffUtc || csvKickoffUtc(match),
+      kickoffUtc: live.kickoffUtc || kickoffUtc,
+      homeDisplayCode: live.homeDisplayCode,
+      homeDisplayName: live.homeDisplayName,
+      awayDisplayCode: live.awayDisplayCode,
+      awayDisplayName: live.awayDisplayName,
       source: "espn" as const,
     };
   });

@@ -22,7 +22,11 @@ const TOURNAMENT_RANGE = "20260611-20260719";
 /** Shape of the bits we read from a scoreboard event. */
 export interface EspnMatch {
   homeCode: string;
+  homeDisplayCode: string;
+  homeDisplayName: string;
   awayCode: string;
+  awayDisplayCode: string;
+  awayDisplayName: string;
   homeScore: number;
   awayScore: number;
   state: "pre" | "in" | "post";
@@ -74,6 +78,16 @@ function normalizeState(state: unknown): "pre" | "in" | "post" {
   return state === "in" || state === "post" ? state : "pre";
 }
 
+function displayCode(team: any): string {
+  return team?.isActive === false
+    ? (team?.shortDisplayName ?? team?.abbreviation ?? "")
+    : (team?.abbreviation ?? team?.shortDisplayName ?? "");
+}
+
+function displayName(team: any): string {
+  return team?.displayName ?? team?.name ?? team?.abbreviation ?? "";
+}
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export async function fetchEspnMatches(opts: FetchOpts = {}): Promise<EspnMatch[]> {
@@ -99,7 +113,11 @@ export async function fetchEspnMatches(opts: FetchOpts = {}): Promise<EspnMatch[
     const type = comp?.status?.type ?? {};
     out.push({
       homeCode,
+      homeDisplayCode: displayCode(home?.team),
+      homeDisplayName: displayName(home?.team),
       awayCode,
+      awayDisplayCode: displayCode(away?.team),
+      awayDisplayName: displayName(away?.team),
       homeScore: num(home?.score),
       awayScore: num(away?.score),
       state: normalizeState(type?.state),

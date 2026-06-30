@@ -110,6 +110,10 @@ function FixturesList({ data }: { data: WorldCupData }) {
         {filtered.map((match) => {
           const home = teamMap.get(match.homeTeamId);
           const away = teamMap.get(match.awayTeamId);
+          const homeCode = home?.fifaCode ?? match.homeDisplayCode ?? "TBD";
+          const awayCode = away?.fifaCode ?? match.awayDisplayCode ?? "TBD";
+          const homeName = home?.name ?? match.homeDisplayName ?? "";
+          const awayName = away?.name ?? match.awayDisplayName ?? "";
           const stadium = stadiumMap.get(match.stadiumId);
           const played = hasScore(match);
           const live = isLive(match);
@@ -135,9 +139,9 @@ function FixturesList({ data }: { data: WorldCupData }) {
                 </span>
                 <span className="glow-soft truncate">
                   <span className="text-teletext-cyan">
-                    {home?.fifaCode ?? "TBD"}
+                    {homeCode}
                   </span>{" "}
-                  <span className="text-muted-foreground">{home?.name}</span>
+                  <span className="text-muted-foreground">{homeName}</span>
                 </span>
                 <span className={`font-display text-center text-[9px] ${scoreColor}`}>
                   {live && (
@@ -149,9 +153,9 @@ function FixturesList({ data }: { data: WorldCupData }) {
                 </span>
                 <span className="glow-soft truncate">
                   <span className="text-teletext-cyan">
-                    {away?.fifaCode ?? "TBD"}
+                    {awayCode}
                   </span>{" "}
-                  <span className="text-muted-foreground">{away?.name}</span>
+                  <span className="text-muted-foreground">{awayName}</span>
                 </span>
                 <div>
                   <MatchTimeRow
@@ -183,7 +187,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-base">
                   <span className="glow-soft min-w-0 truncate text-right">
                     <span className="text-teletext-cyan">
-                      {home?.fifaCode ?? "TBD"}
+                      {homeCode}
                     </span>
                   </span>
                   <span
@@ -196,7 +200,7 @@ function FixturesList({ data }: { data: WorldCupData }) {
                   </span>
                   <span className="glow-soft min-w-0 truncate">
                     <span className="text-teletext-cyan">
-                      {away?.fifaCode ?? "TBD"}
+                      {awayCode}
                     </span>
                   </span>
                 </div>
