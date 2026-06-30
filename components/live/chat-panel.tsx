@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import PusherClient from "pusher-js";
-import { Bell, BellOff, Trash2 } from "lucide-react";
+import { Bell, BellOff, Pencil, Trash2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CHAT_EVENT, SYNC_EVENT, chatChannel } from "@/lib/chat-shared";
 import { getChatLog, getServerSnapshot } from "@/lib/chat-log";
@@ -93,6 +93,8 @@ export function ChatPanel({
   const [members, setMembers] = useState<string[]>([]);
   const [connected, setConnected] = useState(false);
   const [draft, setDraft] = useState("");
+  const [editingName, setEditingName] = useState(false);
+  const [nameDraft, setNameDraft] = useState("");
   // Lazy reads are safe: this connected view only renders on the client (the
   // server snapshot for `name` is null → server renders the name prompt).
   const [perm, setPerm] = useState<Perm>(readPermission);
@@ -107,6 +109,10 @@ export function ChatPanel({
   useEffect(() => {
     notifyRef.current = notifyOn;
   }, [notifyOn]);
+
+  useEffect(() => {
+    if (!editingName) setNameDraft(name ?? "");
+  }, [editingName, name]);
 
   // Latest presence callback, held in a ref so the subscribe effect doesn't
   // depend on (and reconnect over) the caller's changing function identity.
@@ -242,6 +248,24 @@ export function ChatPanel({
     }
   }
 
+  function startEditingName() {
+    setNameDraft(name ?? "");
+    setEditingName(true);
+  }
+
+  function cancelEditingName() {
+    setNameDraft(name ?? "");
+    setEditingName(false);
+  }
+
+  function saveEditedName(e: React.FormEvent) {
+    e.preventDefault();
+    const value = nameDraft.trim();
+    if (!value) return;
+    setStoredName(value.slice(0, 32));
+    setEditingName(false);
+  }
+
   async function send(e: React.FormEvent) {
     e.preventDefault();
     const text = draft.trim();
@@ -364,6 +388,53 @@ export function ChatPanel({
             {connected ? `${members.length} ONLINE` : "CONNECTING…"}
           </span>
         </span>
+      </div>
+
+      <div className="border-b-2 border-foreground bg-card/20 px-4 py-2">
+        {editingName ? (
+          <form onSubmit={saveEditedName} className="flex gap-1.5">
+            <input
+              value={nameDraft}
+              onChange={(e) => setNameDraft(e.target.value)}
+              maxLength={32}
+              autoFocus
+              className="font-display min-w-0 flex-1 border-2 border-teletext-cyan/40 bg-background px-2 py-1.5 text-[10px] tracking-wider text-teletext-cyan focus:border-teletext-yellow focus:outline-none"
+            />
+            <button
+              type="submit"
+              disabled={!nameDraft.trim()}
+              className="pixel-press font-display shrink-0 border-2 border-teletext-yellow bg-teletext-yellow px-2 py-1 text-[8px] tracking-wider text-background disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              SAVE
+            </button>
+            <button
+              type="button"
+              onClick={cancelEditingName}
+              title="Cancel"
+              className="pixel-press shrink-0 border-2 border-teletext-cyan/40 p-1.5 text-teletext-cyan/70 transition-colors hover:border-teletext-yellow hover:text-teletext-yellow"
+            >
+              <X className="h-3 w-3" />
+            </button>
+          </form>
+        ) : (
+          <div className="flex items-center justify-between gap-3 text-[10px] tracking-wider">
+            <span className="min-w-0 truncate text-muted-foreground">
+              ▌YOU ARE{" "}
+              <span className="font-display text-teletext-yellow">
+                {name.toUpperCase()}
+              </span>
+            </span>
+            <button
+              type="button"
+              onClick={startEditingName}
+              title="Edit name"
+              className="pixel-press flex shrink-0 items-center gap-1 border-2 border-teletext-cyan/40 px-2 py-1 text-[8px] tracking-wider text-teletext-cyan/70 transition-colors hover:border-teletext-yellow hover:text-teletext-yellow"
+            >
+              <Pencil className="h-3 w-3" />
+              EDIT
+            </button>
+          </div>
+        )}
       </div>
 
       {members.length > 0 && (
